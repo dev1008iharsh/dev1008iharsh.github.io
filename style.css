@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #0b0f14;
   color: white;
 }
@@ -21,18 +21,30 @@ body {
   font-weight: 800;
 }
 
-.hero-left h2 {
+/* BLUE TITLE */
+
+.title-blue {
   color: #4da3ff;
+  font-size: 36px;
   margin: 10px 0;
+}
+
+/* ANIMATED TEXT */
+
+.animated-text {
+  font-size: 28px;
+  margin: 8px 0;
+  animation: fadeMove 2.5s infinite alternate;
+}
+
+@keyframes fadeMove {
+  from { opacity: 0.4; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(-5px); }
 }
 
 .contact-line a {
   color: #4da3ff;
   text-decoration: none;
-}
-
-.pronoun {
-  opacity: 0.7;
 }
 
 .subtitle {
@@ -52,14 +64,9 @@ body {
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.25s;
 }
 
-.buttons a:hover {
-  background: #2f86e0;
-}
-
-/* PROFILE IMAGE */
+/* IMAGE */
 
 .hero-right img {
   width: 340px;
@@ -81,12 +88,6 @@ body {
   border-radius: 16px;
 }
 
-.project h3 {
-  margin-top: 0;
-}
-
-/* CODE BUTTON */
-
 .code-btn {
   display: inline-block;
   margin-top: 14px;
@@ -98,8 +99,36 @@ body {
   font-weight: 600;
 }
 
-.code-btn:hover {
-  background: #2f86e0;
+/* SKILLS */
+
+.skills {
+  padding: 100px 12%;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.skill-grid div {
+  background: #12171d;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* CONTACT FOOTER */
+
+.contact-footer {
+  padding: 80px 0;
+  text-align: center;
+  background: #12171d;
+}
+
+.contact-footer a {
+  color: #4da3ff;
+  text-decoration: none;
 }
 
 /* MOBILE */
@@ -119,6 +148,10 @@ body {
 
   .hero-left h1 {
     font-size: 42px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
