@@ -26,59 +26,48 @@ body {
   margin: 10px 0;
 }
 
-.hero-left p {
+.contact-line {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.pronoun {
+  margin: 6px 0;
+  opacity: 0.7;
+}
+
+.subtitle {
   font-size: 20px;
   opacity: 0.8;
-  max-width: 500px;
+  max-width: 600px;
 }
+
+/* BUTTONS */
 
 .buttons a {
   display: inline-block;
-  margin: 15px 10px 0 0;
+  margin: 18px 12px 0 0;
   padding: 14px 28px;
   background: #4da3ff;
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
+  font-weight: 600;
   transition: 0.25s;
 }
 
 .buttons a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   background: #2f86e0;
 }
 
+/* PROFILE IMAGE */
+
 .hero-right img {
   width: 340px;
+  height: 340px;
+  object-fit: cover;
   border-radius: 22px;
-}
-
-/* PROJECTS */
-
-.projects {
-  padding: 100px 12%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.card {
-  background: #12171d;
-  padding: 20px;
-  border-radius: 18px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 12px;
 }
 
 /* SKILLS */
@@ -89,24 +78,19 @@ body {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
 .skill-grid div {
   background: #12171d;
-  padding: 20px;
+  padding: 18px;
   border-radius: 12px;
-}
-
-/* CONTACT */
-
-.contact {
-  padding: 100px 12%;
   text-align: center;
+  font-weight: 500;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width: 900px) {
 
@@ -118,14 +102,15 @@ body {
   .hero-right img {
     margin-top: 40px;
     width: 220px;
+    height: 220px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .hero-left h1 {
+    font-size: 44px;
   }
 
   .skill-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
