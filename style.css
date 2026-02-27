@@ -1,134 +1,147 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg,#0b0f14,#0f1720);
-  color: white;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0b0f14,#0f1720);
+  color:white;
 }
 
-/* HERO — moved upward */
+/* HERO */
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px 12% 20px;
-  min-height: auto;
+.hero{
+  padding:40px 12%;
+  display:flex;
+  justify-content:center;
 }
 
 /* GLASS PROFILE BOX */
 
-.hero-left {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(18px);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
-  max-width: 700px;
+.profile-box{
+  max-width:900px;
+  width:100%;
+  text-align:center;
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(20px);
+  border-radius:22px;
+  padding:40px;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+/* IMAGE INSIDE BOX */
+
+.profile-img{
+  width:180px;
+  border-radius:50%;
+  margin-bottom:15px;
 }
 
 /* NAME */
 
-.hero-left h1 {
-  font-size: 72px;
-  margin: 0;
-  font-weight: 800;
-  line-height: 1.05;
+.profile-box h1{
+  font-size:64px;
+  margin:0;
 }
 
 /* TITLE */
 
-.title-blue {
-  color: #4da3ff;
-  margin: 10px 0;
+.title-blue{
+  color:#4da3ff;
+  margin:10px 0;
 }
 
 /* CONTACT */
 
-.contact-line a {
-  color: #e6e6e6;
-  text-decoration: none;
+.contact-line a{
+  color:#e6e6e6;
+  text-decoration:none;
 }
 
-.contact-line a:hover {
-  color: #4da3ff;
+.contact-line a:hover{
+  color:#4da3ff;
 }
 
-/* SUBTITLE */
+/* BUTTON GRID — 2 PER ROW */
 
-.subtitle {
-  margin-top: 8px;
-  opacity: 0.8;
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
 }
 
-/* BUTTONS */
+.buttons a{
+  padding:14px;
+  text-decoration:none;
+  color:white;
+  border-radius:12px;
 
-.buttons a {
-  display: inline-block;
-  margin: 15px 10px 0 0;
-  padding: 14px 28px;
-  background: rgba(77,163,255,0.2);
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  border: 1px solid rgba(77,163,255,0.4);
-  color: white;
-  text-decoration: none;
-  transition: 0.2s;
+  background:rgba(77,163,255,0.2);
+  border:1px solid rgba(77,163,255,0.4);
+  backdrop-filter:blur(12px);
+  text-align:center;
 }
 
-.buttons a:hover {
-  background: rgba(77,163,255,0.35);
+.buttons a:hover{
+  background:rgba(77,163,255,0.35);
 }
 
-/* PROFILE IMAGE */
+/* PROJECTS */
 
-.hero-right img {
-  width: 320px;
-  border-radius: 22px;
-  align-self: flex-start;
+.projects{
+  padding:20px 12% 60px;
 }
 
-/* PROJECTS — gap removed */
+.project-card{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(18px);
+  border-radius:18px;
+  padding:28px;
+  margin-bottom:25px;
+  border:1px solid rgba(255,255,255,0.12);
+}
 
-.projects {
-  padding: 20px 12% 100px;
+.project-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 24px;
+  border-radius:12px;
+  background:rgba(77,163,255,0.25);
+  border:1px solid rgba(77,163,255,0.5);
+  color:white;
+  text-decoration:none;
 }
 
 /* SKILLS */
 
-.skills {
-  padding: 100px 12%;
+.skills{
+  padding:40px 12% 80px;
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
+.skill-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
-.skill-grid div {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  padding: 18px;
-  border-radius: 12px;
-  text-align: center;
+.skill-grid div{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(16px);
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.12);
 }
 
 /* MOBILE */
 
-@media (max-width: 900px) {
+@media(max-width:900px){
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
+  .profile-box h1{
+    font-size:40px;
   }
 
-  .hero-right img {
-    margin-top: 20px;
-    width: 220px;
-  }
-
-  .skill-grid {
-    grid-template-columns: 1fr 1fr;
+  .skill-grid{
+    grid-template-columns:1fr 1fr;
   }
 
 }
