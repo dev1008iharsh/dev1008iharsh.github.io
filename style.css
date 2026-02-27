@@ -5,25 +5,44 @@ body {
   color: white;
 }
 
-/* HERO */
+/* HERO — moved upward */
 
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 100px 12%;
-  min-height: 100vh;
+  align-items: flex-start;
+  padding: 40px 12% 20px;
+  min-height: auto;
 }
+
+/* GLASS PROFILE BOX */
+
+.hero-left {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+  max-width: 700px;
+}
+
+/* NAME */
 
 .hero-left h1 {
   font-size: 72px;
   margin: 0;
   font-weight: 800;
+  line-height: 1.05;
 }
+
+/* TITLE */
 
 .title-blue {
   color: #4da3ff;
+  margin: 10px 0;
 }
+
+/* CONTACT */
 
 .contact-line a {
   color: #e6e6e6;
@@ -32,6 +51,13 @@ body {
 
 .contact-line a:hover {
   color: #4da3ff;
+}
+
+/* SUBTITLE */
+
+.subtitle {
+  margin-top: 8px;
+  opacity: 0.8;
 }
 
 /* BUTTONS */
@@ -46,36 +72,25 @@ body {
   border: 1px solid rgba(77,163,255,0.4);
   color: white;
   text-decoration: none;
+  transition: 0.2s;
 }
+
+.buttons a:hover {
+  background: rgba(77,163,255,0.35);
+}
+
+/* PROFILE IMAGE */
 
 .hero-right img {
-  width: 340px;
+  width: 320px;
   border-radius: 22px;
+  align-self: flex-start;
 }
 
-/* PROJECTS — GLASS CARDS */
+/* PROJECTS — gap removed */
 
 .projects {
-  padding: 100px 12%;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(16px);
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 30px;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.project-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 22px;
-  background: #4da3ff;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+  padding: 20px 12% 100px;
 }
 
 /* SKILLS */
@@ -108,7 +123,7 @@ body {
   }
 
   .hero-right img {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 220px;
   }
 
