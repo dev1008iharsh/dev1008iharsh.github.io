@@ -92,7 +92,7 @@ body{
 }
 
 .project-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -104,18 +104,21 @@ body{
   margin-top: 15px;
 }
 
-.project-btn{
-  display:inline-block;
-  padding:12px 24px;
-  border-radius:12px;
-  background:rgba(77,163,255,0.25);
-  border:1px solid rgba(77,163,255,0.5);
-  color:white;
-  text-decoration:none;
+.project-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: rgba(77, 163, 255, 0.25);
+  border: 1px solid rgba(77, 163, 255, 0.5);
+  color: white;
+  text-decoration: none;
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease; 
+  text-align: center;  
+  align-items: center;
+  justify-content: center;
 }
 
 .project-btn:hover{
