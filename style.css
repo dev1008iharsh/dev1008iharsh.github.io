@@ -1,147 +1,165 @@
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#0b0f14,#0f1720);
-  color:white;
+/* ================= GLOBAL STYLES ================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b0f14, #0f1720);
+  color: white;
 }
 
-/* HERO */
-
-.hero{
-  padding:40px 12%;
-  display:flex;
-  justify-content:center;
+/* ================= HERO SECTION ================= */
+.hero {
+  padding: 40px 12%;
+  display: flex;
+  justify-content: center;
 }
 
 /* GLASS PROFILE BOX */
-
-.profile-box{
-  max-width:900px;
-  width:100%;
-  text-align:center;
-
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(20px);
-  border-radius:22px;
-  padding:40px;
-  border:1px solid rgba(255,255,255,0.15);
+.profile-box {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  border-radius: 22px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* IMAGE INSIDE BOX */
-
-.profile-img{
-  width:180px;
-  border-radius:50%;
-  margin-bottom:15px;
+.profile-img {
+  width: 180px;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 /* NAME */
-
-.profile-box h1{
-  font-size:64px;
-  margin:0;
+.profile-box h1 {
+  font-size: 64px;
+  margin: 0;
 }
 
 /* TITLE */
-
-.title-blue{
-  color:#4da3ff;
-  margin:10px 0;
+.title-blue {
+  color: #4da3ff;
+  margin: 10px 0;
 }
 
 /* CONTACT */
-
-.contact-line a{
-  color:#e6e6e6;
-  text-decoration:none;
+.contact-line a {
+  color: #e6e6e6;
+  text-decoration: none;
 }
 
-.contact-line a:hover{
-  color:#4da3ff;
+.contact-line a:hover {
+  color: #4da3ff;
 }
 
 /* BUTTON GRID — 2 PER ROW */
-
-.buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:20px;
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
 }
 
-.buttons a{
-  padding:14px;
-  text-decoration:none;
-  color:white;
-  border-radius:12px;
-
-  background:rgba(77,163,255,0.2);
-  border:1px solid rgba(77,163,255,0.4);
-  backdrop-filter:blur(12px);
-  text-align:center;
+.buttons a {
+  padding: 14px;
+  text-decoration: none;
+  color: white;
+  border-radius: 12px;
+  background: rgba(77, 163, 255, 0.2);
+  border: 1px solid rgba(77, 163, 255, 0.4);
+  backdrop-filter: blur(12px);
+  text-align: center;
 }
 
-.buttons a:hover{
-  background:rgba(77,163,255,0.35);
+.buttons a:hover {
+  background: rgba(77, 163, 255, 0.35);
 }
 
-/* PROJECTS */
-
-.projects{
-  padding:20px 12% 60px;
+/* ================= PROJECTS SECTION ================= */
+.projects {
+  padding: 20px 12% 60px;
 }
 
-.project-card{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(18px);
-  border-radius:18px;
-  padding:28px;
-  margin-bottom:25px;
-  border:1px solid rgba(255,255,255,0.12);
+/* ================= PROJECT CARD ================= */
+.project-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  
+  /* Added transitions for the hover zoom effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures content stays within the rounded borders */
 }
 
-.project-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 24px;
-  border-radius:12px;
-  background:rgba(77,163,255,0.25);
-  border:1px solid rgba(77,163,255,0.5);
-  color:white;
-  text-decoration:none;
+/* HOVER ZOOM EFFECT */
+.project-card:hover {
+  transform: scale(1.02); /* Little zoom effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Nice shadow depth */
 }
 
-/* SKILLS */
-
-.skills{
-  padding:40px 12% 80px;
+/* ================= PROJECT IMAGES ================= */
+/* This ensures all images are the exact same size and look perfect */
+.project-image {
+  width: 100%;
+  height: 220px; /* Fixed height so all cards look uniform */
+  object-fit: cover; /* Prevents image from stretching */
+  border-radius: 12px; /* Matches the card design */
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Slight border for image */
 }
 
-.skill-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+/* PROJECT BUTTON */
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: rgba(77, 163, 255, 0.25);
+  border: 1px solid rgba(77, 163, 255, 0.5);
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s ease;
 }
 
-.skill-grid div{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(16px);
-  padding:16px;
-  border-radius:12px;
-  text-align:center;
-  border:1px solid rgba(255,255,255,0.12);
+.project-btn:hover {
+  background: rgba(77, 163, 255, 0.4);
 }
 
-/* MOBILE */
+/* ================= SKILLS SECTION ================= */
+.skills {
+  padding: 40px 12% 80px;
+}
 
-@media(max-width:900px){
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
 
-  .profile-box h1{
-    font-size:40px;
+.skill-grid div {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media(max-width: 900px) {
+  .profile-box h1 {
+    font-size: 40px;
   }
-
-  .skill-grid{
-    grid-template-columns:1fr 1fr;
+  
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
   }
-
+  
+  /* On mobile, images will automatically adapt their width to 100% 
+     and keep the 220px height, without breaking the UI */
 }
