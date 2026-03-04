@@ -1,165 +1,213 @@
-/* ================= GLOBAL STYLES ================= */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0b0f14, #0f1720);
-  color: white;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0b0f14,#0f1720);
+  color:white;
 }
 
-/* ================= HERO SECTION ================= */
-.hero {
-  padding: 40px 12%;
-  display: flex;
-  justify-content: center;
+/* HERO */
+.hero{
+  padding:40px 12%;
+  display:flex;
+  justify-content:center;
 }
 
 /* GLASS PROFILE BOX */
-.profile-box {
-  max-width: 900px;
-  width: 100%;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  border-radius: 22px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.profile-box{
+  max-width:900px;
+  width:100%;
+  text-align:center;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(20px);
+  border-radius:22px;
+  padding:40px;
+  border:1px solid rgba(255,255,255,0.15);
 }
 
 /* IMAGE INSIDE BOX */
-.profile-img {
-  width: 180px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.profile-img{
+  width:180px;
+  border-radius:50%;
+  margin-bottom:15px;
 }
 
 /* NAME */
-.profile-box h1 {
-  font-size: 64px;
-  margin: 0;
+.profile-box h1{
+  font-size:64px;
+  margin:0;
 }
 
 /* TITLE */
-.title-blue {
-  color: #4da3ff;
-  margin: 10px 0;
+.title-blue{
+  color:#4da3ff;
+  margin:10px 0;
 }
 
 /* CONTACT */
-.contact-line a {
-  color: #e6e6e6;
-  text-decoration: none;
+.contact-line a{
+  color:#e6e6e6;
+  text-decoration:none;
 }
 
-.contact-line a:hover {
-  color: #4da3ff;
+.contact-line a:hover{
+  color:#4da3ff;
 }
 
 /* BUTTON GRID — 2 PER ROW */
-.buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 20px;
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
 }
 
-.buttons a {
-  padding: 14px;
-  text-decoration: none;
-  color: white;
-  border-radius: 12px;
-  background: rgba(77, 163, 255, 0.2);
-  border: 1px solid rgba(77, 163, 255, 0.4);
-  backdrop-filter: blur(12px);
-  text-align: center;
+.buttons a{
+  padding:14px;
+  text-decoration:none;
+  color:white;
+  border-radius:12px;
+  background:rgba(77,163,255,0.2);
+  border:1px solid rgba(77,163,255,0.4);
+  backdrop-filter:blur(12px);
+  text-align:center;
 }
 
-.buttons a:hover {
-  background: rgba(77, 163, 255, 0.35);
+.buttons a:hover{
+  background:rgba(77,163,255,0.35);
 }
 
-/* ================= PROJECTS SECTION ================= */
-.projects {
-  padding: 20px 12% 60px;
+/* PROJECTS */
+.projects{
+  padding:20px 12% 60px;
 }
 
-/* ================= PROJECT CARD ================= */
-.project-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  border-radius: 18px;
-  padding: 28px;
-  margin-bottom: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  
-  /* Added transitions for the hover zoom effect */
+.project-card{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(18px);
+  border-radius:18px;
+  padding:28px;
+  margin-bottom:25px;
+  border:1px solid rgba(255,255,255,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Ensures content stays within the rounded borders */
 }
 
-/* HOVER ZOOM EFFECT */
 .project-card:hover {
-  transform: scale(1.02); /* Little zoom effect */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Nice shadow depth */
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* ================= PROJECT IMAGES ================= */
-/* This ensures all images are the exact same size and look perfect */
-.project-image {
-  width: 100%;
-  height: 220px; /* Fixed height so all cards look uniform */
-  object-fit: cover; /* Prevents image from stretching */
-  border-radius: 12px; /* Matches the card design */
-  margin-bottom: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Slight border for image */
-}
-
-/* PROJECT BUTTON */
-.project-btn {
-  display: inline-block;
+/* BUTTONS WRAPPER IN CARD */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* Helps wrap buttons to next line on small screens */
   margin-top: 15px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  background: rgba(77, 163, 255, 0.25);
-  border: 1px solid rgba(77, 163, 255, 0.5);
-  color: white;
-  text-decoration: none;
+}
+
+.project-btn{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:12px;
+  background:rgba(77,163,255,0.25);
+  border:1px solid rgba(77,163,255,0.5);
+  color:white;
+  text-decoration:none;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
   transition: background 0.2s ease;
 }
 
-.project-btn:hover {
-  background: rgba(77, 163, 255, 0.4);
+.project-btn:hover{
+  background:rgba(77,163,255,0.4);
 }
 
-/* ================= SKILLS SECTION ================= */
-.skills {
-  padding: 40px 12% 80px;
+/* SKILLS */
+.skills{
+  padding:40px 12% 80px;
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+.skill-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
-.skill-grid div {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.skill-grid div{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(16px);
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.12);
 }
 
-/* ================= MOBILE RESPONSIVENESS ================= */
-@media(max-width: 900px) {
-  .profile-box h1 {
-    font-size: 40px;
+/* ================= MODAL / LIGHTBOX STYLES ================= */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 90%; 
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image {
+  max-width: 100%; 
+  max-height: 100%;
+  object-fit: contain; /* Ensures the image is not cropped at all */
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px; 
+  right: 25px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10000;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #ff1a1a;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .profile-box h1{
+    font-size:40px;
   }
-  
-  .skill-grid {
-    grid-template-columns: 1fr 1fr;
+  .skill-grid{
+    grid-template-columns:1fr 1fr;
   }
-  
-  /* On mobile, images will automatically adapt their width to 100% 
-     and keep the 220px height, without breaking the UI */
+  .action-buttons {
+    flex-direction: column; /* Stack buttons on mobile */
+  }
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
