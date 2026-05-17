@@ -1,35 +1,49 @@
 // ========================================
-// Contact Form
+// Contact Form Handler
 // ========================================
 
-const contactForm = document.querySelector("#contact-form");
+window.addEventListener("load", () => {
 
-contactForm.addEventListener("submit", (event) => {
+    // Get contact form AFTER components load
+    const contactForm = document.querySelector("#contact-form");
 
-    // Prevent page refresh
-    event.preventDefault();
+    // Safety check
+    if (!contactForm) {
 
-    // Get form values
-    const name = document.querySelector("#name").value.trim();
+        console.error("❌ contact-form not found");
 
-    const email = document.querySelector("#email").value.trim();
+        return;
+    }
 
-    const subject = document.querySelector("#subject").value.trim();
+    // Form Submit
+    contactForm.addEventListener("submit", (event) => {
 
-    const message = document.querySelector("#message").value.trim();
+        // Prevent page refresh
+        event.preventDefault();
 
-    // Debug
-    console.log({
-        name,
-        email,
-        subject,
-        message
+        // Get values
+        const name = document.querySelector("#name").value.trim();
+
+        const email = document.querySelector("#email").value.trim();
+
+        const subject = document.querySelector("#subject").value.trim();
+
+        const message = document.querySelector("#message").value.trim();
+
+        // Debug
+        console.log({
+            name,
+            email,
+            subject,
+            message
+        });
+
+        // Success Message
+        alert("Message sent successfully 🚀");
+
+        // Reset Form
+        contactForm.reset();
+
     });
-
-    // Success Alert
-    alert("Message sent successfully 🚀");
-
-    // Reset Form
-    contactForm.reset();
 
 });
