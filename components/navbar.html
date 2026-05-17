@@ -1,76 +1,174 @@
-/* =====================================================
-MOBILE NAVIGATION
-===================================================== */
+<!-- FILE: components/navbar.html -->
 
-.menu-toggle {
+<header class="navbar">
 
-    display: none;
+    <!-- =====================================================
+    LOGO
+    ===================================================== -->
 
-    background: transparent;
+    <a
+        href="index.html"
+        class="logo"
+    >
+        Dev.iHarsh1008
+    </a>
 
-    border: none;
+    <!-- =====================================================
+    MOBILE MENU BUTTON
+    ===================================================== -->
 
-    color: white;
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle Navigation"
+    >
+        ☰
+    </button>
 
-    font-size: 32px;
+    <!-- =====================================================
+    NAVIGATION LINKS
+    ===================================================== -->
 
-    cursor: pointer;
+    <nav
+        class="nav-links"
+        id="mobileNav"
+    >
 
-    z-index: 1001;
-}
+        <!-- About -->
 
-/* =====================================================
-MOBILE
-===================================================== */
+        <a href="index.html#about">
+            About
+        </a>
 
-@media (max-width: 900px) {
+        <!-- Contact -->
 
-    .menu-toggle {
+        <a href="index.html#contact">
+            Contact
+        </a>
 
-        display: block;
-    }
+        <!-- Live Projects -->
 
-    .nav-links {
+        <a href="projects.html?type=live">
+            Live Apps
+        </a>
 
-        position: fixed;
+        <!-- Portfolio -->
 
-        top: 90px;
-        left: 20px;
-        right: 20px;
+        <a href="projects.html?type=portfolio">
+            Portfolio Apps
+        </a>
 
-        flex-direction: column;
+        <!-- Skills -->
 
-        gap: 20px;
+        <a href="index.html#skills">
+            Skills
+        </a>
 
-        padding: 30px;
+    </nav>
 
-        border-radius: 24px;
+    <!-- =====================================================
+    ACTION BUTTONS
+    ===================================================== -->
 
-        background:
-            rgba(10, 15, 35, 0.96);
+    <div class="nav-actions">
 
-        backdrop-filter: blur(20px);
+        <!-- GitHub -->
 
-        -webkit-backdrop-filter: blur(20px);
+        <a
+            class="nav-btn github-btn"
+            href="https://github.com/dev1008iharsh"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            GitHub
+        </a>
 
-        border:
-            1px solid rgba(255,255,255,0.08);
+        <!-- LinkedIn -->
 
-        box-shadow:
-            0 20px 60px rgba(0,0,0,0.4);
+        <a
+            class="nav-btn linkedin-btn"
+            href="https://linkedin.com/in/dev1008iharsh"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            LinkedIn
+        </a>
 
-        display: none;
+        <!-- Resume -->
 
-        z-index: 1000;
-    }
+        <a
+            class="nav-btn resume-btn"
+            href="resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Resume
+        </a>
 
-    .nav-links.active {
+    </div>
 
-        display: flex;
-    }
+</header>
 
-    .nav-actions {
+<!-- =====================================================
+MOBILE NAVIGATION SCRIPT
+===================================================== -->
 
-        display: none;
-    }
-}
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mobileNav =
+            document.getElementById("mobileNav");
+
+        if (!menuToggle || !mobileNav) return;
+
+        /* =========================================
+        Toggle Mobile Menu
+        ========================================= */
+
+        menuToggle.addEventListener("click", () => {
+
+            mobileNav.classList.toggle("active");
+
+            /* =====================================
+            Toggle Icon
+            ===================================== */
+
+            if (
+                mobileNav.classList.contains("active")
+            ) {
+
+                menuToggle.innerHTML = "✕";
+
+            } else {
+
+                menuToggle.innerHTML = "☰";
+            }
+
+        });
+
+        /* =========================================
+        Auto Close Menu On Link Click
+        ========================================= */
+
+        const navLinks =
+            mobileNav.querySelectorAll("a");
+
+        navLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                mobileNav.classList.remove("active");
+
+                menuToggle.innerHTML = "☰";
+
+            });
+
+        });
+
+    });
+
+</script>
