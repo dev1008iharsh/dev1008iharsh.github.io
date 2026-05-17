@@ -60,11 +60,6 @@ document.addEventListener(
         );
 
         await loadComponent(
-            "footer-container",
-            "components/footer.html"
-        );
-
-        await loadComponent(
             "modal-container",
             "components/modal.html"
         );
