@@ -1,9 +1,18 @@
+<!-- =========================================================
+FILE: index.html
+Clean Modular Architecture
+Uses reusable component files
+========================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <!-- Meta -->
+    <!-- =====================================================
+    META
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,7 +24,10 @@
         Harsh Darji • Senior iOS Engineer
     </title>
 
-    <!-- Fonts -->
+    <!-- =====================================================
+    GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -29,7 +41,10 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
+    <!-- =====================================================
+    CSS FILES
+    ====================================================== -->
+
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/animations.css">
@@ -44,92 +59,173 @@
 
 <body>
 
-    <!-- =========================================
-         Cursor
-    ========================================== -->
+    <!-- =====================================================
+    CUSTOM CURSOR
+    ====================================================== -->
+
     <div class="cursor-dot"></div>
 
     <div class="cursor-outline"></div>
 
-    <!-- =========================================
-         Background Effects
-    ========================================== -->
+    <!-- =====================================================
+    GLOBAL BACKGROUND EFFECTS
+    ====================================================== -->
+
     <div class="grid-overlay"></div>
 
     <div class="blur blur-one"></div>
 
     <div class="blur blur-two"></div>
 
-    <!-- =========================================
-         Components Containers
-    ========================================== -->
+    <!-- =====================================================
+    NAVBAR COMPONENT
+    FILE:
+    components/navbar.html
+    ====================================================== -->
 
     <div id="navbar-container"></div>
 
+    <!-- =====================================================
+    HERO COMPONENT
+    FILE:
+    components/hero.html
+    ====================================================== -->
+
     <div id="hero-container"></div>
+
+    <!-- =====================================================
+    ABOUT COMPONENT
+    FILE:
+    components/about.html
+    ====================================================== -->
 
     <div id="about-container"></div>
 
+    <!-- =====================================================
+    FEATURED WORK COMPONENT
+    FILE:
+    components/featured-work.html
+    ====================================================== -->
+
     <div id="featured-container"></div>
 
-    <div id="skills-container-wrapper">
+    <!-- =====================================================
+    SKILLS SECTION
+    Dynamic Rendering
+    ====================================================== -->
 
-        <section
-            id="skills"
-            class="section"
-        >
+    <section
+        id="skills"
+        class="section"
+    >
 
-            <div class="section-heading">
+        <div class="section-heading">
 
-                <h2>
-                    Technical <span>Arsenal</span>
-                </h2>
-
-                <p>
-                    Core technologies and engineering expertise
-                    powering scalable iOS applications.
-                </p>
-
+            <div class="hero-badge">
+                🚀 Technical Expertise
             </div>
 
-            <!-- Dynamic Skills -->
-            <div
-                id="skills-container"
-                class="skills-grid"
-            ></div>
+            <h2>
+                Technical <span>Arsenal</span>
+            </h2>
 
-        </section>
+            <p>
+                Core technologies and engineering expertise
+                powering scalable iOS applications,
+                realtime systems,
+                AI integrations,
+                clean architectures
+                and production-grade development workflows.
+            </p>
 
-    </div>
+        </div>
+
+        <!-- Dynamic Skills Rendering -->
+
+        <div
+            id="skills-container"
+            class="skills-grid"
+        ></div>
+
+    </section>
+
+    <!-- =====================================================
+    CONTACT COMPONENT
+    FILE:
+    components/contact.html
+    ====================================================== -->
 
     <div id="contact-container"></div>
 
+    <!-- =====================================================
+    FOOTER COMPONENT
+    FILE:
+    components/footer.html
+    ====================================================== -->
+
     <div id="footer-container"></div>
+
+    <!-- =====================================================
+    MODAL COMPONENT
+    FILE:
+    components/modal.html
+    ====================================================== -->
 
     <div id="modal-container"></div>
 
-    <!-- =========================================
-         Scripts
-    ========================================== -->
+    <!-- =====================================================
+    JAVASCRIPT FILES
+    ====================================================== -->
 
-    <!-- Core -->
+    <!-- =====================================================
+    CORE APP
+    ====================================================== -->
+
     <script src="js/app.js"></script>
+
+    <!-- =====================================================
+    COMPONENT LOADER
+    Loads external reusable HTML components
+    ====================================================== -->
+
+    <script src="js/loadComponents.js"></script>
+
+    <!-- =====================================================
+    HERO TYPING EFFECT
+    ====================================================== -->
 
     <script src="js/typing.js"></script>
 
+    <!-- =====================================================
+    CUSTOM CURSOR
+    ONLY FOR INDEX PAGE
+    ====================================================== -->
+
     <script src="js/cursor.js"></script>
 
-    <script src="js/modal.js"></script>
+    <!-- =====================================================
+    CONTACT FORM MAIL LOGIC
+    ====================================================== -->
 
     <script src="js/mail.js"></script>
 
-    <!-- Dynamic Skills -->
+    <!-- =====================================================
+    IMAGE MODAL
+    ====================================================== -->
+
+    <script src="js/modal.js"></script>
+
+    <!-- =====================================================
+    TECHNICAL SKILLS DATA
+    ====================================================== -->
+
     <script src="data/technicalArsenal.js"></script>
 
-    <script src="js/renderSkills.js"></script>
+    <!-- =====================================================
+    SKILLS RENDERER
+    ====================================================== -->
 
-    <!-- Components Loader -->
-    <script src="js/loadComponents.js"></script>
+    <script src="js/renderSkills.js"></script>
 
 </body>
 
