@@ -23,18 +23,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroBadge =
         document.getElementById("heroBadge");
 
+    /* =====================================================
+       Safety Check
+    ===================================================== */
+
     if (
         !container ||
         !heroTitle ||
         !heroDescription ||
         !heroBadge
     ) {
+        console.error(
+            "Projects page elements not found."
+        );
+
         return;
     }
 
     let projects = [];
 
-    // Live Projects
+    /* =====================================================
+       LIVE PROJECTS
+    ===================================================== */
 
     if (type === "live") {
 
@@ -55,10 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
             and scalable architectures.
             `;
 
-        projects = liveProjects;
+        // Safety fallback
+        // Prevent crash if liveProjects fails to load
+
+        projects =
+            typeof liveProjects !== "undefined"
+            ? liveProjects
+            : [];
+
     }
 
-    // Portfolio Projects
+    /* =====================================================
+       PORTFOLIO PROJECTS
+    ===================================================== */
 
     else {
 
@@ -79,25 +98,82 @@ document.addEventListener("DOMContentLoaded", () => {
             iOS architectures.
             `;
 
-        projects = portfolioProjects;
+        // Safety fallback
+        // Prevent crash if portfolioProjects fails to load
+
+        projects =
+            typeof portfolioProjects !== "undefined"
+            ? portfolioProjects
+            : [];
+
     }
+
+    /* =====================================================
+       Debug Logs
+    ===================================================== */
+
+    console.log(
+        "Projects Type:",
+        type
+    );
+
+    console.log(
+        "Projects Data:",
+        projects
+    );
+
+    /* =====================================================
+       Render Projects
+    ===================================================== */
 
     renderProjects(projects);
 
 });
 
-// =========================================================
-// Render Cards
-// =========================================================
+/* =========================================================
+   Render Cards
+========================================================= */
 
 function renderProjects(projects) {
 
     const container =
         document.getElementById("projectsContainer");
 
-    if (!container) return;
+    if (!container) {
+
+        console.error(
+            "Projects container not found."
+        );
+
+        return;
+    }
+
+    /* =====================================================
+       Empty State
+    ===================================================== */
+
+    if (!Array.isArray(projects)) {
+
+        console.error(
+            "Projects is not an array:",
+            projects
+        );
+
+        container.innerHTML =
+            `
+            <p style="color:white;">
+                Failed to load projects.
+            </p>
+            `;
+
+        return;
+    }
 
     container.innerHTML = "";
+
+    /* =====================================================
+       Create Cards
+    ===================================================== */
 
     const cardsHTML = projects.map((project) => {
 
@@ -121,16 +197,16 @@ function renderProjects(projects) {
             }
 
             <h3>
-                ${project.title}
+                ${project.title || "Untitled Project"}
             </h3>
 
             <p>
-                ${project.description}
+                ${project.description || ""}
             </p>
 
             <div class="project-tags">
 
-                ${project.tags.map(tag =>
+                ${(project.tags || []).map(tag =>
                     `<span>${tag}</span>`
                 ).join("")}
 
@@ -140,15 +216,15 @@ function renderProjects(projects) {
 
                 <button
                     class="project-btn"
-                    data-preview="${project.image}"
-                    data-title="${project.title}"
+                    data-preview="${project.image || ""}"
+                    data-title="${project.title || ""}"
                 >
                     Preview
                 </button>
 
                 <a
                     class="project-btn"
-                    href="${project.link}"
+                    href="${project.link || "#"}"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -162,6 +238,14 @@ function renderProjects(projects) {
 
     }).join("");
 
+    /* =====================================================
+       Inject Cards
+    ===================================================== */
+
     container.innerHTML = cardsHTML;
+
+    console.log(
+        "Projects rendered successfully."
+    );
 
 }
