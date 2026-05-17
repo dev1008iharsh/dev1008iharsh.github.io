@@ -1,6 +1,6 @@
 /* =========================================================
    FILE: js/typing.js
-   Hero Typing Animation
+   Premium Hero Typing Animation
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,73 +15,128 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initializeTypingAnimation() {
 
-    const typingElement = document.getElementById("typing-text");
+    const typingElement =
+        document.getElementById("typing-text");
 
     if (!typingElement) return;
 
+    /* =========================================
+       Dynamic Roles
+    ========================================= */
+
     const texts = [
 
-        "Project Lead • Senior iOS Engineer 🚀",
+        "AI-Driven Mobile Experiences",
 
-        "Swift • UIKit + SwiftUI • MVVM",
+        "Senior iOS Engineer 🚀",
 
-        "Scalable Architecture • Performance Optimization",
+        "Swift • UIKit • SwiftUI",
 
-        "Realtime Systems • Firebase • AI Apps",
+        "Realtime Systems • Firebase",
 
-        "Production-Grade iOS Applications"
+        "Scalable Architecture Specialist",
+
+        "Performance Optimization Expert",
+
+        "Production-Grade App Builder"
 
     ];
 
     let textIndex = 0;
+
     let characterIndex = 0;
+
     let isDeleting = false;
 
-    const typingSpeed = 70;
+    const typingSpeed = 75;
+
     const deletingSpeed = 40;
+
     const pauseDuration = 1800;
+
+    /* =========================================
+       Main Typing Logic
+    ========================================= */
 
     function type() {
 
-        const currentText = texts[textIndex];
+        const currentText =
+            texts[textIndex];
 
-        if (isDeleting) {
+        /* =====================================
+           Typing
+        ===================================== */
+
+        if (!isDeleting) {
 
             typingElement.textContent =
-                currentText.substring(0, characterIndex--);
+                currentText.substring(
+                    0,
+                    characterIndex + 1
+                );
 
-        } else {
-
-            typingElement.textContent =
-                currentText.substring(0, characterIndex++);
+            characterIndex++;
 
         }
 
-        let timeout = isDeleting
+        /* =====================================
+           Deleting
+        ===================================== */
+
+        else {
+
+            typingElement.textContent =
+                currentText.substring(
+                    0,
+                    characterIndex - 1
+                );
+
+            characterIndex--;
+
+        }
+
+        let timeout =
+            isDeleting
             ? deletingSpeed
             : typingSpeed;
 
-        if (!isDeleting && characterIndex === currentText.length) {
+        /* =====================================
+           Text Fully Typed
+        ===================================== */
+
+        if (
+            !isDeleting &&
+            characterIndex === currentText.length
+        ) {
 
             timeout = pauseDuration;
-            isDeleting = true;
 
-        } else if (isDeleting && characterIndex === 0) {
+            isDeleting = true;
+        }
+
+        /* =====================================
+           Text Fully Deleted
+        ===================================== */
+
+        else if (
+            isDeleting &&
+            characterIndex === 0
+        ) {
 
             isDeleting = false;
 
             textIndex++;
 
-            if (textIndex >= texts.length) {
+            if (
+                textIndex >= texts.length
+            ) {
                 textIndex = 0;
             }
 
-            timeout = 400;
-
+            timeout = 500;
         }
 
         setTimeout(type, timeout);
-
     }
 
     type();
@@ -89,20 +144,23 @@ function initializeTypingAnimation() {
 }
 
 /* =========================================================
-   Blinking Cursor
+   Animated Blinking Cursor
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const typingElement = document.getElementById("typing-text");
+    const typingElement =
+        document.getElementById("typing-text");
 
     if (!typingElement) return;
 
-    const cursor = document.createElement("span");
+    const cursor =
+        document.createElement("span");
 
     cursor.classList.add("typing-cursor");
+
     cursor.innerHTML = "|";
 
-    typingElement.after(cursor);
+    typingElement.appendChild(cursor);
 
 });
