@@ -151,6 +151,11 @@ Supports:
 
             backdrop-filter: blur(20px);
 
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 10px 40px rgba(79,124,255,0.15);
+
             font-size: 18px;
             font-weight: 700;
 
@@ -187,6 +192,117 @@ Supports:
         }
 
         /* =====================================================
+        PROJECT BUTTONS
+        Premium Gradient Glass Buttons
+        ===================================================== */
+
+        .project-buttons {
+
+            display: flex;
+
+            gap: 14px;
+
+            margin-top: 28px;
+
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                14px 24px;
+
+            border-radius: 16px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(79,124,255,0.18),
+                    rgba(139,92,246,0.16)
+                );
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+
+            box-shadow:
+                0 10px 30px rgba(79,124,255,0.18);
+
+            isolation: isolate;
+        }
+
+        .project-btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(79,124,255,0.25),
+                    rgba(139,92,246,0.22)
+                );
+
+            opacity: 0;
+
+            transition: opacity 0.3s ease;
+
+            z-index: -1;
+        }
+
+        .project-btn:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.02);
+
+            border-color:
+                rgba(255,255,255,0.14);
+
+            box-shadow:
+                0 18px 50px rgba(79,124,255,0.28);
+        }
+
+        .project-btn:hover::before {
+
+            opacity: 1;
+        }
+
+        .project-btn:active {
+
+            transform: scale(0.98);
+        }
+
+        /* =====================================================
         MOBILE RESPONSIVE
         ===================================================== */
 
@@ -213,6 +329,16 @@ Supports:
 
                 grid-template-columns: 1fr;
             }
+
+            .project-buttons {
+
+                flex-direction: column;
+            }
+
+            .project-btn {
+
+                width: 100%;
+            }
         }
 
     </style>
@@ -228,6 +354,7 @@ Supports:
     <div class="grid-overlay"></div>
 
     <div class="blur blur-one"></div>
+
     <div class="blur blur-two"></div>
 
     <!-- =====================================================
@@ -329,8 +456,6 @@ Supports:
 
     <section class="section">
 
-        <!-- Dynamic Projects Inject Here -->
-
         <div
             class="project-grid"
             id="projectsContainer"
@@ -341,17 +466,12 @@ Supports:
 
     <!-- =====================================================
     IMAGE MODAL
-    IMPORTANT:
-    Only ONE modal should exist in page.
-    Duplicate modal was breaking preview logic.
     ===================================================== -->
 
     <div
         id="imageModal"
         class="modal-overlay"
     >
-
-        <!-- Close Button -->
 
         <button
             class="close-btn"
@@ -360,15 +480,9 @@ Supports:
             ✕
         </button>
 
-        <!-- Modal Content -->
-
         <div class="modal-content">
 
-            <!-- Glow Layer -->
-
             <div class="modal-glow"></div>
-
-            <!-- Preview Image -->
 
             <img
                 id="modalImage"
@@ -381,15 +495,12 @@ Supports:
 
     </div>
 
-
-
     <!-- =====================================================
     DATA FILES
-    IMPORTANT:
-    Data must load BEFORE renderProjects.js
     ===================================================== -->
 
     <script src="data/liveProjects.js"></script>
+
     <script src="data/portfolioProjects.js"></script>
 
     <!-- =====================================================
@@ -400,9 +511,6 @@ Supports:
 
     <!-- =====================================================
     PROJECTS RENDERER
-    IMPORTANT:
-    This file dynamically renders cards
-    and attaches Preview functionality.
     ===================================================== -->
 
     <script src="js/renderProjects.js"></script>
