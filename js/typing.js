@@ -26,7 +26,7 @@ function initializeTypingAnimation() {
 
     const texts = [
 
-        "AI-Driven Mobile Experiences",
+        "AI-Driven Mobile Application Developmnet Experiences",
 
         "Senior iOS Engineer 🚀",
 
