@@ -1,86 +1,76 @@
-<!-- FILE: components/navbar.html -->
+/* =====================================================
+MOBILE NAVIGATION
+===================================================== */
 
-<header class="navbar">
+.menu-toggle {
 
-    <!-- Logo -->
+    display: none;
 
-    <a
-        href="index.html"
-        class="logo"
-    >
-        Dev.iHarsh1008
-    </a>
+    background: transparent;
 
-    <!-- Nav Links -->
+    border: none;
 
-    <nav class="nav-links">
+    color: white;
 
-        <a href="index.html#about">
-            About
-        </a>
+    font-size: 32px;
 
-        <!-- Contacts -->
-           <a href="index.html#contact">
-            Contact
-        </a>
+    cursor: pointer;
 
-        <!-- Live Projects -->
+    z-index: 1001;
+}
 
-        <a href="projects.html?type=live">
-            Live Apps
-        </a>
+/* =====================================================
+MOBILE
+===================================================== */
 
-        <!-- Portfolio Projects -->
+@media (max-width: 900px) {
 
-        <a href="projects.html?type=portfolio">
-            Portfolio Apps
-        </a>
+    .menu-toggle {
 
-        <a href="index.html#skills">
-            Skills
-        </a>
+        display: block;
+    }
 
-     
+    .nav-links {
 
-    </nav>
+        position: fixed;
 
-    <!-- Action Buttons -->
+        top: 90px;
+        left: 20px;
+        right: 20px;
 
-    <div class="nav-actions">
+        flex-direction: column;
 
-        <!-- GitHub -->
+        gap: 20px;
 
-        <a
-            class="nav-btn github-btn"
-            href="https://github.com/dev1008iharsh"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            GitHub
-        </a>
+        padding: 30px;
 
-        <!-- LinkedIn -->
+        border-radius: 24px;
 
-        <a
-            class="nav-btn linkedin-btn"
-            href="https://linkedin.com/in/dev1008iharsh"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            LinkedIn
-        </a>
+        background:
+            rgba(10, 15, 35, 0.96);
 
-        <!-- Resume -->
+        backdrop-filter: blur(20px);
 
-        <a
-            class="nav-btn resume-btn"
-            href="resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Resume
-        </a>
+        -webkit-backdrop-filter: blur(20px);
 
-    </div>
+        border:
+            1px solid rgba(255,255,255,0.08);
 
-</header>
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.4);
+
+        display: none;
+
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+
+        display: flex;
+    }
+
+    .nav-actions {
+
+        display: none;
+    }
+}
