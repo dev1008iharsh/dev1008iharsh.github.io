@@ -25,6 +25,7 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
+    line-height: 1.6;
 }
 
 /* =========================================================
@@ -193,7 +194,6 @@ NAV ACTIONS
 
     transition:
         transform 0.25s ease,
-        background 0.25s ease,
         box-shadow 0.25s ease;
 }
 
@@ -248,22 +248,15 @@ HERO
     text-align: center;
 }
 
-.hero-container {
+.hero-content {
     width: 100%;
     max-width: 1100px;
 }
 
-.hero-left {
-    width: 100%;
-}
-
-/* =========================================================
-HERO BADGE
-========================================================= */
-
 .hero-badge {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 
     padding:
         12px 22px;
@@ -281,12 +274,8 @@ HERO BADGE
     font-size: 0.9rem;
     font-weight: 600;
 
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
-
-/* =========================================================
-HERO TEXT
-========================================================= */
 
 .hero h1 {
     font-size: clamp(56px, 10vw, 110px);
@@ -295,7 +284,7 @@ HERO TEXT
 
     line-height: 1.05;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .hero h1 span {
@@ -310,6 +299,16 @@ HERO TEXT
     -webkit-text-fill-color: transparent;
 }
 
+.hero-role {
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    color:
+        rgba(255,255,255,0.82);
+
+    margin-bottom: 28px;
+}
+
 .hero h2 {
     min-height: 50px;
 
@@ -322,7 +321,7 @@ HERO TEXT
 }
 
 .hero-description {
-    max-width: 850px;
+    max-width: 860px;
 
     margin: 0 auto 38px;
 
@@ -379,7 +378,8 @@ HERO TAGS
 BUTTONS
 ========================================================= */
 
-.hero-buttons {
+.hero-buttons,
+.project-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -406,7 +406,6 @@ BUTTONS
 
     transition:
         transform 0.25s ease,
-        background 0.25s ease,
         border-color 0.25s ease;
 
     position: relative;
@@ -421,14 +420,19 @@ BUTTONS
             #00c2ff,
             #8b5cf6
         );
+
+    color: white;
 }
 
-.secondary-btn {
+.secondary-btn,
+.project-btn {
     background:
         rgba(255,255,255,0.05);
 
     border:
         1px solid rgba(255,255,255,0.08);
+
+    color: white;
 }
 
 .primary-btn::before,
@@ -529,17 +533,28 @@ ABOUT
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(320px, 420px);
+
     gap: 32px;
+
+    align-items: stretch;
 }
 
 .about-card {
     padding: 38px;
+    height: 100%;
 }
 
 .about-card h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 800;
+
     margin-bottom: 24px;
+
+    line-height: 1.4;
 }
 
 .about-card p {
@@ -548,7 +563,57 @@ ABOUT
 
     line-height: 1.9;
 
+    font-size: 1rem;
+
     margin-bottom: 20px;
+}
+
+/* =========================================================
+STATS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+    height: 100%;
+}
+
+.stat-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    min-height: 160px;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 800;
+
+    color: #00c2ff;
+
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    color:
+        rgba(255,255,255,0.72);
+
+    line-height: 1.6;
+
+    font-size: 0.95rem;
 }
 
 /* =========================================================
@@ -563,7 +628,9 @@ FEATURED
 
 .feature-card {
     padding: 40px;
-    transition: transform 0.3s ease;
+
+    transition:
+        transform 0.3s ease;
 }
 
 .feature-card:hover {
@@ -680,7 +747,9 @@ CONTACT
 
 .contact-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 40px;
 
@@ -703,6 +772,12 @@ CONTACT
     line-height: 1.9;
 
     margin-bottom: 34px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .contact-form {
@@ -764,6 +839,17 @@ PROJECTS
 
 .project-card {
     padding: 32px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(79,124,255,0.24);
 }
 
 .project-card h3 {
@@ -799,22 +885,6 @@ PROJECTS
 
     font-size: 0.82rem;
     font-weight: 600;
-}
-
-.project-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.project-btn {
-    background:
-        rgba(255,255,255,0.05);
-
-    border:
-        1px solid rgba(255,255,255,0.08);
-
-    color: white;
 }
 
 /* =========================================================
@@ -950,6 +1020,10 @@ RESPONSIVE
         font-size: 54px;
     }
 
+    .hero-role {
+        font-size: 1rem;
+    }
+
     .hero-description {
         font-size: 1rem;
     }
@@ -972,7 +1046,8 @@ RESPONSIVE
         width: 100%;
     }
 
-    .expertise-container {
+    .expertise-container,
+    .stats-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1011,5 +1086,12 @@ RESPONSIVE
 
     .footer-content h3 {
         font-size: 1.8rem;
+    }
+
+    .hero-description,
+    .about-card p,
+    .feature-card p,
+    .project-card p {
+        font-size: 0.95rem;
     }
 }
