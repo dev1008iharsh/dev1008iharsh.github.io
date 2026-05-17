@@ -1,0 +1,387 @@
+/* =========================================================
+   FILE: css/animations.css
+   DESCRIPTION:
+   All reusable animations and hover effects
+========================================================= */
+
+/* =========================================================
+   FADE IN UP
+========================================================= */
+
+@keyframes fadeInUp {
+
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   FLOATING EFFECT
+========================================================= */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   GLOW PULSE
+========================================================= */
+
+@keyframes pulseGlow {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+}
+
+/* =========================================================
+   ROTATING GRADIENT
+========================================================= */
+
+@keyframes rotateGradient {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   BLUR MOVEMENT
+========================================================= */
+
+@keyframes blurMove {
+
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(30px, -20px);
+    }
+
+    50% {
+        transform: translate(-20px, 30px);
+    }
+
+    75% {
+        transform: translate(20px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/* =========================================================
+   SHIMMER EFFECT
+========================================================= */
+
+@keyframes shimmer {
+
+    0% {
+        background-position: -500px 0;
+    }
+
+    100% {
+        background-position: 500px 0;
+    }
+}
+
+/* =========================================================
+   SCALE IN
+========================================================= */
+
+@keyframes scaleIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+.hero-badge {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero h1 {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero h2 {
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-description {
+    animation: fadeInUp 1.4s ease forwards;
+}
+
+.hero-tags {
+    animation: fadeInUp 1.6s ease forwards;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1.8s ease forwards;
+}
+
+.social-links {
+    animation: fadeInUp 2s ease forwards;
+}
+
+/* =========================================================
+   PROFILE IMAGE ANIMATION
+========================================================= */
+
+.profile-wrapper {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.profile-ring {
+    animation:
+        pulseGlow 5s ease-in-out infinite,
+        rotateGradient 16s linear infinite;
+}
+
+/* =========================================================
+   CARD HOVER EFFECTS
+========================================================= */
+
+.about-card,
+.stat-card,
+.feature-card,
+.project-card,
+.skill-box,
+.contact-card {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.about-card:hover,
+.stat-card:hover,
+.feature-card:hover,
+.project-card:hover,
+.skill-box:hover,
+.contact-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: rgba(0,194,255,0.3);
+
+    box-shadow:
+        0 20px 60px rgba(0,194,255,0.08),
+        0 0 40px rgba(139,92,246,0.08);
+}
+
+/* =========================================================
+   NAV BUTTON HOVER
+========================================================= */
+
+.nav-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+        );
+
+    transition: 0.6s ease;
+}
+
+.nav-btn:hover::before {
+    left: 120%;
+}
+
+/* =========================================================
+   PROJECT BUTTONS
+========================================================= */
+
+.project-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
+
+    transform: translateX(-100%);
+
+    transition: 0.6s ease;
+}
+
+.project-btn:hover::before {
+    transform: translateX(100%);
+}
+
+/* =========================================================
+   HERO TAG HOVER
+========================================================= */
+
+.hero-tags span,
+.project-tags span,
+.feature-tags span,
+.skill-box span {
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.hero-tags span:hover,
+.project-tags span:hover,
+.feature-tags span:hover,
+.skill-box span:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(0,194,255,0.35);
+
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================================================
+   GLOW BACKGROUND MOVEMENT
+========================================================= */
+
+.blur-one {
+    animation: blurMove 14s ease-in-out infinite;
+}
+
+.blur-two {
+    animation: blurMove 18s ease-in-out infinite;
+}
+
+/* =========================================================
+   MODAL ANIMATION
+========================================================= */
+
+.modal-overlay.active {
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.modal-content {
+    animation: scaleIn 0.35s ease forwards;
+}
+
+/* =========================================================
+   FEATURE GLOW EFFECT
+========================================================= */
+
+.feature-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0,194,255,0.15),
+            transparent 45%
+        );
+
+    opacity: 0;
+
+    transition: 0.4s ease;
+
+    pointer-events: none;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+/* =========================================================
+   INPUT FOCUS EFFECT
+========================================================= */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+    border-color: rgba(0,194,255,0.4);
+
+    box-shadow:
+        0 0 0 4px rgba(0,194,255,0.08);
+}
+
+/* =========================================================
+   SMOOTH PAGE TRANSITION
+========================================================= */
+
+body {
+    animation: fadeInUp 0.8s ease;
+}
