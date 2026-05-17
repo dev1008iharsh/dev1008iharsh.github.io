@@ -1,1 +1,571 @@
 
+<!-- =========================================================
+FILE: projects.html
+Reusable Projects Page
+Supports:
+- projects.html?type=live
+- projects.html?type=portfolio
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Projects • Harsh Darji
+    </title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Page Specific Fix -->
+
+    <style>
+
+        /* =====================================================
+        NORMAL CURSOR ONLY FOR THIS PAGE
+        ===================================================== */
+
+        body {
+            cursor: auto !important;
+            overflow-x: hidden;
+        }
+
+        * {
+            cursor: auto !important;
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            display: none !important;
+        }
+
+        /* =====================================================
+        PAGE HERO FIX
+        ===================================================== */
+
+        .page-hero {
+
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding:
+                180px 24px
+                80px;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+
+            font-size: clamp(52px, 8vw, 90px);
+
+            font-weight: 900;
+
+            line-height: 1.1;
+
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .page-hero h1 span {
+
+            background: linear-gradient(
+                90deg,
+                #4f7cff,
+                #8b5cf6
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            font-size: 24px;
+
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.75);
+        }
+
+        .hero-badge {
+
+            width: fit-content;
+
+            margin: 0 auto;
+
+            padding:
+                18px 34px;
+
+            border-radius: 999px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(20px);
+
+            font-size: 18px;
+            font-weight: 700;
+
+            color: white;
+        }
+
+        /* =====================================================
+        GRID FIX
+        ===================================================== */
+
+        .project-grid {
+
+            width: 100%;
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            padding:
+                0 24px
+                120px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(340px, 1fr)
+                );
+
+            gap: 32px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =====================================================
+        MOBILE FIX
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .page-hero {
+
+                padding:
+                    140px 20px
+                    60px;
+            }
+
+            .hero-description {
+
+                font-size: 18px;
+                line-height: 1.7;
+            }
+
+            .project-grid {
+
+                padding:
+                    0 20px
+                    100px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+    BACKGROUND
+    ===================================================== -->
+
+    <div class="grid-overlay"></div>
+
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
+
+    <!-- =====================================================
+    NAVBAR
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Dev.iHarsh1008
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="projects.html?type=live">
+                Live Apps
+            </a>
+
+            <a href="projects.html?type=portfolio">
+                Portfolio
+            </a>
+
+            <a href="index.html#skills">
+                Skills
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <a
+                class="nav-btn"
+                href="https://github.com/dev1008iharsh"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                class="nav-btn"
+                href="https://linkedin.com/in/dev1008iharsh"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                class="nav-btn"
+                href="resume.pdf"
+                target="_blank"
+            >
+                Resume
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- =====================================================
+    HERO
+    ===================================================== -->
+
+    <section class="page-hero">
+
+        <div
+            class="hero-badge"
+            id="heroBadge"
+        >
+            🚀 Production Grade Applications
+        </div>
+
+        <h1 id="heroTitle">
+            Projects
+        </h1>
+
+        <p
+            class="hero-description"
+            id="heroDescription"
+        >
+            Loading projects...
+        </p>
+
+    </section>
+
+    <!-- =====================================================
+    PROJECTS GRID
+    ===================================================== -->
+
+    <section class="section">
+
+        <div
+            class="project-grid"
+            id="projectsContainer"
+        >
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+    MODAL
+    ===================================================== -->
+
+    <div
+        id="imageModal"
+        class="modal-overlay"
+    >
+
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
+            ✕
+        </button>
+
+        <div class="modal-content">
+
+            <div class="modal-glow"></div>
+
+            <img
+                id="modalImage"
+                class="modal-image"
+                src=""
+                alt="Preview"
+            >
+
+        </div>
+
+    </div>
+
+    <!-- =====================================================
+    FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h3>
+                Harsh Darji
+            </h3>
+
+            <p>
+                Senior iOS Engineer • Swift • UIKit + SwiftUI • AI Apps
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- =====================================================
+    DATA FILES
+    ===================================================== -->
+
+    <script src="data/liveProjects.js"></script>
+    <script src="data/portfolioProjects.js"></script>
+
+    <!-- =====================================================
+    RENDER LOGIC
+    ===================================================== -->
+
+    <script>
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const type =
+            params.get("type");
+
+        const container =
+            document.getElementById("projectsContainer");
+
+        const heroTitle =
+            document.getElementById("heroTitle");
+
+        const heroDescription =
+            document.getElementById("heroDescription");
+
+        const heroBadge =
+            document.getElementById("heroBadge");
+
+        let projects = [];
+
+        /* =====================================================
+        LIVE PROJECTS
+        ===================================================== */
+
+        if (type === "live") {
+
+            heroBadge.innerHTML =
+                "🚀 Production Grade App Store Applications";
+
+            heroTitle.innerHTML =
+                'Live <span>Projects</span>';
+
+            heroDescription.innerHTML =
+                `
+                Production-grade App Store applications built using
+                Swift, UIKit + SwiftUI, Firebase,
+                AI integrations, realtime systems
+                and scalable architectures.
+                `;
+
+            projects = liveProjects;
+        }
+
+        /* =====================================================
+        PORTFOLIO PROJECTS
+        ===================================================== */
+
+        else {
+
+            heroBadge.innerHTML =
+                "🚀 Advanced GitHub Portfolio";
+
+            heroTitle.innerHTML =
+                'Portfolio <span>Projects</span>';
+
+            heroDescription.innerHTML =
+                `
+                Advanced GitHub portfolio projects built using Swift,
+                UIKit + SwiftUI, MVVM, Firebase,
+                realtime systems and scalable iOS architectures.
+                `;
+
+            projects = portfolioProjects;
+        }
+
+        /* =====================================================
+        RENDER PROJECTS
+        ===================================================== */
+
+        projects.forEach((project) => {
+
+            const card =
+            `
+            <div class="project-card">
+
+                ${
+                    project.flagship
+                    ?
+                    `
+                    <div class="project-top">
+                        <span class="project-badge">
+                            Flagship
+                        </span>
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+                <h3>
+                    ${project.title}
+                </h3>
+
+                <p>
+                    ${project.description}
+                </p>
+
+                <div class="project-tags">
+
+                    ${project.tags.map(tag =>
+                        `<span>${tag}</span>`
+                    ).join("")}
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <button
+                        class="project-btn"
+                        onclick="openModal('${project.image}')"
+                    >
+                        Preview
+                    </button>
+
+                    <a
+                        class="project-btn"
+                        href="${project.link}"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
+
+                </div>
+
+            </div>
+            `;
+
+            container.innerHTML += card;
+        });
+
+    </script>
+
+    <!-- =====================================================
+    MODAL SCRIPT
+    ===================================================== -->
+
+    <script>
+
+        const modal =
+            document.getElementById("imageModal");
+
+        const modalImage =
+            document.getElementById("modalImage");
+
+        function openModal(imagePath) {
+
+            modalImage.src = imagePath;
+
+            modal.style.display = "flex";
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+
+            modal.style.display = "none";
+
+            modalImage.src = "";
+
+            document.body.style.overflow = "auto";
+        }
+
+        modal.addEventListener("click", (e) => {
+
+            if (
+                e.target === modal
+            ) {
+                closeModal();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
