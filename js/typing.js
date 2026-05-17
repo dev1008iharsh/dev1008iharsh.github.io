@@ -18,15 +18,19 @@ function initializeTypingAnimation() {
     const typingElement =
         document.getElementById("typing-text");
 
+    /* =========================================
+       Safety Check
+    ========================================= */
+
     if (!typingElement) return;
 
     /* =========================================
-       Dynamic Roles
+       Dynamic Typing Texts
     ========================================= */
 
     const texts = [
 
-        "AI-Driven Mobile Application Developmnet Experiences",
+        "AI-Driven Mobile Application Development Experiences",
 
         "Senior iOS Engineer 🚀",
 
@@ -55,7 +59,7 @@ function initializeTypingAnimation() {
     const pauseDuration = 1800;
 
     /* =========================================
-       Main Typing Logic
+       Main Typing Function
     ========================================= */
 
     function type() {
@@ -69,14 +73,14 @@ function initializeTypingAnimation() {
 
         if (!isDeleting) {
 
-            typingElement.textContent =
+            typingElement.innerHTML =
                 currentText.substring(
                     0,
                     characterIndex + 1
-                );
+                ) +
+                '<span class="typing-cursor">|</span>';
 
             characterIndex++;
-
         }
 
         /* =====================================
@@ -85,14 +89,14 @@ function initializeTypingAnimation() {
 
         else {
 
-            typingElement.textContent =
+            typingElement.innerHTML =
                 currentText.substring(
                     0,
                     characterIndex - 1
-                );
+                ) +
+                '<span class="typing-cursor">|</span>';
 
             characterIndex--;
-
         }
 
         let timeout =
@@ -130,6 +134,7 @@ function initializeTypingAnimation() {
             if (
                 textIndex >= texts.length
             ) {
+
                 textIndex = 0;
             }
 
@@ -139,28 +144,10 @@ function initializeTypingAnimation() {
         setTimeout(type, timeout);
     }
 
+    /* =========================================
+       Start Animation
+    ========================================= */
+
     type();
 
 }
-
-/* =========================================================
-   Animated Blinking Cursor
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const typingElement =
-        document.getElementById("typing-text");
-
-    if (!typingElement) return;
-
-    const cursor =
-        document.createElement("span");
-
-    cursor.classList.add("typing-cursor");
-
-    cursor.innerHTML = "|";
-
-    typingElement.appendChild(cursor);
-
-});
