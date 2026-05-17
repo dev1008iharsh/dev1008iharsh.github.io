@@ -69,5 +69,10 @@ document.addEventListener(
             "components/modal.html"
         );
 
+       await loadComponent(
+            "skills-container",
+            "components/skills.html"
+        );
+
     }
 );
