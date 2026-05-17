@@ -1,27 +1,36 @@
 <!-- =========================================
      Contact Section
 ========================================== -->
-<section id="contact" class="section">
+<section
+    id="contact"
+    class="section"
+>
 
     <div class="contact-card">
 
         <!-- =========================================
              Left Content
         ========================================== -->
+
         <div class="contact-left">
 
             <!-- Availability Badge -->
+
             <div class="hero-badge">
+
                 🚀 Available for Opportunities
+
             </div>
 
             <!-- Main Heading -->
+
             <h2>
                 Let's Build
                 <span>Amazing Apps</span>
             </h2>
 
             <!-- Description -->
+
             <p>
                 Open for Senior iOS Engineering opportunities,
                 architecture consulting,
@@ -31,6 +40,7 @@
             </p>
 
             <!-- Contact Links -->
+
             <div class="contact-links">
 
                 <a href="mailto:dev.iharsh1008@gmail.com">
@@ -50,12 +60,13 @@
         ========================================== -->
 
         <!-- IMPORTANT:
-             ID must match mail.js
+             Keep this exact ID for mail.js
         -->
 
         <form
             id="contact-form"
             class="contact-form"
+            autocomplete="off"
         >
 
             <!-- Name -->
@@ -63,6 +74,7 @@
             <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Your Name"
                 required
             >
@@ -72,6 +84,7 @@
             <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="Your Email"
                 required
             >
@@ -81,6 +94,7 @@
             <input
                 type="text"
                 id="subject"
+                name="subject"
                 placeholder="Subject"
                 required
             >
@@ -89,14 +103,18 @@
 
             <textarea
                 id="message"
+                name="message"
                 placeholder="Tell me about your project..."
                 required
             ></textarea>
 
             <!-- Submit Button -->
 
-            <button type="submit">
-                Send Message
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Send Message 🚀
             </button>
 
         </form>
