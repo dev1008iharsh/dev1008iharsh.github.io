@@ -3,7 +3,7 @@
 // Professional Contact Form Mail Handler
 // ======================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 
     /* ==================================================
     Get Contact Form
@@ -118,8 +118,16 @@ ${message}`;
         Open Default Mail App
         ============================================== */
 
-        window.location.href =
+        const mailURL =
 `mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+        window.location.href = mailURL;
+
+        /* ==============================================
+        Optional Reset Form
+        ============================================== */
+
+        contactForm.reset();
 
     });
 
