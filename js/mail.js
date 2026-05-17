@@ -2,48 +2,67 @@
 // Contact Form Handler
 // ========================================
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
-    // Get contact form AFTER components load
-    const contactForm = document.querySelector("#contact-form");
+    // Wait because components load dynamically
+    setTimeout(() => {
 
-    // Safety check
-    if (!contactForm) {
+        // Get contact form
+        const contactForm = document.querySelector("#contact-form");
 
-        console.error("❌ contact-form not found");
+        // Safety check
+        if (!contactForm) {
 
-        return;
-    }
+            console.error("❌ contact-form not found");
 
-    // Form Submit
-    contactForm.addEventListener("submit", (event) => {
+            return;
+        }
 
-        // Prevent page refresh
-        event.preventDefault();
+        // Handle form submit
+        contactForm.addEventListener("submit", (event) => {
 
-        // Get values
-        const name = document.querySelector("#name").value.trim();
+            // Prevent page refresh
+            event.preventDefault();
 
-        const email = document.querySelector("#email").value.trim();
+            // Get input values safely
+            const name =
+                document.querySelector("#name")?.value.trim();
 
-        const subject = document.querySelector("#subject").value.trim();
+            const email =
+                document.querySelector("#email")?.value.trim();
 
-        const message = document.querySelector("#message").value.trim();
+            const subject =
+                document.querySelector("#subject")?.value.trim();
 
-        // Debug
-        console.log({
-            name,
-            email,
-            subject,
-            message
+            const message =
+                document.querySelector("#message")?.value.trim();
+
+            // Create email body
+            const body = `
+Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}
+            `;
+
+            // Create mailto URL
+            const mailToURL =
+                `mailto:dev.iharsh1008@gmail.com` +
+                `?subject=${encodeURIComponent(subject)}` +
+                `&body=${encodeURIComponent(body)}`;
+
+            // Open default system mail app
+            window.location.href = mailToURL;
+
+            // Reset form after opening mail
+            contactForm.reset();
+
         });
 
-        // Success Message
-        alert("Message sent successfully 🚀");
+        console.log("✅ Contact form initialized");
 
-        // Reset Form
-        contactForm.reset();
-
-    });
+    }, 500);
 
 });
