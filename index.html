@@ -87,12 +87,15 @@
 
     <div id="contact-container"></div>
 
-
     <!-- Modal -->
 
     <div id="modal-container"></div>
 
-    <!-- JS -->
+    <!-- =====================================================
+    JS FILES
+    IMPORTANT:
+    loadComponents.js must load BEFORE mail.js
+    ===================================================== -->
 
     <script src="js/app.js"></script>
 
@@ -102,11 +105,14 @@
 
     <script src="js/cursor.js"></script>
 
-    <script src="js/mail.js"></script>
-
-    <script src="js/typing.js"></script>
-
     <script src="js/modal.js"></script>
+
+    <!-- IMPORTANT:
+         mail.js should be LAST
+         so contact component already exists
+    -->
+
+    <script src="js/mail.js"></script>
 
 </body>
 
