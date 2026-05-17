@@ -1,105 +1,42 @@
-/* =========================================================
-   FILE: js/mail.js
-   Contact Form Mail Handler
-========================================================= */
+// ======================================================
+// FILE: js/mail.js
+// ======================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+// Get form reference
+const contactForm = document.getElementById("contact-form");
 
-    initializeContactForm();
+// Prevent null crash
+if (contactForm) {
 
-});
+    contactForm.addEventListener("submit", function (event) {
 
-/* =========================================================
-   Initialize Contact Form
-========================================================= */
+        // Prevent page reload
+        event.preventDefault();
 
-function initializeContactForm() {
+        // Get input values
+        const name = document.getElementById("name").value.trim();
 
-    const form = document.getElementById("contactForm");
+        const email = document.getElementById("email").value.trim();
 
-    if (!form) return;
+        const subject = document.getElementById("subject").value.trim();
 
-    form.addEventListener("submit", handleMailSubmit);
+        const message = document.getElementById("message").value.trim();
 
-}
+        // Build professional email body
+        const emailBody =
+`Name: ${name}
 
-/* =========================================================
-   Handle Form Submit
-========================================================= */
+Email: ${email}
 
-function handleMailSubmit(event) {
-
-    event.preventDefault();
-
-    const name = document.getElementById("name")?.value.trim();
-    const email = document.getElementById("email")?.value.trim();
-    const subject = document.getElementById("subject")?.value.trim();
-    const message = document.getElementById("message")?.value.trim();
-
-    /* ========================================
-       Basic Validation
-    ======================================== */
-
-    if (!name || !email || !subject || !message) {
-
-        alert("Please fill all required fields.");
-
-        return;
-
-    }
-
-    /* ========================================
-       Construct Email Body
-    ======================================== */
-
-    const mailSubject = encodeURIComponent(
-        `Portfolio Contact • ${subject}`
-    );
-
-    const mailBody = encodeURIComponent(
-
-`Hello Harsh,
-
-You received a new portfolio inquiry.
-
-━━━━━━━━━━━━━━━━━━━━━━
-
-Name:
-${name}
-
-Email:
-${email}
-
-Subject:
-${subject}
+Subject: ${subject}
 
 Message:
-${message}
+${message}`;
 
-━━━━━━━━━━━━━━━━━━━━━━
+        // Open default mail app
+        window.location.href =
+`mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
-Sent From:
-Harsh Darji Portfolio Website
-`
-    );
-
-    /* ========================================
-       Open Default Mail App
-    ======================================== */
-
-    const mailToLink =
-        `mailto:dev.iharsh1008@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-
-    window.location.href = mailToLink;
-
-    /* ========================================
-       Reset Form
-    ======================================== */
-
-    setTimeout(() => {
-
-        document.getElementById("contactForm").reset();
-
-    }, 500);
+    });
 
 }
