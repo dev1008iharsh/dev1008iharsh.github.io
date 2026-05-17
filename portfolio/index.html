@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Harsh Darji • Senior iOS Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#050816;
+    --card:#0d1323;
+    --border:rgba(255,255,255,0.08);
+    --text:#ffffff;
+    --muted:#9ca3af;
+    --gradient:linear-gradient(90deg,#4d7cff,#9b5cff);
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.grid-overlay{
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:70px 70px;
+    z-index:-2;
+}
+
+.blur{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+.blur-one{
+    width:420px;
+    height:420px;
+    background:#4d7cff33;
+    top:-100px;
+    left:-120px;
+}
+
+.blur-two{
+    width:420px;
+    height:420px;
+    background:#9b5cff22;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* =========================
+   CURSOR
+========================= */
+
+.cursor-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    position:fixed;
+    background:#7c5cff;
+    pointer-events:none;
+    z-index:9999;
+    box-shadow:0 0 20px #7c5cff;
+    transform:translate(-50%,-50%);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:22px 70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    backdrop-filter:blur(18px);
+    background:rgba(0,0,0,.25);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.04);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    color:white;
+}
+
+.logo span{
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:38px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#d1d5db;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:white;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--gradient);
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.nav-right{
+    display:flex;
+    gap:12px;
+}
+
+.top-btn{
+    padding:12px 18px;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.top-btn:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.12);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:140px 20px 80px;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 28px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    margin-bottom:34px;
+    font-size:18px;
+    font-weight:600;
+    color:#e5e7eb;
+}
+
+.profile-wrapper{
+    width:220px;
+    height:220px;
+    margin:0 auto 36px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-wrapper::before{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    background:var(--gradient);
+    filter:blur(20px);
+    opacity:.6;
+}
+
+.profile-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,.1);
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:92px;
+    font-weight:900;
+    line-height:1;
+    margin-bottom:26px;
+}
+
+.hero h1 span{
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-description{
+    max-width:950px;
+    margin:0 auto 34px;
+    font-size:24px;
+    line-height:1.7;
+    color:#cbd5e1;
+}
+
+.hero-tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:42px;
+}
+
+.hero-tags span{
+    padding:14px 22px;
+    border-radius:16px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    font-size:16px;
+    color:#d1d5db;
+    transition:.3s;
+}
+
+.hero-tags span:hover{
+    transform:translateY(-3px);
+    border-color:#7c5cff;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:120px 70px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-heading h2{
+    font-size:68px;
+    margin-bottom:16px;
+    font-weight:900;
+}
+
+.section-heading h2 span{
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.section-heading p{
+    max-width:900px;
+    margin:auto;
+    color:#94a3b8;
+    line-height:1.7;
+    font-size:20px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:34px;
+    padding:34px;
+    position:relative;
+    overflow:hidden;
+    backdrop-filter:blur(18px);
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 50px rgba(124,92,255,.25);
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at var(--x) var(--y), rgba(124,92,255,.15), transparent 40%);
+    opacity:0;
+    transition:.3s;
+}
+
+.project-card:hover::before{
+    opacity:1;
+}
+
+.project-card h3{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:28px;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+.project-tags span{
+    padding:10px 16px;
+    border-radius:14px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    font-size:14px;
+    color:#d1d5db;
+}
+
+.project-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.project-btn{
+    padding:14px 22px;
+    border-radius:16px;
+    background:var(--gradient);
+    color:white;
+    text-decoration:none;
+    border:none;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.project-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.skill-box{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:30px;
+}
+
+.skill-box h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.skill-box span{
+    display:inline-block;
+    margin:6px;
+    padding:10px 16px;
+    border-radius:14px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    color:#d1d5db;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:40px;
+    padding:60px;
+}
+
+.contact-left h2{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:28px;
+}
+
+.contact-left h2 span{
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.contact-left p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:20px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    background:#111827;
+    border:none;
+    border-radius:18px;
+    padding:20px;
+    color:white;
+    font-size:16px;
+}
+
+.contact-form textarea{
+    height:180px;
+    resize:none;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    padding:40px;
+}
+
+.modal-content{
+    max-width:1100px;
+    width:100%;
+    position:relative;
+    border-radius:34px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+        0 0 80px rgba(124,92,255,.45),
+        0 0 120px rgba(77,124,255,.2);
+}
+
+.modal-image{
+    width:100%;
+    display:block;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    z-index:10;
+    background:rgba(0,0,0,.5);
+    color:white;
+    border:none;
+    padding:14px 18px;
+    border-radius:14px;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:980px){
+
+    .navbar{
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:62px;
+    }
+
+    .hero-description{
+        font-size:18px;
+    }
+
+    .contact-card{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:100px 20px;
+    }
+
+    .section-heading h2{
+        font-size:48px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid-overlay"></div>
+<div class="blur blur-one"></div>
+<div class="blur blur-two"></div>
+
+<div class="cursor-dot"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        Dev.<span>iHarsh1008</span>
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#liveapps">Live Apps</a>
+        <a href="#portfolio Apps">Portfolio Apps</a>
+        <a href="#skills">Skills</a>
+    </nav>
+
+    <div class="nav-right">
+        <a class="top-btn" href="resume.pdf" target="_blank">Resume</a>
+
+        <a class="top-btn"
+           href="https://github.com/dev1008iharsh"
+           target="_blank">
+           GitHub
+        </a>
+
+        <a class="top-btn"
+           href="https://linkedin.com/in/dev1008iharsh"
+           target="_blank">
+           LinkedIn
+        </a>
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🚀 Senior iOS Engineer • 5.5+ Years Experience
+        </div>
+
+        <div class="profile-wrapper">
+            <img src="profile.png"
+                 alt="Harsh Darji"
+                 class="profile-image">
+        </div>
+
+        <h1>
+            Harsh <span>Darji</span>
+        </h1>
+
+        <p class="hero-description">
+            Project Lead - Senior iOS Engineer | Swift • UIKit • SwiftUI •
+            Scalable Architecture • Performance Optimisation
+        </p>
+
+        <div class="hero-tags">
+            <span>Swift</span>
+            <span>UIKit</span>
+            <span>SwiftUI</span>
+            <span>MVVM</span>
+            <span>Firebase</span>
+            <span>Realtime</span>
+            <span>AI Apps</span>
+            <span>REST APIs</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="section">
+
+    <div class="section-heading">
+        <h2>About <span>Me</span></h2>
+
+        <p>
+            Senior iOS Engineer focused on building scalable,
+            maintainable and production-grade mobile applications.
+        </p>
+    </div>
+
+</section>
+
+<section id="liveapps" class="section">
+
+    <div class="section-heading">
+        <h2>Live <span>Apps</span></h2>
+
+        <p>
+            Production-grade App Store applications built using
+            Swift, UIKit + SwiftUI, Firebase, Realtime systems,
+            AI integrations and scalable architectures.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <h3>Dual Camera Capture</h3>
+
+            <p>
+                Advanced multi-camera recording engine with AVCaptureSession,
+                4K 60fps capture, sensor tracking, Firebase uploads,
+                compression pipeline and background processing.
+            </p>
+
+            <div class="project-tags">
+                <span>Swift</span>
+                <span>UIKit + SwiftUI</span>
+                <span>Firebase</span>
+                <span>Realtime</span>
+            </div>
+
+            <div class="project-buttons">
+
+                <button class="project-btn"
+                        onclick="openModal('images/dualcamera.png')">
+                    Preview
+                </button>
+
+                <a class="project-btn"
+                   href="https://www.youtube.com/watch?v=7cVl1fcF2Tc"
+                   target="_blank">
+                    Experience
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="portfolio" class="section">
+
+    <div class="section-heading">
+        <h2>Portfolio Apps <span>Projects</span></h2>
+
+        <p>
+            Open-source projects, scalable architectures,
+            reusable systems and modern UIKit + SwiftUI engineering.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <h3>AI Chat Application</h3>
+
+            <p>
+                AI-powered conversational application integrating Gemini APIs,
+                Markdown rendering and intelligent image generation workflows.
+            </p>
+
+            <div class="project-tags">
+                <span>Swift</span>
+                <span>UIKit + SwiftUI</span>
+                <span>AI Apps</span>
+                <span>REST APIs</span>
+            </div>
+
+            <div class="project-buttons">
+
+                <button class="project-btn"
+                        onclick="openModal('images/aichat.png')">
+                    Preview
+                </button>
+
+                <a class="project-btn"
+                   href="https://github.com/dev1008iharsh/AIChatBotHarsh"
+                   target="_blank">
+                    Experience
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="skills" class="section">
+
+    <div class="section-heading">
+
+        <h2>Technical <span>Arsenal</span></h2>
+
+        <p>
+            Core technologies and engineering expertise powering
+            scalable mobile applications and real-time systems.
+        </p>
+
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-box">
+
+            <h3>Mobile Development</h3>
+
+            <span>Swift</span>
+            <span>UIKit + SwiftUI</span>
+            <span>MVVM</span>
+            <span>Combine</span>
+            <span>Realtime</span>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>Architecture</h3>
+
+            <span>Clean Architecture</span>
+            <span>SOLID</span>
+            <span>Offline First</span>
+            <span>Dependency Injection</span>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>Backend & APIs</h3>
+
+            <span>Firebase</span>
+            <span>REST APIs</span>
+            <span>GraphQL</span>
+            <span>Supabase</span>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>AI & Performance</h3>
+
+            <span>AI Apps</span>
+            <span>Gemini API</span>
+            <span>Concurrency</span>
+            <span>Performance</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="section">
+
+    <div class="contact-card">
+
+        <div class="contact-left">
+
+            <h2>
+                Let's build
+                <span>amazing apps</span>
+                together.
+            </h2>
+
+            <p>
+                Open for senior iOS engineering opportunities,
+                architecture consulting and scalable mobile product development.
+            </p>
+
+        </div>
+
+        <form class="contact-form"
+              id="contactForm">
+
+            <input type="text"
+                   id="name"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   id="email"
+                   placeholder="Email Address"
+                   required>
+
+            <input type="text"
+                   id="subject"
+                   placeholder="Subject"
+                   required>
+
+            <textarea id="message"
+                      placeholder="Tell me about your project..."
+                      required></textarea>
+
+            <button type="submit"
+                    class="project-btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<div id="imageModal"
+     class="modal-overlay">
+
+    <div class="modal-content">
+
+        <button class="close-btn"
+                onclick="closeModal()">
+            ✕
+        </button>
+
+        <img id="modalImage"
+             class="modal-image"
+             src=""
+             alt="Preview">
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+   CURSOR
+========================= */
+
+const cursor = document.querySelector('.cursor-dot');
+
+window.addEventListener('mousemove', (e) => {
+
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+
+});
+
+/* =========================
+   PROJECT HOVER LIGHT
+========================= */
+
+const cards = document.querySelectorAll('.project-card');
+
+window.addEventListener('mousemove', (e) => {
+
+    cards.forEach((card) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+
+    });
+
+});
+
+/* =========================
+   MODAL
+========================= */
+
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+
+function openModal(imagePath){
+
+    modal.style.display = 'flex';
+    modalImage.src = imagePath;
+
+}
+
+function closeModal(){
+
+    modal.style.display = 'none';
+    modalImage.src = '';
+
+}
+
+modal.addEventListener('click', (e) => {
+
+    if(e.target === modal){
+        closeModal();
+    }
+
+});
+
+/* =========================
+   CONTACT FORM EMAIL
+========================= */
+
+document.getElementById('contactForm')
+.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById('name').value;
+
+    const email =
+        document.getElementById('email').value;
+
+    const subject =
+        document.getElementById('subject').value;
+
+    const message =
+        document.getElementById('message').value;
+
+    const body = `
+Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}
+`;
+
+    window.location.href =
+    `mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+});
+
+</script>
+
+</body>
+</html>
