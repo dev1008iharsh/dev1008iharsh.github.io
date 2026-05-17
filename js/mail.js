@@ -1,127 +1,42 @@
+// ========================================
+// Contact Form Submission
+// ========================================
 
+const contactForm = document.getElementById("contact-form");
 
-<section
-    id="contact"
-    class="section"
->
+contactForm.addEventListener("submit", function (event) {
 
-    <div class="contact-card">
+    // Prevent page refresh
+    event.preventDefault();
 
-        <!-- =========================================
-             Left Content
-        ========================================== -->
+    // Get form values
+    const name = document.getElementById("name").value.trim();
 
-        <div class="contact-left">
+    const email = document.getElementById("email").value.trim();
 
-            <!-- Availability Badge -->
+    const subject = document.getElementById("subject").value.trim();
 
-            <div class="hero-badge">
+    const message = document.getElementById("message").value.trim();
 
-                🚀 Available for Opportunities
+    // Simple validation
+    if (!name || !email || !subject || !message) {
 
-            </div>
+        alert("Please fill all fields.");
 
-            <!-- Main Heading -->
+        return;
+    }
 
-            <h2>
-                Let's Build
-                <span>Amazing Apps</span>
-            </h2>
+    // Example success flow
+    console.log({
+        name,
+        email,
+        subject,
+        message
+    });
 
-            <!-- Description -->
+    alert("Message sent successfully 🚀");
 
-            <p>
-                Open for Senior iOS Engineering opportunities,
-                architecture consulting,
-                realtime systems,
-                AI-powered mobile applications
-                and scalable product development.
-            </p>
+    // Reset form
+    contactForm.reset();
 
-            <!-- Contact Links -->
-
-            <div class="contact-links">
-
-                <a href="mailto:dev.iharsh1008@gmail.com">
-                    dev.iharsh1008@gmail.com
-                </a>
-
-                <a href="tel:+919662108047">
-                    +91 9662108047
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- =========================================
-             Contact Form
-        ========================================== -->
-
-        <form
-            id="contact-form"
-            class="contact-form"
-            autocomplete="off"
-        >
-
-            <!-- Name -->
-
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                required
-            >
-
-            <!-- Email -->
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-                required
-            >
-
-            <!-- Subject -->
-
-            <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Subject"
-                required
-            >
-
-            <!-- Message -->
-
-            <textarea
-                id="message"
-                name="message"
-                placeholder="Tell me about your project..."
-                required
-            ></textarea>
-
-            <!-- Submit Button -->
-
-            <button
-                type="submit"
-                class="primary-btn"
-            >
-                Send Message 🚀
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-MAIL SCRIPT
-IMPORTANT:
-Must be below contact section
-===================================================== -->
-
-<script src="js/mail.js"></script>
+});
