@@ -15,8 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initializeModal() {
 
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
+    const modal =
+        document.getElementById("imageModal");
+
+    const modalImage =
+        document.getElementById("modalImage");
+
+    // Safety check
+    // Prevent JS crashes if modal elements are missing
 
     if (!modal || !modalImage) return;
 
@@ -29,6 +35,7 @@ function initializeModal() {
         modal.classList.add("active");
 
         modalImage.src = imagePath;
+
         modalImage.alt = title;
 
         document.body.style.overflow = "hidden";
@@ -44,6 +51,9 @@ function initializeModal() {
         modal.classList.remove("active");
 
         document.body.style.overflow = "auto";
+
+        // Clear image after animation finishes
+        // Prevent flashing old image next time
 
         setTimeout(() => {
 
@@ -61,7 +71,7 @@ function initializeModal() {
 
         if (event.target === modal) {
 
-            closeModal();
+            window.closeModal();
 
         }
 
@@ -78,7 +88,7 @@ function initializeModal() {
             modal.classList.contains("active")
         ) {
 
-            closeModal();
+            window.closeModal();
 
         }
 
@@ -92,13 +102,18 @@ function initializeModal() {
 
 document.addEventListener("click", (event) => {
 
-    const previewButton = event.target.closest("[data-preview]");
+    const previewButton =
+        event.target.closest("[data-preview]");
 
     if (!previewButton) return;
 
-    const image = previewButton.dataset.preview;
-    const title = previewButton.dataset.title || "Project Preview";
+    const image =
+        previewButton.dataset.preview;
 
-    openModal(image, title);
+    const title =
+        previewButton.dataset.title ||
+        "Project Preview";
+
+    window.openModal(image, title);
 
 });
