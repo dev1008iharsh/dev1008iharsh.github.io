@@ -1,134 +1,129 @@
-// ======================================================
-// FILE: js/mail.js
-// Professional Contact Form Mail Handler
-// ======================================================
+<!-- =====================================================
+CONTACT SECTION
+===================================================== -->
 
-window.addEventListener("load", () => {
+<section
+    id="contact"
+    class="section"
+>
 
-    /* ==================================================
-    Get Contact Form
-    ================================================== */
+    <div class="contact-card">
 
-    const contactForm =
-        document.getElementById("contact-form");
+        <!-- =========================================
+             Left Content
+        ========================================== -->
 
-    /* ==================================================
-    Debug Check
-    ================================================== */
+        <div class="contact-left">
 
-    console.log(
-        "Contact Form:",
-        contactForm
-    );
+            <!-- Availability Badge -->
 
-    /* ==================================================
-    Prevent Null Errors
-    ================================================== */
+            <div class="hero-badge">
 
-    if (!contactForm) {
+                🚀 Available for Opportunities
 
-        console.error(
-            "❌ contact-form not found"
-        );
+            </div>
 
-        return;
-    }
+            <!-- Main Heading -->
 
-    /* ==================================================
-    Submit Event
-    ================================================== */
+            <h2>
+                Let's Build
+                <span>Amazing Apps</span>
+            </h2>
 
-    contactForm.addEventListener("submit", (event) => {
+            <!-- Description -->
 
-        /* ==============================================
-        Prevent Default Reload
-        ============================================== */
+            <p>
+                Open for Senior iOS Engineering opportunities,
+                architecture consulting,
+                realtime systems,
+                AI-powered mobile applications
+                and scalable product development.
+            </p>
 
-        event.preventDefault();
+            <!-- Contact Links -->
 
-        /* ==============================================
-        Get Form Values
-        ============================================== */
+            <div class="contact-links">
 
-        const name =
-            document
-                .getElementById("name")
-                ?.value
-                .trim();
+                <a href="mailto:dev.iharsh1008@gmail.com">
+                    dev.iharsh1008@gmail.com
+                </a>
 
-        const email =
-            document
-                .getElementById("email")
-                ?.value
-                .trim();
+                <a href="tel:+919662108047">
+                    +91 9662108047
+                </a>
 
-        const subject =
-            document
-                .getElementById("subject")
-                ?.value
-                .trim();
+            </div>
 
-        const message =
-            document
-                .getElementById("message")
-                ?.value
-                .trim();
+        </div>
 
-        /* ==============================================
-        Validation
-        ============================================== */
+        <!-- =========================================
+             Contact Form
+        ========================================== -->
 
-        if (
-            !name ||
-            !email ||
-            !subject ||
-            !message
-        ) {
+        <form
+            id="contact-form"
+            class="contact-form"
+            autocomplete="off"
+        >
 
-            alert(
-                "Please fill all fields."
-            );
+            <!-- Name -->
 
-            return;
-        }
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
 
-        /* ==============================================
-        Build Email Body
-        ============================================== */
+            <!-- Email -->
 
-        const emailBody =
-`Name: ${name}
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
 
-Email: ${email}
+            <!-- Subject -->
 
-Subject: ${subject}
+            <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                required
+            >
 
-Message:
-${message}`;
+            <!-- Message -->
 
-        /* ==============================================
-        Debug Log
-        ============================================== */
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
 
-        console.log(
-            "Opening Mail Client..."
-        );
+            <!-- Submit Button -->
 
-        /* ==============================================
-        Open Default Mail App
-        ============================================== */
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Send Message 🚀
+            </button>
 
-        const mailURL =
-`mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        </form>
 
-        window.location.href = mailURL;
+    </div>
 
-        /* ==============================================
-        Optional Reset Form
-        ============================================== */
+</section>
 
-        contactForm.reset();
+<!-- =====================================================
+MAIL SCRIPT
+IMPORTANT:
+Must be below contact section
+===================================================== -->
 
-    });
-
-});
+<script src="js/mail.js"></script>
