@@ -1,408 +1,489 @@
-<section id="liveapps" class="section">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="section-heading">
-        <h2>Live <span>Apps</span></h2>
+<head>
 
-        <p>
-            Production-grade App Store applications built using Swift,
-            UIKit + SwiftUI, Firebase, AI integrations,
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Live Projects • Harsh Darji
+    </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background Effects -->
+    <div class="grid-overlay"></div>
+
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Dev.iHarsh1008
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="live-projects.html">
+                Live Apps
+            </a>
+
+            <a href="portfolio-projects.html">
+                Portfolio
+            </a>
+
+            <a href="index.html#skills">
+                Skills
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <a
+                class="nav-btn"
+                href="https://github.com/dev1008iharsh"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                class="nav-btn"
+                href="https://linkedin.com/in/dev1008iharsh"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                class="nav-btn"
+                href="resume.pdf"
+                target="_blank"
+            >
+                Resume
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section class="page-hero">
+
+        <div class="hero-badge">
+            🚀 Production Grade App Store Applications
+        </div>
+
+        <h1>
+            Live <span>Projects</span>
+        </h1>
+
+        <p class="hero-description">
+
+            Production-grade App Store applications built using
+            Swift, UIKit + SwiftUI, Firebase, AI integrations,
             realtime systems and scalable architectures.
+
         </p>
-    </div>
 
-    <div class="project-grid">
+    </section>
 
-        <!-- Dual Camera -->
-        <div class="project-card">
+    <!-- Projects -->
 
-            <h3>Dual Camera Capture</h3>
+    <section
+        id="liveapps"
+        class="section"
+    >
 
-            <p>
-                Advanced iOS camera system built with Swift using AVCaptureSession,
-                enabling simultaneous front and rear 4K 60fps recording.
-                Features real-time processing, compression,
-                password-protected ZIP uploads and secure Firebase Storage integration.
-            </p>
+        <div class="project-grid">
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>AVFoundation</span>
-                <span>Firebase</span>
-                <span>Realtime</span>
-            </div>
+            <!-- Dual Camera -->
+            <div class="project-card featured">
 
-            <div class="project-buttons">
-                <button class="project-btn"
-                    onclick="openModal('images/dualcamera.png')">
-                    Preview
-                </button>
+                <div class="project-top">
+                    <span class="project-badge">
+                        Flagship
+                    </span>
+                </div>
 
-                <a class="project-btn"
-                   href="https://www.youtube.com/watch?v=7cVl1fcF2Tc"
-                   target="_blank">
-                    Experience
-                </a>
-            </div>
+                <h3>
+                    Dual Camera Capture
+                </h3>
 
-        </div>
+                <p>
+                    Advanced iOS camera system built with Swift using AVCaptureSession,
+                    enabling simultaneous front and rear 4K 60fps recording.
+                    Features realtime processing, compression,
+                    password-protected ZIP uploads and Firebase Storage integration.
+                </p>
 
-        <!-- Dashible -->
-        <div class="project-card">
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>AVFoundation</span>
+                    <span>Firebase</span>
+                    <span>Realtime</span>
+                </div>
 
-            <h3>Local Deals & Rewards Platform</h3>
+                <div class="project-buttons">
 
-            <p>
-                Location-based deals and loyalty application designed
-                to help users discover nearby discounts,
-                promotions and offers from local businesses.
-            </p>
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/dualcamera.png')"
+                    >
+                        Preview
+                    </button>
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>MapKit</span>
-                <span>Realtime</span>
-                <span>Rewards</span>
-            </div>
+                    <a
+                        class="project-btn"
+                        href="https://www.youtube.com/watch?v=7cVl1fcF2Tc"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
 
-            <div class="project-buttons">
-                <button class="project-btn"
-                    onclick="openModal('images/dashible.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://apps.apple.com/us/app/dashible-deals/id1475022894"
-                   target="_blank">
-                    Experience
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Logistics -->
-        <div class="project-card">
-
-            <h3>Transport & Logistics Platform</h3>
-
-            <p>
-                Comprehensive transport service application designed
-                to streamline vehicle booking, trip management,
-                and logistics coordination with scalable architecture.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Realtime</span>
-                <span>REST APIs</span>
-                <span>Logistics</span>
-            </div>
-
-            <div class="project-buttons">
-                <button class="project-btn"
-                    onclick="openModal('images/desh.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://apps.apple.com/in/app/desh-parivahan/id1471516595"
-                   target="_blank">
-                    Experience
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Community -->
-        <div class="project-card">
-
-            <h3>Community & Events App</h3>
-
-            <p>
-                Community-focused mobile application for discovering local events,
-                businesses and activities with live announcements
-                and integrated radio streaming.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Streaming</span>
-                <span>Community</span>
-                <span>Realtime</span>
-            </div>
-
-            <div class="project-buttons">
-
-                <button class="project-btn"
-                    onclick="openModal('images/local.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://apps.apple.com/us/app/local-happenings/id1524588247"
-                   target="_blank">
-                    Experience
-                </a>
+                </div>
 
             </div>
 
-        </div>
+            <!-- Dashible -->
 
-        <!-- Rydezilla -->
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>Car Rental Ecosystem</h3>
+                <h3>
+                    Local Deals & Rewards Platform
+                </h3>
 
-            <p>
-                End-to-end vehicle rental platform built from scratch
-                covering customer and dealer applications with booking,
-                payments and real-time fleet management.
-            </p>
+                <p>
+                    Location-based deals and loyalty application helping users discover
+                    nearby discounts, promotions and rewards from local businesses.
+                </p>
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Realtime</span>
-                <span>Booking</span>
-                <span>Payments</span>
-            </div>
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>MapKit</span>
+                    <span>Realtime</span>
+                    <span>Rewards</span>
+                </div>
 
-            <div class="project-buttons">
+                <div class="project-buttons">
 
-                <button class="project-btn"
-                    onclick="openModal('images/rydezilla.png')">
-                    Preview
-                </button>
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/dashible.png')"
+                    >
+                        Preview
+                    </button>
 
-                <a class="project-btn"
-                   href="https://rydezilla.com/"
-                   target="_blank">
-                    Experience
-                </a>
+                    <a
+                        class="project-btn"
+                        href="https://apps.apple.com/us/app/dashible-deals/id1475022894"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
 
-            </div>
-
-        </div>
-
-        <!-- Insurance -->
-        <div class="project-card">
-
-            <h3>Insurance Management App</h3>
-
-            <p>
-                Mobile solution designed to simplify insurance handling
-                with centralized access to policies, claims,
-                payment history and secure workflows.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Security</span>
-                <span>Fintech</span>
-                <span>REST APIs</span>
-            </div>
-
-            <div class="project-buttons">
-
-                <button class="project-btn"
-                    onclick="openModal('images/insure.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://apps.apple.com/in/app/just-insure/id1540086699"
-                   target="_blank">
-                    Experience
-                </a>
+                </div>
 
             </div>
 
-        </div>
+            <!-- Logistics -->
 
-        <!-- Diet -->
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>Diet Planner App</h3>
+                <h3>
+                    Transport & Logistics Platform
+                </h3>
 
-            <p>
-                Health-focused iOS application built with Swift
-                to track diet data, reminders, water intake
-                and generate personalized plans.
-            </p>
+                <p>
+                    Comprehensive transport service application designed
+                    for scalable vehicle booking,
+                    logistics coordination and realtime workflows.
+                </p>
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Health</span>
-                <span>Notifications</span>
-                <span>Productivity</span>
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>REST APIs</span>
+                    <span>Realtime</span>
+                    <span>Logistics</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/desh.png')"
+                    >
+                        Preview
+                    </button>
+
+                    <a
+                        class="project-btn"
+                        href="https://apps.apple.com/in/app/desh-parivahan/id1471516595"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="project-buttons">
+            <!-- Local -->
 
-                <button class="project-btn"
-                    onclick="openModal('images/diet.png')">
-                    Preview
-                </button>
+            <div class="project-card">
 
-                <a class="project-btn"
-                   href="https://www.youtube.com/shorts/JFIbh6RCxlQ"
-                   target="_blank">
-                    Experience
-                </a>
+                <h3>
+                    Community & Events App
+                </h3>
+
+                <p>
+                    Community-focused mobile application for discovering local events,
+                    announcements and businesses with live streaming support.
+                </p>
+
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>Streaming</span>
+                    <span>Community</span>
+                    <span>Realtime</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/local.png')"
+                    >
+                        Preview
+                    </button>
+
+                    <a
+                        class="project-btn"
+                        href="https://apps.apple.com/us/app/local-happenings/id1524588247"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
+
+                </div>
 
             </div>
 
-        </div>
+            <!-- Rydezilla -->
 
-        <!-- Auction -->
-        <div class="project-card">
+            <div class="project-card">
 
-            <h3>Auction & Stadium Management</h3>
+                <h3>
+                    Car Rental Ecosystem
+                </h3>
 
-            <p>
-                Event and auction management platform enabling organizers
-                to handle ticketing, bidding workflows,
-                seating allocation and realtime operations.
-            </p>
+                <p>
+                    End-to-end vehicle rental platform featuring booking workflows,
+                    payments, realtime fleet management and dealer systems.
+                </p>
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Realtime</span>
-                <span>Payments</span>
-                <span>Events</span>
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>Booking</span>
+                    <span>Payments</span>
+                    <span>Realtime</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/rydezilla.png')"
+                    >
+                        Preview
+                    </button>
+
+                    <a
+                        class="project-btn"
+                        href="https://rydezilla.com/"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="project-buttons">
+            <!-- Insurance -->
 
-                <button class="project-btn"
-                    onclick="openModal('images/auction.png')">
-                    Preview
-                </button>
+            <div class="project-card">
 
-                <a class="project-btn"
-                   href="https://www.facebook.com/Cymmons/photos"
-                   target="_blank">
-                    Experience
-                </a>
+                <h3>
+                    Insurance Management App
+                </h3>
+
+                <p>
+                    Mobile solution simplifying policy management,
+                    secure claims tracking and payment workflows.
+                </p>
+
+                <div class="project-tags">
+                    <span>Swift</span>
+                    <span>UIKit + SwiftUI</span>
+                    <span>Security</span>
+                    <span>Fintech</span>
+                    <span>REST APIs</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <button
+                        class="project-btn"
+                        onclick="openModal('images/insure.png')"
+                    >
+                        Preview
+                    </button>
+
+                    <a
+                        class="project-btn"
+                        href="https://apps.apple.com/in/app/just-insure/id1540086699"
+                        target="_blank"
+                    >
+                        Experience
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
-        <!-- Marketplace -->
-        <div class="project-card">
+    </section>
 
-            <h3>Marketplace App</h3>
+    <!-- Modal -->
 
-            <p>
-                Gujarati OLX-style marketplace for farmers
-                to buy and sell cattle, tractors,
-                crops and agricultural equipment with 10L+ users.
-            </p>
+    <div
+        id="imageModal"
+        class="modal-overlay"
+    >
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Marketplace</span>
-                <span>Realtime</span>
-                <span>Performance</span>
-            </div>
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
+            ✕
+        </button>
 
-            <div class="project-buttons">
+        <div class="modal-content">
 
-                <button class="project-btn"
-                    onclick="openModal('images/piplana.png')">
-                    Preview
-                </button>
+            <div class="modal-glow"></div>
 
-                <a class="project-btn"
-                   href="https://apps.apple.com/in/app/piplana-pane/id1409110407"
-                   target="_blank">
-                    Experience
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- Crypto -->
-        <div class="project-card">
-
-            <h3>Crypto Wallet App</h3>
-
-            <p>
-                Secure cryptocurrency wallet application built using Web3 SDKs,
-                featuring wallet balance tracking,
-                token management and transaction handling.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Web3</span>
-                <span>Blockchain</span>
-                <span>Security</span>
-            </div>
-
-            <div class="project-buttons">
-
-                <button class="project-btn"
-                    onclick="openModal('images/crypto.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="youtube.com/shorts/rCbtzJ246aw?feature=share"
-                   target="_blank">
-                    Experience
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- Cookbook -->
-        <div class="project-card">
-
-            <h3>Digital Recipe Manager App</h3>
-
-            <p>
-                Personal recipe management application supporting
-                meal planning, ingredient search,
-                offline access and shopping list workflows.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Offline First</span>
-                <span>Productivity</span>
-                <span>Core Data</span>
-            </div>
-
-            <div class="project-buttons">
-
-                <button class="project-btn"
-                    onclick="openModal('images/cookbook.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://apps.apple.com/us/app/mycookbook/id1218876038"
-                   target="_blank">
-                    Experience
-                </a>
-
-            </div>
+            <img
+                id="modalImage"
+                class="modal-image"
+                src=""
+                alt="Project Preview"
+            >
 
         </div>
 
     </div>
 
-</section>
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h3>
+                Harsh Darji
+            </h3>
+
+            <p>
+                Senior iOS Engineer • Swift • UIKit + SwiftUI • AI Apps
+            </p>
+
+            <div class="footer-links">
+
+                <a href="mailto:dev.iharsh1008@gmail.com">
+                    Email
+                </a>
+
+                <a
+                    href="https://github.com/dev1008iharsh"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://linkedin.com/in/dev1008iharsh"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="js/app.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/mail.js"></script>
+
+</body>
+
+</html>
