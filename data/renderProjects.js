@@ -5,15 +5,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // URL Params
-
     const params =
         new URLSearchParams(window.location.search);
 
     const type =
         params.get("type");
-
-    // Elements
 
     const container =
         document.getElementById("projectsContainer");
@@ -27,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroBadge =
         document.getElementById("heroBadge");
 
-    // Safety
-
     if (
         !container ||
         !heroTitle ||
@@ -37,8 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
         return;
     }
-
-    // Data
 
     let projects = [];
 
@@ -58,11 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         heroDescription.innerHTML =
             `
             Production-grade App Store applications
-            built using Swift,
-            UIKit + SwiftUI,
-            Firebase,
-            AI integrations,
-            realtime systems
+            built using Swift, UIKit + SwiftUI,
+            AI integrations, realtime systems
             and scalable architectures.
             `;
 
@@ -85,18 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
         heroDescription.innerHTML =
             `
             Advanced GitHub portfolio projects
-            built using Swift,
-            UIKit + SwiftUI,
-            MVVM,
-            Firebase,
-            realtime systems
-            and scalable iOS architectures.
+            built using Swift, UIKit + SwiftUI,
+            MVVM, Firebase and scalable
+            iOS architectures.
             `;
 
         projects = portfolioProjects;
     }
-
-    // Render
 
     renderProjects(projects);
 
@@ -113,11 +97,7 @@ function renderProjects(projects) {
 
     if (!container) return;
 
-    // Reset
-
     container.innerHTML = "";
-
-    // Create HTML
 
     const cardsHTML = projects.map((project) => {
 
@@ -160,7 +140,8 @@ function renderProjects(projects) {
 
                 <button
                     class="project-btn"
-                    onclick="openModal('${project.image}')"
+                    data-preview="${project.image}"
+                    data-title="${project.title}"
                 >
                     Preview
                 </button>
@@ -180,9 +161,6 @@ function renderProjects(projects) {
         `;
 
     }).join("");
-
-    // Inject Once
-    // Better performance than += loop
 
     container.innerHTML = cardsHTML;
 
