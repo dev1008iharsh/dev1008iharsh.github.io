@@ -1,28 +1,101 @@
 // ======================================================
 // FILE: js/mail.js
+// Professional Contact Form Mail Handler
 // ======================================================
 
-// Get form reference
-const contactForm = document.getElementById("contact-form");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Prevent null crash
-if (contactForm) {
+    /* ==================================================
+    Get Contact Form
+    ================================================== */
 
-    contactForm.addEventListener("submit", function (event) {
+    const contactForm =
+        document.getElementById("contact-form");
 
-        // Prevent page reload
+    /* ==================================================
+    Debug Check
+    ================================================== */
+
+    console.log(
+        "Contact Form:",
+        contactForm
+    );
+
+    /* ==================================================
+    Prevent Null Errors
+    ================================================== */
+
+    if (!contactForm) {
+
+        console.error(
+            "❌ contact-form not found"
+        );
+
+        return;
+    }
+
+    /* ==================================================
+    Submit Event
+    ================================================== */
+
+    contactForm.addEventListener("submit", (event) => {
+
+        /* ==============================================
+        Prevent Default Reload
+        ============================================== */
+
         event.preventDefault();
 
-        // Get input values
-        const name = document.getElementById("name").value.trim();
+        /* ==============================================
+        Get Form Values
+        ============================================== */
 
-        const email = document.getElementById("email").value.trim();
+        const name =
+            document
+                .getElementById("name")
+                ?.value
+                .trim();
 
-        const subject = document.getElementById("subject").value.trim();
+        const email =
+            document
+                .getElementById("email")
+                ?.value
+                .trim();
 
-        const message = document.getElementById("message").value.trim();
+        const subject =
+            document
+                .getElementById("subject")
+                ?.value
+                .trim();
 
-        // Build professional email body
+        const message =
+            document
+                .getElementById("message")
+                ?.value
+                .trim();
+
+        /* ==============================================
+        Validation
+        ============================================== */
+
+        if (
+            !name ||
+            !email ||
+            !subject ||
+            !message
+        ) {
+
+            alert(
+                "Please fill all fields."
+            );
+
+            return;
+        }
+
+        /* ==============================================
+        Build Email Body
+        ============================================== */
+
         const emailBody =
 `Name: ${name}
 
@@ -33,10 +106,21 @@ Subject: ${subject}
 Message:
 ${message}`;
 
-        // Open default mail app
+        /* ==============================================
+        Debug Log
+        ============================================== */
+
+        console.log(
+            "Opening Mail Client..."
+        );
+
+        /* ==============================================
+        Open Default Mail App
+        ============================================== */
+
         window.location.href =
 `mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
     });
 
-}
+});
