@@ -103,7 +103,6 @@ NAVBAR
 
 .navbar {
     width: 100%;
-
     padding: 22px 8%;
 
     display: flex;
@@ -432,8 +431,6 @@ BUTTONS
         1px solid rgba(255,255,255,0.08);
 }
 
-/* Remove shimmer */
-
 .primary-btn::before,
 .secondary-btn::before,
 .project-btn::before {
@@ -513,7 +510,8 @@ COMMON CARDS
 .feature-card,
 .contact-card,
 .project-card,
-.expertise-card {
+.expertise-card,
+.footer-content {
     background:
         rgba(255,255,255,0.04);
 
@@ -523,8 +521,6 @@ COMMON CARDS
     backdrop-filter: blur(20px);
 
     border-radius: 28px;
-
-    overflow: hidden;
 }
 
 /* =========================================================
@@ -533,10 +529,7 @@ ABOUT
 
 .about-grid {
     display: grid;
-
-    grid-template-columns:
-        1.4fr 1fr;
-
+    grid-template-columns: 1.4fr 1fr;
     gap: 32px;
 }
 
@@ -559,53 +552,18 @@ ABOUT
 }
 
 /* =========================================================
-STATS
-========================================================= */
-
-.stats-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 22px;
-}
-
-.stat-card {
-    padding: 32px;
-    text-align: center;
-}
-
-.stat-card h3 {
-    font-size: 2.2rem;
-    color: #00c2ff;
-
-    margin-bottom: 12px;
-}
-
-.stat-card p {
-    color:
-        rgba(255,255,255,0.74);
-}
-
-/* =========================================================
 FEATURED
 ========================================================= */
 
 .featured-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap: 30px;
 }
 
 .feature-card {
     padding: 40px;
-
-    transition:
-        transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
@@ -631,25 +589,6 @@ FEATURED
     margin-bottom: 24px;
 }
 
-.feature-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.feature-tags span {
-    padding:
-        10px 16px;
-
-    border-radius: 12px;
-
-    background:
-        rgba(255,255,255,0.05);
-
-    font-size: 0.82rem;
-    font-weight: 600;
-}
-
 /* =========================================================
 SKILLS
 ========================================================= */
@@ -668,17 +607,12 @@ SKILLS
     display: grid;
 
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(320px, 1fr)
-        );
+        repeat(auto-fit, minmax(320px, 1fr));
 
     gap: 28px;
 }
 
 .expertise-card {
-    position: relative;
-
     padding: 34px;
 
     transition:
@@ -738,17 +672,6 @@ SKILLS
 
     font-size: 14px;
     font-weight: 600;
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
-}
-
-.expertise-tags span:hover {
-    transform: translateY(-2px);
-
-    border-color:
-        rgba(79,124,255,0.28);
 }
 
 /* =========================================================
@@ -757,9 +680,7 @@ CONTACT
 
 .contact-card {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 40px;
 
@@ -768,7 +689,6 @@ CONTACT
 
 .contact-left h2 {
     font-size: 3rem;
-
     margin-bottom: 24px;
 }
 
@@ -784,20 +704,6 @@ CONTACT
 
     margin-bottom: 34px;
 }
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.contact-links a {
-    font-weight: 600;
-}
-
-/* =========================================================
-FORM
-========================================================= */
 
 .contact-form {
     display: flex;
@@ -822,11 +728,7 @@ FORM
 
     color: #ffffff;
 
-    font-size: 0.95rem;
-
     outline: none;
-
-    resize: none;
 }
 
 .contact-form textarea {
@@ -845,17 +747,9 @@ FORM
             #8b5cf6
         );
 
-    color: #ffffff;
+    color: white;
 
-    font-size: 1rem;
     font-weight: 700;
-
-    transition:
-        transform 0.25s ease;
-}
-
-.contact-form button:hover {
-    transform: translateY(-2px);
 }
 
 /* =========================================================
@@ -864,31 +758,16 @@ PROJECTS
 
 .project-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap: 28px;
 }
 
 .project-card {
     padding: 32px;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-
-    border-color:
-        rgba(79,124,255,0.24);
 }
 
 .project-card h3 {
     font-size: 1.5rem;
-
     margin-bottom: 18px;
 }
 
@@ -939,10 +818,104 @@ PROJECTS
 }
 
 /* =========================================================
+FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    padding:
+        0 8%
+        80px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        50px 40px;
+
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 2.4rem;
+    font-weight: 800;
+
+    margin-bottom: 16px;
+}
+
+.footer-content p {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color:
+        rgba(255,255,255,0.75);
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #00c2ff;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 0.9rem;
+}
+
+/* =========================================================
 RESPONSIVE
 ========================================================= */
 
+@media (max-width: 1200px) {
+
+    .hero,
+    .section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
 @media (max-width: 992px) {
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
 
     .about-grid,
     .featured-grid,
@@ -951,24 +924,27 @@ RESPONSIVE
         grid-template-columns: 1fr;
     }
 
-    .nav-links,
-    .nav-actions {
-        display: none;
+    .expertise-container {
+        grid-template-columns: 1fr 1fr;
     }
 
     .hero {
-        padding:
-            140px 6%
-            100px;
-    }
-
-    .section {
-        padding:
-            100px 6%;
+        padding-top: 140px;
     }
 }
 
 @media (max-width: 768px) {
+
+    .section {
+        padding:
+            80px 20px;
+    }
+
+    .hero {
+        padding:
+            120px 20px
+            80px;
+    }
 
     .hero h1 {
         font-size: 54px;
@@ -978,28 +954,62 @@ RESPONSIVE
         font-size: 1rem;
     }
 
-    .section-heading h2 {
-        font-size: 44px;
+    .hero-tags span,
+    .project-tags span,
+    .expertise-tags span {
+        width: 100%;
+        text-align: center;
     }
 
-    .contact-left h2 {
-        font-size: 42px;
+    .hero-buttons,
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .project-btn {
+        width: 100%;
     }
 
     .expertise-container {
         grid-template-columns: 1fr;
     }
 
-    .expertise-card {
-        padding: 28px;
+    .contact-card,
+    .expertise-card,
+    .project-card,
+    .feature-card,
+    .about-card,
+    .footer-content {
+        padding: 24px;
     }
 
-    .expertise-card h3 {
-        font-size: 28px;
+    .footer-content h3 {
+        font-size: 2rem;
     }
 
-    .expertise-tags span {
-        width: 100%;
-        text-align: center;
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .contact-left h2 {
+        font-size: 30px;
+    }
+
+    .footer-content h3 {
+        font-size: 1.8rem;
     }
 }
