@@ -8,6 +8,7 @@
 ================================ */
 
 .modal-overlay {
+
     position: fixed;
     inset: 0;
 
@@ -21,9 +22,11 @@
     padding: 24px;
 
     background:
-        radial-gradient(circle at top,
+        radial-gradient(
+            circle at top,
             rgba(91, 140, 255, 0.15),
-            transparent 40%),
+            transparent 40%
+        ),
         rgba(0, 0, 0, 0.78);
 
     backdrop-filter: blur(18px);
@@ -31,6 +34,8 @@
 
     opacity: 0;
     visibility: hidden;
+
+    pointer-events: none;
 
     z-index: 999999;
 
@@ -44,8 +49,11 @@
 ================================ */
 
 .modal-overlay.active {
+
     opacity: 1;
     visibility: visible;
+
+    pointer-events: auto;
 }
 
 /* ================================
@@ -53,6 +61,7 @@
 ================================ */
 
 .modal-content {
+
     position: relative;
 
     width: 100%;
@@ -62,9 +71,11 @@
 
     overflow: hidden;
 
-    background: rgba(15, 15, 22, 0.78);
+    background:
+        rgba(15, 15, 22, 0.88);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border:
+        1px solid rgba(91, 140, 255, 0.18);
 
     box-shadow:
         0 0 40px rgba(91, 140, 255, 0.18),
@@ -86,6 +97,7 @@
 ================================ */
 
 .modal-overlay.active .modal-content {
+
     opacity: 1;
 
     transform:
@@ -98,6 +110,7 @@
 ================================ */
 
 .modal-image {
+
     width: 100%;
     height: auto;
 
@@ -119,6 +132,7 @@
 ================================ */
 
 .modal-content:hover .modal-image {
+
     transform: scale(1.015);
 
     filter:
@@ -131,6 +145,7 @@
 ================================ */
 
 .close-btn {
+
     position: absolute;
 
     top: 18px;
@@ -155,13 +170,15 @@
 
     color: #ffffff;
 
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
 
     backdrop-filter: blur(10px);
 
-    z-index: 5;
+    z-index: 10;
 
     transition:
         transform 0.3s ease,
@@ -174,50 +191,22 @@
 ================================ */
 
 .close-btn:hover {
+
     transform: scale(1.08);
 
-    background: rgba(91, 140, 255, 0.18);
+    background:
+        rgba(91, 140, 255, 0.18);
 
     box-shadow:
         0 0 20px rgba(91, 140, 255, 0.35);
 }
 
 /* ================================
-   Modal Glow Border
-================================ */
-
-.modal-content::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    border-radius: inherit;
-
-    padding: 1px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(91, 140, 255, 0.6),
-            rgba(255, 255, 255, 0.08),
-            rgba(91, 140, 255, 0.4)
-        );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-
-    pointer-events: none;
-}
-
-/* ================================
-   Image Caption
+   Optional Caption
 ================================ */
 
 .modal-caption {
+
     position: absolute;
 
     left: 0;
@@ -234,7 +223,8 @@
             transparent
         );
 
-    color: rgba(255, 255, 255, 0.9);
+    color:
+        rgba(255, 255, 255, 0.9);
 
     font-size: 15px;
     font-weight: 500;
@@ -243,32 +233,37 @@
 }
 
 /* ================================
-   Scrollbar Hidden
+   Hide Scrollbar
 ================================ */
 
 .modal-overlay::-webkit-scrollbar {
+
     display: none;
 }
 
 /* ================================
-   Mobile Responsive
+   Tablet Responsive
 ================================ */
 
 @media (max-width: 768px) {
 
     .modal-overlay {
+
         padding: 16px;
     }
 
     .modal-content {
+
         border-radius: 20px;
     }
 
     .modal-image {
+
         max-height: 75vh;
     }
 
     .close-btn {
+
         width: 42px;
         height: 42px;
 
@@ -279,6 +274,7 @@
     }
 
     .modal-caption {
+
         padding: 14px 18px;
 
         font-size: 14px;
@@ -286,24 +282,28 @@
 }
 
 /* ================================
-   Small Mobile
+   Small Mobile Responsive
 ================================ */
 
 @media (max-width: 480px) {
 
     .modal-overlay {
+
         padding: 10px;
     }
 
     .modal-content {
+
         border-radius: 18px;
     }
 
     .modal-image {
+
         max-height: 70vh;
     }
 
     .close-btn {
+
         width: 38px;
         height: 38px;
 
