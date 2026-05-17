@@ -2,1008 +2,558 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Harsh Darji • Senior iOS Engineer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#050816;
-    --card:#0d1323;
-    --border:rgba(255,255,255,0.08);
-    --text:#ffffff;
-    --muted:#9ca3af;
-    --gradient:linear-gradient(90deg,#4d7cff,#9b5cff);
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    overflow-x:hidden;
-    position:relative;
-}
-
-/* =========================
-   BACKGROUND
-========================= */
-
-.grid-overlay{
-    position:fixed;
-    inset:0;
-    background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size:70px 70px;
-    z-index:-2;
-}
-
-.blur{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(120px);
-    z-index:-1;
-}
-
-.blur-one{
-    width:420px;
-    height:420px;
-    background:#4d7cff33;
-    top:-100px;
-    left:-120px;
-}
-
-.blur-two{
-    width:420px;
-    height:420px;
-    background:#9b5cff22;
-    bottom:-120px;
-    right:-120px;
-}
-
-/* =========================
-   CURSOR
-========================= */
-
-.cursor-dot{
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    position:fixed;
-    background:#7c5cff;
-    pointer-events:none;
-    z-index:9999;
-    box-shadow:0 0 20px #7c5cff;
-    transform:translate(-50%,-50%);
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:22px 70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    backdrop-filter:blur(18px);
-    background:rgba(0,0,0,.25);
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,.04);
-}
-
-.logo{
-    font-size:28px;
-    font-weight:900;
-    color:white;
-}
-
-.logo span{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:38px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#d1d5db;
-    font-weight:500;
-    transition:.3s;
-    position:relative;
-}
-
-nav a:hover{
-    color:white;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:var(--gradient);
-    transition:.3s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-.nav-right{
-    display:flex;
-    gap:12px;
-}
-
-.top-btn{
-    padding:12px 18px;
-    border-radius:16px;
-    text-decoration:none;
-    color:white;
-    font-size:14px;
-    font-weight:600;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.top-btn:hover{
-    transform:translateY(-2px);
-    background:rgba(255,255,255,.12);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:140px 20px 80px;
-}
-
-.hero-content{
-    max-width:1200px;
-    width:100%;
-}
-
-.hero-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:16px 28px;
-    border-radius:999px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
-    margin-bottom:34px;
-    font-size:18px;
-    font-weight:600;
-    color:#e5e7eb;
-}
-
-.profile-wrapper{
-    width:220px;
-    height:220px;
-    margin:0 auto 36px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.profile-wrapper::before{
-    content:"";
-    position:absolute;
-    inset:-8px;
-    border-radius:50%;
-    background:var(--gradient);
-    filter:blur(20px);
-    opacity:.6;
-}
-
-.profile-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,.1);
-    position:relative;
-    z-index:2;
-}
-
-.hero h1{
-    font-size:92px;
-    font-weight:900;
-    line-height:1;
-    margin-bottom:26px;
-}
-
-.hero h1 span{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero-description{
-    max-width:950px;
-    margin:0 auto 34px;
-    font-size:24px;
-    line-height:1.7;
-    color:#cbd5e1;
-}
-
-.hero-tags{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
-    margin-bottom:42px;
-}
-
-.hero-tags span{
-    padding:14px 22px;
-    border-radius:16px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    font-size:16px;
-    color:#d1d5db;
-    transition:.3s;
-}
-
-.hero-tags span:hover{
-    transform:translateY(-3px);
-    border-color:#7c5cff;
-}
-
-/* =========================
-   SECTION
-========================= */
-
-.section{
-    padding:120px 70px;
-}
-
-.section-heading{
-    text-align:center;
-    margin-bottom:70px;
-}
-
-.section-heading h2{
-    font-size:68px;
-    margin-bottom:16px;
-    font-weight:900;
-}
-
-.section-heading h2 span{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.section-heading p{
-    max-width:900px;
-    margin:auto;
-    color:#94a3b8;
-    line-height:1.7;
-    font-size:20px;
-}
-
-/* =========================
-   PROJECTS
-========================= */
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-    gap:30px;
-}
-
-.project-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:34px;
-    padding:34px;
-    position:relative;
-    overflow:hidden;
-    backdrop-filter:blur(18px);
-    transition:.4s;
-}
-
-.project-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 50px rgba(124,92,255,.25);
-}
-
-.project-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at var(--x) var(--y), rgba(124,92,255,.15), transparent 40%);
-    opacity:0;
-    transition:.3s;
-}
-
-.project-card:hover::before{
-    opacity:1;
-}
-
-.project-card h3{
-    font-size:32px;
-    margin-bottom:18px;
-}
-
-.project-card p{
-    color:#cbd5e1;
-    line-height:1.8;
-    margin-bottom:28px;
-}
-
-.project-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-bottom:28px;
-}
-
-.project-tags span{
-    padding:10px 16px;
-    border-radius:14px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    font-size:14px;
-    color:#d1d5db;
-}
-
-.project-buttons{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-}
-
-.project-btn{
-    padding:14px 22px;
-    border-radius:16px;
-    background:var(--gradient);
-    color:white;
-    text-decoration:none;
-    border:none;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.project-btn:hover{
-    transform:translateY(-2px);
-}
-
-/* =========================
-   SKILLS
-========================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:28px;
-}
-
-.skill-box{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    padding:30px;
-    border-radius:30px;
-}
-
-.skill-box h3{
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.skill-box span{
-    display:inline-block;
-    margin:6px;
-    padding:10px 16px;
-    border-radius:14px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    color:#d1d5db;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-card{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:40px;
-    padding:60px;
-}
-
-.contact-left h2{
-    font-size:72px;
-    line-height:1.1;
-    margin-bottom:28px;
-}
-
-.contact-left h2 span{
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.contact-left p{
-    color:#cbd5e1;
-    line-height:1.8;
-    font-size:20px;
-}
-
-.contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.contact-form input,
-.contact-form textarea{
-    background:#111827;
-    border:none;
-    border-radius:18px;
-    padding:20px;
-    color:white;
-    font-size:16px;
-}
-
-.contact-form textarea{
-    height:180px;
-    resize:none;
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.88);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    padding:40px;
-}
-
-.modal-content{
-    max-width:1100px;
-    width:100%;
-    position:relative;
-    border-radius:34px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:
-        0 0 80px rgba(124,92,255,.45),
-        0 0 120px rgba(77,124,255,.2);
-}
-
-.modal-image{
-    width:100%;
-    display:block;
-}
-
-.close-btn{
-    position:absolute;
-    top:20px;
-    right:20px;
-    z-index:10;
-    background:rgba(0,0,0,.5);
-    color:white;
-    border:none;
-    padding:14px 18px;
-    border-radius:14px;
-    cursor:pointer;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:980px){
-
-    .navbar{
-        padding:20px;
-        flex-direction:column;
-        gap:20px;
-    }
-
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero h1{
-        font-size:62px;
-    }
-
-    .hero-description{
-        font-size:18px;
-    }
-
-    .contact-card{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:100px 20px;
-    }
-
-    .section-heading h2{
-        font-size:48px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        Harsh Darji • Project Lead - Senior iOS Engineer
+    </title>
+
+    <!-- =========================================
+         Google Fonts
+    ========================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- =========================================
+         CSS Files
+    ========================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<div class="grid-overlay"></div>
-<div class="blur blur-one"></div>
-<div class="blur blur-two"></div>
+    <!-- =========================================
+         Custom Cursor
+    ========================================== -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-<div class="cursor-dot"></div>
+    <!-- =========================================
+         Background Effects
+    ========================================== -->
+    <div class="grid-overlay"></div>
 
-<header class="navbar">
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
 
-    <div class="logo">
-        Dev.<span>iHarsh1008</span>
-    </div>
+    <!-- =========================================
+         Navbar
+    ========================================== -->
+    <header class="navbar">
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#liveapps">Live Apps</a>
-        <a href="#portfolio Apps">Portfolio Apps</a>
-        <a href="#skills">Skills</a>
-    </nav>
+        <!-- Left Logo -->
+        <div class="logo">
+            Dev.iHarsh1008
+        </div>
 
-    <div class="nav-right">
-        <a class="top-btn" href="resume.pdf" target="_blank">Resume</a>
+        <!-- Center Navigation -->
+        <nav class="nav-links">
 
-        <a class="top-btn"
-           href="https://github.com/dev1008iharsh"
-           target="_blank">
-           GitHub
-        </a>
+            <a href="#about">
+                About
+            </a>
 
-        <a class="top-btn"
-           href="https://linkedin.com/in/dev1008iharsh"
-           target="_blank">
-           LinkedIn
-        </a>
-    </div>
+            <a href="#contact">
+                Contact
+            </a>
 
-</header>
+            <a href="live-projects.html">
+                Live Apps
+            </a>
 
-<section class="hero">
+            <a href="portfolio-projects.html">
+                Portfolio
+            </a>
 
-    <div class="hero-content">
+            <a href="#skills">
+                Skills
+            </a>
 
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+
+            <a
+                class="nav-btn github-btn"
+                href="https://github.com/dev1008iharsh"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                class="nav-btn linkedin-btn"
+                href="https://www.linkedin.com/in/dev1008iharsh/"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                class="nav-btn resume-btn"
+                href="resume.pdf"
+                target="_blank"
+            >
+                Resume
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================
+         Hero Section
+    ========================================== -->
+    <section class="hero">
+
+        <!-- Experience Badge -->
         <div class="hero-badge">
             🚀 Senior iOS Engineer • 5.5+ Years Experience
         </div>
 
-        <div class="profile-wrapper">
-            <img src="profile.png"
-                 alt="Harsh Darji"
-                 class="profile-image">
-        </div>
+        <!-- Main Hero Layout -->
+        <div class="hero-container">
 
-        <h1>
-            Harsh <span>Darji</span>
-        </h1>
+            <!-- Left Content -->
+            <div class="hero-left">
 
-        <p class="hero-description">
-            Project Lead - Senior iOS Engineer | Swift • UIKit • SwiftUI •
-            Scalable Architecture • Performance Optimisation
-        </p>
+                <h1>
+                    Harsh <span>Darji</span>
+                </h1>
 
-        <div class="hero-tags">
-            <span>Swift</span>
-            <span>UIKit</span>
-            <span>SwiftUI</span>
-            <span>MVVM</span>
-            <span>Firebase</span>
-            <span>Realtime</span>
-            <span>AI Apps</span>
-            <span>REST APIs</span>
-        </div>
+                <!-- Typing Text -->
+                <h2 id="typing-text"></h2>
 
-    </div>
+                <!-- Description -->
+                <p class="hero-description">
+                    Building production-grade iOS applications using
+                    Swift, UIKit + SwiftUI with focus on scalable
+                    architecture, offline-first systems, AI integrations,
+                    performance optimization, realtime communication,
+                    and clean engineering workflows.
+                </p>
 
-</section>
+                <!-- Tags -->
+                <div class="hero-tags">
 
-<section id="about" class="section">
+                    <span>Swift</span>
 
-    <div class="section-heading">
-        <h2>About <span>Me</span></h2>
+                    <span>UIKit + SwiftUI</span>
 
-        <p>
-            Senior iOS Engineer focused on building scalable,
-            maintainable and production-grade mobile applications.
-        </p>
-    </div>
+                    <span>MVVM</span>
 
-</section>
+                    <span>Firebase</span>
 
-<section id="liveapps" class="section">
+                    <span>Realtime</span>
 
-    <div class="section-heading">
-        <h2>Live <span>Apps</span></h2>
+                    <span>AI Apps</span>
 
-        <p>
-            Production-grade App Store applications built using
-            Swift, UIKit + SwiftUI, Firebase, Realtime systems,
-            AI integrations and scalable architectures.
-        </p>
-    </div>
+                    <span>REST APIs</span>
 
-    <div class="project-grid">
+                </div>
 
-        <div class="project-card">
+                <!-- Buttons -->
+                <div class="hero-buttons">
 
-            <h3>Dual Camera Capture</h3>
+                    <a
+                        href="live-projects.html"
+                        class="primary-btn"
+                    >
+                        Explore Live Apps
+                    </a>
 
-            <p>
-                Advanced multi-camera recording engine with AVCaptureSession,
-                4K 60fps capture, sensor tracking, Firebase uploads,
-                compression pipeline and background processing.
-            </p>
+                    <a
+                        href="portfolio-projects.html"
+                        class="secondary-btn"
+                    >
+                        View Portfolio
+                    </a>
 
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>Firebase</span>
-                <span>Realtime</span>
+                </div>
+
+                <!-- Contact Links -->
+                <div class="social-links">
+
+                    <a href="mailto:dev.iharsh1008@gmail.com">
+                        Email
+                    </a>
+
+                    <a href="tel:+919662108047">
+                        Call
+                    </a>
+
+                    <a
+                        href="https://github.com/dev1008iharsh"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="https://linkedin.com/in/dev1008iharsh"
+                        target="_blank"
+                    >
+                        LinkedIn
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="project-buttons">
+            <!-- Right Profile -->
+            <div class="hero-right">
 
-                <button class="project-btn"
-                        onclick="openModal('images/dualcamera.png')">
-                    Preview
-                </button>
+                <div class="profile-wrapper">
 
-                <a class="project-btn"
-                   href="https://www.youtube.com/watch?v=7cVl1fcF2Tc"
-                   target="_blank">
-                    Experience
-                </a>
+                    <!-- Glow Ring -->
+                    <div class="profile-ring"></div>
 
-            </div>
+                    <!-- Profile Image -->
+                    <img
+                        src="images/profile.png"
+                        alt="Harsh Darji"
+                        class="profile-image"
+                    />
 
-        </div>
-
-    </div>
-
-</section>
-
-<section id="portfolio" class="section">
-
-    <div class="section-heading">
-        <h2>Portfolio Apps <span>Projects</span></h2>
-
-        <p>
-            Open-source projects, scalable architectures,
-            reusable systems and modern UIKit + SwiftUI engineering.
-        </p>
-    </div>
-
-    <div class="project-grid">
-
-        <div class="project-card">
-
-            <h3>AI Chat Application</h3>
-
-            <p>
-                AI-powered conversational application integrating Gemini APIs,
-                Markdown rendering and intelligent image generation workflows.
-            </p>
-
-            <div class="project-tags">
-                <span>Swift</span>
-                <span>UIKit + SwiftUI</span>
-                <span>AI Apps</span>
-                <span>REST APIs</span>
-            </div>
-
-            <div class="project-buttons">
-
-                <button class="project-btn"
-                        onclick="openModal('images/aichat.png')">
-                    Preview
-                </button>
-
-                <a class="project-btn"
-                   href="https://github.com/dev1008iharsh/AIChatBotHarsh"
-                   target="_blank">
-                    Experience
-                </a>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- =========================================
+         About Section
+    ========================================== -->
+    <section id="about" class="section">
 
-<section id="skills" class="section">
-
-    <div class="section-heading">
-
-        <h2>Technical <span>Arsenal</span></h2>
-
-        <p>
-            Core technologies and engineering expertise powering
-            scalable mobile applications and real-time systems.
-        </p>
-
-    </div>
-
-    <div class="skills-grid">
-
-        <div class="skill-box">
-
-            <h3>Mobile Development</h3>
-
-            <span>Swift</span>
-            <span>UIKit + SwiftUI</span>
-            <span>MVVM</span>
-            <span>Combine</span>
-            <span>Realtime</span>
-
-        </div>
-
-        <div class="skill-box">
-
-            <h3>Architecture</h3>
-
-            <span>Clean Architecture</span>
-            <span>SOLID</span>
-            <span>Offline First</span>
-            <span>Dependency Injection</span>
-
-        </div>
-
-        <div class="skill-box">
-
-            <h3>Backend & APIs</h3>
-
-            <span>Firebase</span>
-            <span>REST APIs</span>
-            <span>GraphQL</span>
-            <span>Supabase</span>
-
-        </div>
-
-        <div class="skill-box">
-
-            <h3>AI & Performance</h3>
-
-            <span>AI Apps</span>
-            <span>Gemini API</span>
-            <span>Concurrency</span>
-            <span>Performance</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="contact" class="section">
-
-    <div class="contact-card">
-
-        <div class="contact-left">
+        <div class="section-heading">
 
             <h2>
-                Let's build
-                <span>amazing apps</span>
-                together.
+                About <span>Me</span>
             </h2>
 
             <p>
-                Open for senior iOS engineering opportunities,
-                architecture consulting and scalable mobile product development.
+                Senior iOS Engineer focused on scalable architecture,
+                production-grade mobile applications, performance optimization,
+                realtime systems, and clean maintainable engineering workflows.
             </p>
 
         </div>
 
-        <form class="contact-form"
-              id="contactForm">
+        <div class="about-grid">
 
-            <input type="text"
-                   id="name"
-                   placeholder="Your Name"
-                   required>
+            <!-- Professional Summary -->
+            <div class="about-card large-card">
 
-            <input type="email"
-                   id="email"
-                   placeholder="Email Address"
-                   required>
+                <h3>
+                    Professional Summary
+                </h3>
 
-            <input type="text"
-                   id="subject"
-                   placeholder="Subject"
-                   required>
+                <p>
+                    Senior iOS Engineer with 5.5+ years of experience
+                    building scalable, high-performance applications
+                    using Swift, UIKit + SwiftUI.
+                </p>
 
-            <textarea id="message"
-                      placeholder="Tell me about your project..."
-                      required></textarea>
+                <p>
+                    Delivered 20+ production applications across
+                    healthcare, logistics, streaming, fintech,
+                    e-commerce, realtime communication,
+                    AI-powered systems, and enterprise platforms.
+                </p>
 
-            <button type="submit"
-                    class="project-btn">
-                Send Message
-            </button>
+                <p>
+                    Specialized in scalable architecture,
+                    offline-first systems, Firebase integrations,
+                    API design, memory optimization,
+                    clean MVVM patterns, concurrency,
+                    and production-level engineering workflows.
+                </p>
 
-        </form>
+            </div>
 
-    </div>
+            <!-- Stats -->
+            <div class="stats-grid">
 
-</section>
+                <div class="stat-card">
+                    <h3>20+</h3>
+                    <p>Production Apps</p>
+                </div>
 
-<div id="imageModal"
-     class="modal-overlay">
+                <div class="stat-card">
+                    <h3>5.5+</h3>
+                    <p>Years Experience</p>
+                </div>
 
-    <div class="modal-content">
+                <div class="stat-card">
+                    <h3>10L+</h3>
+                    <p>Users Impacted</p>
+                </div>
 
-        <button class="close-btn"
-                onclick="closeModal()">
+                <div class="stat-card">
+                    <h3>UIKit + SwiftUI</h3>
+                    <p>Architecture Expert</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         Featured Sections
+    ========================================== -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Featured <span>Work</span>
+            </h2>
+
+            <p>
+                Production-grade live applications and scalable
+                portfolio engineering systems.
+            </p>
+
+        </div>
+
+        <div class="featured-grid">
+
+            <!-- Live Apps -->
+            <a href="live-projects.html" class="feature-card">
+
+                <div class="feature-glow"></div>
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Live App Store Projects
+                </h3>
+
+                <p>
+                    Explore all production iOS applications
+                    delivered to real users across multiple domains.
+                </p>
+
+                <div class="feature-tags">
+                    <span>Production</span>
+                    <span>App Store</span>
+                    <span>Realtime</span>
+                </div>
+
+            </a>
+
+            <!-- Portfolio -->
+            <a href="portfolio-projects.html" class="feature-card">
+
+                <div class="feature-glow"></div>
+
+                <div class="feature-icon">
+                    💻
+                </div>
+
+                <h3>
+                    GitHub Portfolio
+                </h3>
+
+                <p>
+                    Explore architecture-focused projects,
+                    AI apps, Firebase systems,
+                    networking layers, and reusable frameworks.
+                </p>
+
+                <div class="feature-tags">
+                    <span>MVVM</span>
+                    <span>Architecture</span>
+                    <span>AI Apps</span>
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         Skills Section
+    ========================================== -->
+    <section id="skills" class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Technical <span>Arsenal</span>
+            </h2>
+
+            <p>
+                Core technologies and engineering expertise
+                powering scalable iOS applications.
+            </p>
+
+        </div>
+
+        <!-- Dynamic Skills Rendering -->
+        <div
+            id="skills-container"
+            class="skills-grid"
+        ></div>
+
+    </section>
+
+    <!-- =========================================
+         Contact Section
+    ========================================== -->
+    <section id="contact" class="section">
+
+        <div class="contact-card">
+
+            <!-- Left -->
+            <div class="contact-left">
+
+                <h2>
+                    Let's build <span>amazing apps</span> together.
+                </h2>
+
+                <p>
+                    Open for Senior iOS Engineering opportunities,
+                    scalable product development,
+                    architecture consulting,
+                    and AI-integrated mobile applications.
+                </p>
+
+                <div class="contact-links">
+
+                    <a href="mailto:dev.iharsh1008@gmail.com">
+                        dev.iharsh1008@gmail.com
+                    </a>
+
+                    <a href="tel:+919662108047">
+                        +91 9662108047
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right Form -->
+            <div class="contact-right">
+
+                <!--
+                    Form opens default email client
+                    with all user entered details
+                -->
+                <form
+                    id="contact-form"
+                    class="contact-form"
+                >
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    />
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email Address"
+                        required
+                    />
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Project Subject"
+                        required
+                    />
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell me about your project..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         Modal Viewer
+    ========================================== -->
+    <div id="imageModal" class="modal-overlay">
+
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
             ✕
         </button>
 
-        <img id="modalImage"
-             class="modal-image"
-             src=""
-             alt="Preview">
+        <div class="modal-content">
+
+            <!-- Glow Effect -->
+            <div class="modal-glow"></div>
+
+            <img
+                id="modalImage"
+                class="modal-image"
+                src=""
+                alt="Preview"
+            />
+
+        </div>
 
     </div>
 
-</div>
+    <!-- =========================================
+         JS Files
+    ========================================== -->
 
-<script>
+    <!-- Main App -->
+    <script src="js/app.js"></script>
 
-/* =========================
-   CURSOR
-========================= */
+    <!-- Typing Animation -->
+    <script src="js/typing.js"></script>
 
-const cursor = document.querySelector('.cursor-dot');
+    <!-- Cursor -->
+    <script src="js/cursor.js"></script>
 
-window.addEventListener('mousemove', (e) => {
+    <!-- Modal -->
+    <script src="js/modal.js"></script>
 
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
+    <!-- Mail -->
+    <script src="js/mail.js"></script>
 
-});
-
-/* =========================
-   PROJECT HOVER LIGHT
-========================= */
-
-const cards = document.querySelectorAll('.project-card');
-
-window.addEventListener('mousemove', (e) => {
-
-    cards.forEach((card) => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty('--x', `${x}px`);
-        card.style.setProperty('--y', `${y}px`);
-
-    });
-
-});
-
-/* =========================
-   MODAL
-========================= */
-
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-
-function openModal(imagePath){
-
-    modal.style.display = 'flex';
-    modalImage.src = imagePath;
-
-}
-
-function closeModal(){
-
-    modal.style.display = 'none';
-    modalImage.src = '';
-
-}
-
-modal.addEventListener('click', (e) => {
-
-    if(e.target === modal){
-        closeModal();
-    }
-
-});
-
-/* =========================
-   CONTACT FORM EMAIL
-========================= */
-
-document.getElementById('contactForm')
-.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    const name =
-        document.getElementById('name').value;
-
-    const email =
-        document.getElementById('email').value;
-
-    const subject =
-        document.getElementById('subject').value;
-
-    const message =
-        document.getElementById('message').value;
-
-    const body = `
-Name: ${name}
-
-Email: ${email}
-
-Message:
-${message}
-`;
-
-    window.location.href =
-    `mailto:dev.iharsh1008@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-});
-
-</script>
+    <!-- Dynamic Skills -->
+    <script src="data/technicalArsenal.js"></script>
+    <script src="js/renderSkills.js"></script>
 
 </body>
+
 </html>
