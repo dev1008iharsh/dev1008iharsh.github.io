@@ -1,58 +1,35 @@
 // ========================================
-// Contact Form Script
+// Contact Form
 // ========================================
 
-// Wait until full HTML is loaded
-window.addEventListener("DOMContentLoaded", () => {
+const contactForm = document.querySelector("#contact-form");
 
-    // Get form element safely
-    const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", (event) => {
 
-    // Prevent crash if form does not exist
-    if (!contactForm) {
+    // Prevent page refresh
+    event.preventDefault();
 
-        console.error("❌ contact-form not found");
+    // Get form values
+    const name = document.querySelector("#name").value.trim();
 
-        return;
-    }
+    const email = document.querySelector("#email").value.trim();
 
-    // Form submit listener
-    contactForm.addEventListener("submit", (event) => {
+    const subject = document.querySelector("#subject").value.trim();
 
-        // Prevent page refresh & URL params
-        event.preventDefault();
+    const message = document.querySelector("#message").value.trim();
 
-        // Get input values
-        const name = document.getElementById("name")?.value.trim();
-
-        const email = document.getElementById("email")?.value.trim();
-
-        const subject = document.getElementById("subject")?.value.trim();
-
-        const message = document.getElementById("message")?.value.trim();
-
-        // Validation
-        if (!name || !email || !subject || !message) {
-
-            alert("Please fill all fields.");
-
-            return;
-        }
-
-        // Debug
-        console.log({
-            name,
-            email,
-            subject,
-            message
-        });
-
-        // Success Message
-        alert("Message sent successfully 🚀");
-
-        // Reset form
-        contactForm.reset();
-
+    // Debug
+    console.log({
+        name,
+        email,
+        subject,
+        message
     });
+
+    // Success Alert
+    alert("Message sent successfully 🚀");
+
+    // Reset Form
+    contactForm.reset();
 
 });
