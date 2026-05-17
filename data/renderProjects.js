@@ -1,16 +1,11 @@
 // =========================================================
 // FILE: js/renderProjects.js
-// Reusable Dynamic Projects Renderer
-// Supports:
-// - projects.html?type=live
-// - projects.html?type=portfolio
+// Dynamic Projects Renderer
 // =========================================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =====================================================
-    // URL PARAMS
-    // =====================================================
+    // URL Params
 
     const params =
         new URLSearchParams(window.location.search);
@@ -18,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const type =
         params.get("type");
 
-    // =====================================================
-    // ELEMENTS
-    // =====================================================
+    // Elements
 
     const container =
         document.getElementById("projectsContainer");
@@ -34,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroBadge =
         document.getElementById("heroBadge");
 
-    // Safety check
+    // Safety
+
     if (
         !container ||
         !heroTitle ||
@@ -44,17 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // =====================================================
-    // DATA SOURCE
-    // =====================================================
+    // Data
 
     let projects = [];
 
-    // =====================================================
-    // LIVE PROJECTS
-    // =====================================================
+    // Live Projects
 
     if (type === "live") {
+
+        document.title =
+            "Live Projects • Harsh Darji";
 
         heroBadge.innerHTML =
             "🚀 Production Grade App Store Applications";
@@ -64,20 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         heroDescription.innerHTML =
             `
-            Production-grade App Store applications built using
-            Swift, UIKit + SwiftUI, Firebase,
-            AI integrations, realtime systems
+            Production-grade App Store applications
+            built using Swift,
+            UIKit + SwiftUI,
+            Firebase,
+            AI integrations,
+            realtime systems
             and scalable architectures.
             `;
 
         projects = liveProjects;
     }
 
-    // =====================================================
-    // PORTFOLIO PROJECTS
-    // =====================================================
+    // Portfolio Projects
 
     else {
+
+        document.title =
+            "Portfolio Projects • Harsh Darji";
 
         heroBadge.innerHTML =
             "🚀 Advanced GitHub Portfolio";
@@ -87,24 +84,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         heroDescription.innerHTML =
             `
-            Advanced GitHub portfolio projects built using Swift,
-            UIKit + SwiftUI, MVVM, Firebase,
-            realtime systems and scalable iOS architectures.
+            Advanced GitHub portfolio projects
+            built using Swift,
+            UIKit + SwiftUI,
+            MVVM,
+            Firebase,
+            realtime systems
+            and scalable iOS architectures.
             `;
 
         projects = portfolioProjects;
     }
 
-    // =====================================================
-    // RENDER PROJECTS
-    // =====================================================
+    // Render
 
     renderProjects(projects);
 
 });
 
 // =========================================================
-// RENDER FUNCTION
+// Render Cards
 // =========================================================
 
 function renderProjects(projects) {
@@ -114,12 +113,15 @@ function renderProjects(projects) {
 
     if (!container) return;
 
+    // Reset
+
     container.innerHTML = "";
 
-    projects.forEach((project) => {
+    // Create HTML
 
-        const card =
-        `
+    const cardsHTML = projects.map((project) => {
+
+        return `
         <div class="project-card fade-in">
 
             ${
@@ -177,7 +179,11 @@ function renderProjects(projects) {
         </div>
         `;
 
-        container.innerHTML += card;
-    });
+    }).join("");
+
+    // Inject Once
+    // Better performance than += loop
+
+    container.innerHTML = cardsHTML;
 
 }
