@@ -1,4 +1,3 @@
-
 // =========================================================
 // FILE: data/liveProjects.js
 // =========================================================
@@ -7,383 +6,382 @@ const liveProjects = [
 
     {
         title: "Dual Camera Capture",
-
         description:
-            "Advanced iOS camera system built with Swift using AVCaptureSession, enabling simultaneous front and rear 4K 60fps recording. Features real-time processing, compression, password-protected ZIP uploads and secure Firebase Storage integration.",
-
+            "Simultaneous front and rear 4K recording with live processing, compression and protected uploads to Firebase Storage.",
         image: "images/dualcamera.png",
-
         link: "https://www.youtube.com/watch?v=7cVl1fcF2Tc",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "AVFoundation",
-            "Firebase",
-            "Realtime"
+        highlights: [
+            "Dual AVCaptureSession pipeline at 4K 60fps",
+            "Password-protected ZIP upload workflow"
         ],
-
+        tags: [
+            "UIKit",
+            "AVCaptureSession",
+            "AVFoundation",
+            "Firebase Storage",
+            "Live Processing"
+        ],
         flagship: true
     },
 
     {
         title: "Local Deals & Rewards Platform",
-
         description:
-            "Location-based deals and loyalty application designed to help users discover nearby discounts, promotions and offers from local businesses.",
-
+            "Location-aware deals app helping users unlock nearby offers, loyalty rewards and merchant promotions on the map.",
         image: "images/dashible.png",
-
         link: "https://apps.apple.com/us/app/dashible-deals/id1475022894",
-
+        highlights: [
+            "Geo-fenced offer discovery with MapKit",
+            "Push-driven deal alerts and redemption flow"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "SwiftUI",
             "MapKit",
-            "Realtime",
-            "Rewards"
+            "Core Location",
+            "Push Notifications",
+            "Loyalty Engine"
         ]
     },
 
     {
         title: "Transport & Logistics Platform",
-
         description:
-            "Comprehensive transport service application designed to streamline vehicle booking, trip management and logistics coordination with scalable architecture.",
-
+            "Fleet and trip management for vehicle booking, route coordination and live status across customer and operator roles.",
         image: "images/desh.png",
-
         link: "https://apps.apple.com/in/app/desh-parivahan/id1471516595",
-
+        highlights: [
+            "Real-time trip and vehicle status sync",
+            "Scalable booking and dispatch modules"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
+            "UIKit",
             "REST APIs",
-            "Logistics"
+            "Live Tracking",
+            "Trip Booking",
+            "MVVM"
         ]
     },
 
     {
         title: "Community & Events App",
-
         description:
-            "Community-focused mobile application for discovering local events, businesses and activities with live announcements and integrated radio streaming.",
-
+            "Local events, business listings and community updates with integrated radio streaming and announcement feeds.",
         image: "images/local.png",
-
         link: "https://apps.apple.com/us/app/local-happenings/id1524588247",
-
+        highlights: [
+            "Event discovery with category filters",
+            "In-app radio streaming and live announcements"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Streaming",
-            "Community",
-            "Realtime"
+            "SwiftUI",
+            "Firebase",
+            "Audio Streaming",
+            "Event Feeds",
+            "Deep Linking"
         ]
     },
 
     {
         title: "Car Rental Ecosystem",
-
         description:
-            "End-to-end vehicle rental platform built from scratch covering customer and dealer applications with booking, payments and real-time fleet management.",
-
+            "Customer and dealer apps for rentals, fleet visibility, booking lifecycle and payment-ready trip workflows.",
         image: "images/rydezilla.png",
-
         link: "https://rydezilla.com/",
-
+        highlights: [
+            "Dual-app ecosystem: customer + dealer",
+            "Live fleet availability and booking sync"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
-            "Booking",
-            "Payments"
+            "UIKit",
+            "In-App Payments",
+            "Booking Engine",
+            "Fleet Management",
+            "Socket Updates"
         ]
     },
 
     {
         title: "Insurance Management App",
-
         description:
-            "Mobile solution designed to simplify insurance handling with centralized access to policies, claims, payment history and secure workflows.",
-
+            "Central hub for policies, claims, payment history and secure insurance workflows on mobile.",
         image: "images/insure.png",
-
         link: "https://apps.apple.com/in/app/just-insure/id1540086699",
-
+        highlights: [
+            "Policy vault with claim submission flow",
+            "Secure session and document handling"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Security",
-            "Fintech",
-            "REST APIs"
+            "SwiftUI",
+            "Keychain",
+            "REST APIs",
+            "Claims Workflow",
+            "Fintech UX"
         ]
     },
 
     {
         title: "Diet Planner App",
-
         description:
-            "Health-focused iOS application built with Swift to track diet data, reminders, water intake and generate personalized plans.",
-
+            "Health tracking for meals, water intake, reminders and personalized diet plans with daily goal insights.",
         image: "images/diet.png",
-
         link: "https://www.youtube.com/shorts/JFIbh6RCxlQ",
-
+        highlights: [
+            "Smart reminders for meals and hydration",
+            "Personalized plan builder with progress view"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Health",
-            "Notifications",
-            "Productivity"
-        ]
-    },
-
-    {
-        title: "Auction & Stadium Management",
-
-        description:
-            "Event and auction management platform enabling organizers to handle ticketing, bidding workflows, seating allocation and realtime operations.",
-
-        image: "images/auction.png",
-
-        link: "https://www.facebook.com/Cymmons/photos",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
-            "Payments",
-            "Events"
-        ]
-    },
-
-    {
-        title: "Marketplace App",
-
-        description:
-            "Gujarati OLX-style marketplace for farmers to buy and sell cattle, tractors, crops and agricultural equipment with 10L+ users.",
-
-        image: "images/piplana.png",
-
-        link: "https://apps.apple.com/in/app/piplana-pane/id1409110407",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Marketplace",
-            "Realtime",
-            "Performance"
-        ]
-    },
-
-    {
-        title: "Crypto Wallet App",
-
-        description:
-            "Secure cryptocurrency wallet application built using Web3 SDKs, featuring wallet balance tracking, token management and transaction handling.",
-
-        image: "images/crypto.png",
-
-        link: "https://youtube.com/shorts/rCbtzJ246aw?feature=share",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Web3",
-            "Blockchain",
-            "Security"
-        ]
-    },
-
-    {
-        title: "Digital Recipe Manager App",
-
-        description:
-            "Personal recipe management application supporting meal planning, ingredient search, offline access and shopping list workflows.",
-
-        image: "images/cookbook.png",
-
-        link: "https://apps.apple.com/us/app/mycookbook/id1218876038",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Offline First",
-            "Productivity",
+            "SwiftUI",
+            "Local Notifications",
+            "Health Tracking",
+            "Charts",
             "Core Data"
         ]
     },
 
     {
-        title: "Laundry Booking App",
-
+        title: "Auction & Stadium Management",
         description:
-            "On-demand laundry service application allowing users to schedule pickups, track orders and manage payments seamlessly.",
-
-        image: "images/laundry.png",
-
-        link: "https://apps.apple.com/in/app/moon-laundry/id1541635952",
-
+            "Event operations platform for ticketing, live bidding, seating maps and stadium-side coordination.",
+        image: "images/auction.png",
+        link: "https://www.facebook.com/Cymmons/photos",
+        highlights: [
+            "Live bidding with seat allocation logic",
+            "Ticketing and on-site event controls"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
+            "UIKit",
+            "Live Bidding",
             "Payments",
-            "Booking"
+            "Seat Maps",
+            "Real-time Sync"
+        ]
+    },
+
+    {
+        title: "Marketplace App",
+        description:
+            "Agricultural marketplace for cattle, tractors, crops and equipment with high-traffic listing and chat flows.",
+        image: "images/piplana.png",
+        link: "https://apps.apple.com/in/app/piplana-pane/id1409110407",
+        highlights: [
+            "10L+ user scale with optimized media uploads",
+            "Category listings with seller messaging"
+        ],
+        tags: [
+            "UIKit",
+            "Marketplace Feed",
+            "Image Compression",
+            "Performance Tuning",
+            "Firebase"
+        ]
+    },
+
+    {
+        title: "Crypto Wallet App",
+        description:
+            "Web3 wallet for balances, token management and transaction flows with security-first storage patterns.",
+        image: "images/crypto.png",
+        link: "https://youtube.com/shorts/rCbtzJ246aw?feature=share",
+        highlights: [
+            "Web3 SDK integration for wallet actions",
+            "Token portfolio and transaction history UI"
+        ],
+        tags: [
+            "SwiftUI",
+            "Web3 SDK",
+            "Blockchain",
+            "Keychain",
+            "Transaction Engine"
+        ]
+    },
+
+    {
+        title: "Digital Recipe Manager App",
+        description:
+            "Recipe library with meal planning, ingredient search, offline access and shopping list automation.",
+        image: "images/cookbook.png",
+        link: "https://apps.apple.com/us/app/mycookbook/id1218876038",
+        highlights: [
+            "Offline-first recipe cache with Core Data",
+            "Ingredient search and shopping list export"
+        ],
+        tags: [
+            "UIKit",
+            "Offline-first",
+            "Core Data",
+            "Smart Search",
+            "Meal Planning"
+        ]
+    },
+
+    {
+        title: "Laundry Booking App",
+        description:
+            "On-demand laundry with pickup scheduling, order tracking and seamless checkout for recurring users.",
+        image: "images/laundry.png",
+        link: "https://apps.apple.com/in/app/moon-laundry/id1541635952",
+        highlights: [
+            "Pickup slot booking with live order status",
+            "Payment and notification-driven updates"
+        ],
+        tags: [
+            "SwiftUI",
+            "Order Tracking",
+            "Payments",
+            "Push Notifications",
+            "Booking Flow"
         ]
     },
 
     {
         title: "Visual Learning Healthcare App",
-
         description:
-            "Medical education application focused on visual mnemonics, illustrated concepts and categorized healthcare learning modules.",
-
+            "Medical learning through visual mnemonics, illustrated modules and structured healthcare categories.",
         image: "images/medinaz.png",
-
         link: "https://apps.apple.com/in/app/medinaz/id1532692978",
-
+        highlights: [
+            "Visual mnemonic learning paths",
+            "Cached media for smooth module playback"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Healthcare",
-            "Education",
-            "Learning"
+            "SwiftUI",
+            "Healthcare UX",
+            "Media Caching",
+            "Education Modules",
+            "Search"
         ]
     },
 
     {
         title: "Telemedicine & Healthcare Platform",
-
         description:
-            "Comprehensive healthcare application enabling realtime doctor consultations, online appointments and home lab test bookings.",
-
+            "Doctor consultations, appointment booking and home lab test scheduling in one healthcare super-app.",
         image: "images/healwell.png",
-
         link: "https://www.facebook.com/HealWell24/photos",
-
+        highlights: [
+            "Video consult and appointment scheduling",
+            "Lab test booking with status tracking"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Healthcare",
-            "Realtime",
-            "Video Call"
+            "UIKit",
+            "Video Calls",
+            "Healthcare APIs",
+            "Appointments",
+            "Real-time Chat"
         ]
     },
 
     {
         title: "Donation & Campaign Tracking App",
-
         description:
-            "Charity platform for managing donations, fundraising campaigns and humanitarian initiatives with realtime contribution tracking.",
-
+            "Charity platform for campaigns, donations and contribution tracking with companion watch experiences.",
         image: "images/irusa.png",
-
         link: "https://irusa.app/",
-
+        highlights: [
+            "Campaign dashboards with live donation totals",
+            "watchOS companion for quick giving updates"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
-            "Donations",
-            "watchOS"
+            "SwiftUI",
+            "Campaign Analytics",
+            "Firebase",
+            "watchOS",
+            "Donation Flow"
         ]
     },
 
     {
         title: "E-Commerce Shopping App",
-
         description:
-            "End-to-end perfume shopping application enabling users to browse collections, view product details and complete purchases.",
-
+            "Perfume storefront with collections, rich product detail and end-to-end mobile checkout.",
         image: "images/eshal.png",
-
         link: "https://github.com/dev1008iharsh/Harsh-iShop",
-
+        highlights: [
+            "Catalog browsing with variant selection",
+            "Cart, coupons and checkout integration"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "SwiftUI",
             "E-Commerce",
             "Payments",
-            "REST APIs"
+            "REST APIs",
+            "Cart System"
         ]
     },
 
     {
         title: "Trading & Agent Management App",
-
         description:
-            "Business productivity application designed for commission agents and traders to manage deals, transactions and business workflows.",
-
+            "Business app for commission agents to track deals, transactions and daily trading operations.",
         image: "images/trading.png",
-
         link: "https://apps.apple.com/in/app/repairmint-business/id1596447429",
-
+        highlights: [
+            "Deal pipeline with commission calculations",
+            "Transaction ledger and reporting views"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Business",
-            "Realtime",
-            "Productivity"
+            "UIKit",
+            "Business Logic",
+            "MVVM",
+            "Reports",
+            "Data Sync"
         ]
     },
 
     {
-        title: "Reel - Video Streaming Platform",
-
+        title: "Reel: Video Streaming Platform",
         description:
-            "Comprehensive video streaming application similar to YouTube supporting uploads, subscriptions and personalized recommendations.",
-
+            "YouTube-style streaming with uploads, subscriptions, channels and personalized recommendation feeds.",
         image: "images/ubvideos.png",
-
         link: "https://apps.apple.com/us/app/ubvideos/id1571532210",
-
+        highlights: [
+            "Upload pipeline with channel subscriptions",
+            "Recommendation-driven home feed"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Streaming",
-            "Video",
-            "Realtime"
+            "UIKit",
+            "Video Streaming",
+            "Upload Pipeline",
+            "CDN Playback",
+            "Subscriptions"
         ]
     },
 
     {
         title: "Video Streaming Platform",
-
         description:
-            "End-to-end video streaming platform supporting adaptive playback, media uploads and personalized viewing experiences.",
-
+            "Adaptive video platform with media uploads, playback optimization and personalized viewer journeys.",
         image: "images/video.png",
-
         link: "https://apps.apple.com/us/app/",
-
+        highlights: [
+            "HLS-style adaptive streaming playback",
+            "Background-friendly media session handling"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Streaming",
-            "Media",
+            "SwiftUI",
+            "HLS Playback",
+            "Media Upload",
+            "Recommendations",
             "Performance"
         ]
     },
 
     {
         title: "Art Marketplace (iOS Version)",
-
         description:
-            "iOS implementation of an online art marketplace featuring artist discovery, galleries, auction-style listings and product browsing.",
-
+            "Art discovery marketplace with galleries, artist profiles and auction-style listing experiences.",
         image: "images/7arts.png",
-
         link: "https://apkpure.net/7-arts/com.fatima.app.sevenarts.enterprise",
-
+        highlights: [
+            "Artist profiles with gallery collections",
+            "Auction listings and artwork discovery"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "UIKit",
             "Marketplace",
             "REST APIs",
-            "Media"
+            "Media Gallery",
+            "Auction UX"
         ]
     }
 
