@@ -1,73 +1,29 @@
-/* =========================================
-   Load HTML Components
-========================================= */
-
-async function loadComponent(
-    containerId,
-    filePath
-) {
-
+async function loadComponent(containerId, filePath) {
     try {
-
         const response = await fetch(filePath);
-
         const html = await response.text();
-
         document.getElementById(containerId).innerHTML = html;
-
     } catch (error) {
-
-        console.error(
-            `Error loading component: ${filePath}`,
-            error
-        );
-
+        console.error(`Failed to load ${filePath}`, error);
     }
-
 }
 
-/* =========================================
-   Initialize Components
-========================================= */
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadComponent("navbar-container", "components/navbar.html");
+    if (typeof initMobileMenu === "function") initMobileMenu();
 
-document.addEventListener(
-    "DOMContentLoaded",
-    async () => {
+    await loadComponent("hero-container", "components/hero.html");
+    if (typeof initializeTypingAnimation === "function") initializeTypingAnimation();
 
-        await loadComponent(
-            "navbar-container",
-            "components/navbar.html"
-        );
+    await loadComponent("about-container", "components/about.html");
+    await loadComponent("featured-container", "components/featured-work.html");
+    await loadComponent("skills-container", "components/skills.html");
+    await loadComponent("contact-container", "components/contact.html");
+    await loadComponent("modal-container", "components/modal.html");
 
-        await loadComponent(
-            "hero-container",
-            "components/hero.html"
-        );
+    if (typeof initializePageFeatures === "function") initializePageFeatures();
 
-        await loadComponent(
-            "about-container",
-            "components/about.html"
-        );
-
-        await loadComponent(
-            "featured-container",
-            "components/featured-work.html"
-        );
-
-        await loadComponent(
-            "contact-container",
-            "components/contact.html"
-        );
-
-        await loadComponent(
-            "modal-container",
-            "components/modal.html"
-        );
-
-       await loadComponent(
-            "skills-container",
-            "components/skills.html"
-        );
-
+    if (window.location.hash) {
+        scrollToHashWithRetry(window.location.hash);
     }
-);
+});
