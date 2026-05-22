@@ -190,7 +190,7 @@
 .stat-card,
 .feature-card,
 .project-card,
-.skill-box,
+.expertise-card,
 .contact-card {
     transition:
         transform 0.35s ease,
@@ -202,7 +202,7 @@
 .stat-card:hover,
 .feature-card:hover,
 .project-card:hover,
-.skill-box:hover,
+.expertise-card:hover,
 .contact-card:hover {
 
     transform: translateY(-10px);
@@ -291,7 +291,7 @@
 .hero-tags span,
 .project-tags span,
 .feature-tags span,
-.skill-box span {
+.expertise-tags span {
 
     transition:
         transform 0.3s ease,
@@ -302,7 +302,7 @@
 .hero-tags span:hover,
 .project-tags span:hover,
 .feature-tags span:hover,
-.skill-box span:hover {
+.expertise-tags span:hover {
 
     transform: translateY(-4px);
 
