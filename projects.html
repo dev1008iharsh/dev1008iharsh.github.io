@@ -47,358 +47,11 @@ Supports:
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- =====================================================
-    PAGE SPECIFIC STYLES
-    ===================================================== -->
-
-    <style>
-
-        /* =====================================================
-        NORMAL CURSOR ONLY FOR PROJECTS PAGE
-        ===================================================== */
-
-        body {
-            cursor: auto !important;
-            overflow-x: hidden;
-        }
-
-        * {
-            cursor: auto !important;
-        }
-
-        .cursor-dot,
-        .cursor-outline {
-            display: none !important;
-        }
-
-        /* =====================================================
-        PAGE HERO
-        ===================================================== */
-
-        .page-hero {
-
-            width: 100%;
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding:
-                180px 24px
-                80px;
-
-            text-align: center;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-hero h1 {
-
-            font-size: clamp(52px, 8vw, 90px);
-
-            font-weight: 900;
-
-            line-height: 1.1;
-
-            margin-top: 24px;
-            margin-bottom: 24px;
-        }
-
-        .page-hero h1 span {
-
-            background: linear-gradient(
-                90deg,
-                #4f7cff,
-                #8b5cf6
-            );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-
-            max-width: 900px;
-
-            margin: 0 auto;
-
-            text-align: center;
-
-            font-size: 24px;
-
-            line-height: 1.8;
-
-            color: rgba(255,255,255,0.75);
-        }
-
-        .hero-badge {
-
-            width: fit-content;
-
-            margin: 0 auto;
-
-            padding:
-                18px 34px;
-
-            border-radius: 999px;
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            background:
-                rgba(255,255,255,0.04);
-
-            backdrop-filter: blur(20px);
-
-            -webkit-backdrop-filter: blur(20px);
-
-            box-shadow:
-                0 10px 40px rgba(79,124,255,0.15);
-
-            font-size: 18px;
-            font-weight: 700;
-
-            color: white;
-        }
-
-        /* =====================================================
-        PROJECT GRID
-        ===================================================== */
-
-        .project-grid {
-
-            width: 100%;
-            max-width: 1400px;
-
-            margin: 0 auto;
-
-            padding:
-                0 24px
-                120px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(340px, 1fr)
-                );
-
-            gap: 32px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        /* =====================================================
-        PROJECT BUTTONS
-        DARK BLUE GLASS EFFECT
-        ===================================================== */
-
-        .project-buttons {
-
-            display: flex;
-
-            gap: 14px;
-
-            margin-top: 28px;
-
-            flex-wrap: wrap;
-        }
-
-        .project-btn {
-
-            position: relative;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding:
-                14px 26px;
-
-            border-radius: 16px;
-
-            border:
-                1px solid rgba(91,140,255,0.18);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(8,18,45,0.95),
-                    rgba(15,35,80,0.95)
-                );
-
-            backdrop-filter: blur(18px);
-
-            -webkit-backdrop-filter: blur(18px);
-
-            color: #ffffff;
-
-            font-size: 15px;
-            font-weight: 700;
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            overflow: hidden;
-
-            transition:
-                transform 0.35s ease,
-                box-shadow 0.35s ease,
-                border-color 0.35s ease,
-                background 0.35s ease;
-
-            box-shadow:
-                0 0 20px rgba(79,124,255,0.22),
-                0 10px 40px rgba(20,40,120,0.35);
-
-            isolation: isolate;
-        }
-
-        /* =====================================================
-        BUTTON GLOW LAYER
-        ===================================================== */
-
-        .project-btn::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(79,124,255,0.28),
-                    rgba(50,90,255,0.18)
-                );
-
-            opacity: 0;
-
-            transition: opacity 0.35s ease;
-
-            z-index: -1;
-        }
-
-        /* =====================================================
-        BUTTON SHINE EFFECT
-        ===================================================== */
-
-        .project-btn::after {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: -120%;
-
-            width: 120%;
-            height: 100%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,0.14),
-                    transparent
-                );
-
-            transition: left 0.7s ease;
-        }
-
-        /* =====================================================
-        BUTTON HOVER
-        ===================================================== */
-
-        .project-btn:hover {
-
-            transform:
-                translateY(-4px)
-                scale(1.03);
-
-            border-color:
-                rgba(120,160,255,0.35);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(10,22,58,0.98),
-                    rgba(18,40,95,0.98)
-                );
-
-            box-shadow:
-                0 0 30px rgba(79,124,255,0.35),
-                0 16px 60px rgba(20,40,120,0.45);
-        }
-
-        .project-btn:hover::before {
-
-            opacity: 1;
-        }
-
-        .project-btn:hover::after {
-
-            left: 120%;
-        }
-
-        /* =====================================================
-        BUTTON CLICK
-        ===================================================== */
-
-        .project-btn:active {
-
-            transform: scale(0.98);
-        }
-
-        /* =====================================================
-        MOBILE RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 768px) {
-
-            .page-hero {
-
-                padding:
-                    140px 20px
-                    60px;
-            }
-
-            .hero-description {
-
-                font-size: 18px;
-                line-height: 1.7;
-            }
-
-            .project-grid {
-
-                padding:
-                    0 20px
-                    100px;
-
-                grid-template-columns: 1fr;
-            }
-
-            .project-buttons {
-
-                flex-direction: column;
-            }
-
-            .project-btn {
-
-                width: 100%;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/projects-page.css">
 
 </head>
 
-<body>
+<body class="projects-page">
 
     <!-- =====================================================
     BACKGROUND EFFECTS
@@ -423,7 +76,26 @@ Supports:
             Dev.iHarsh1008
         </a>
 
-        <nav class="nav-links">
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNavPanel"
+        >
+            ☰
+        </button>
+
+        <div
+            class="mobile-nav-panel"
+            id="mobileNavPanel"
+        >
+
+        <nav
+            class="nav-links"
+            id="mobileNav"
+        >
 
             <a href="index.html#about">
                 About
@@ -438,7 +110,7 @@ Supports:
             </a>
 
             <a href="projects.html?type=portfolio">
-                Portfolio
+                Portfolio Apps
             </a>
 
             <a href="index.html#skills">
@@ -472,6 +144,8 @@ Supports:
             >
                 Resume
             </a>
+
+        </div>
 
         </div>
 
@@ -560,13 +234,15 @@ Supports:
     MODAL LOGIC
     ===================================================== -->
 
+    <script src="js/app.js"></script>
     <script src="js/modal.js"></script>
-
-    <!-- =====================================================
-    PROJECTS RENDERER
-    ===================================================== -->
-
+    <script src="js/mobileMenu.js"></script>
     <script src="js/renderProjects.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof initMobileMenu === "function") initMobileMenu();
+        });
+    </script>
 
 </body>
 
