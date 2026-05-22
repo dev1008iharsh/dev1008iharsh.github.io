@@ -1,163 +1,34 @@
-<!-- FILE: components/navbar.html -->
-
 <header class="navbar">
 
-    <!-- =====================================================
-    LOGO
-    ===================================================== -->
+    <a href="index.html" class="logo">Dev.iHarsh1008</a>
 
-    <a
-        href="index.html"
-        class="logo"
+    <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileNavPanel"
     >
-        Dev.iHarsh1008
-    </a>
- 
+        ☰
+    </button>
 
-    <!-- =====================================================
-    NAVIGATION LINKS
-    ===================================================== -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
 
-    <nav
-        class="nav-links"
-        id="mobileNav"
-    >
+        <nav class="nav-links" id="mobileNav">
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="projects.html?type=live">Live Apps</a>
+            <a href="projects.html?type=portfolio">Portfolio Apps</a>
+            <a href="index.html#skills">Skills</a>
+        </nav>
 
-        <!-- About -->
-
-        <a href="index.html#about">
-            About
-        </a>
-
-        <!-- Contact -->
-
-        <a href="index.html#contact">
-            Contact
-        </a>
-
-        <!-- Live Projects -->
-
-        <a href="projects.html?type=live">
-            Live Apps
-        </a>
-
-        <!-- Portfolio -->
-
-        <a href="projects.html?type=portfolio">
-            Portfolio Apps
-        </a>
-
-        <!-- Skills -->
-
-        <a href="index.html#skills">
-            Skills
-        </a>
-
-    </nav>
-
-    <!-- =====================================================
-    ACTION BUTTONS
-    ===================================================== -->
-
-    <div class="nav-actions">
-
-        <!-- GitHub -->
-
-        <a
-            class="nav-btn github-btn"
-            href="https://github.com/dev1008iharsh"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            GitHub
-        </a>
-
-        <!-- LinkedIn -->
-
-        <a
-            class="nav-btn linkedin-btn"
-            href="https://linkedin.com/in/dev1008iharsh"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            LinkedIn
-        </a>
-
-        <!-- Resume -->
-
-        <a
-            class="nav-btn resume-btn"
-            href="resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Resume
-        </a>
+        <div class="nav-actions">
+            <a class="nav-btn github-btn" href="https://github.com/dev1008iharsh" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="nav-btn linkedin-btn" href="https://linkedin.com/in/dev1008iharsh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-btn resume-btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </div>
 
     </div>
 
 </header>
-
-<!-- =====================================================
-MOBILE NAVIGATION SCRIPT
-===================================================== -->
-
-<script>
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const mobileNav =
-            document.getElementById("mobileNav");
-
-        if (!menuToggle || !mobileNav) return;
-
-        /* =========================================
-        Toggle Mobile Menu
-        ========================================= */
-
-        menuToggle.addEventListener("click", () => {
-
-            mobileNav.classList.toggle("active");
-
-            /* =====================================
-            Toggle Icon
-            ===================================== */
-
-            if (
-                mobileNav.classList.contains("active")
-            ) {
-
-                menuToggle.innerHTML = "✕";
-
-            } else {
-
-                menuToggle.innerHTML = "☰";
-            }
-
-        });
-
-        /* =========================================
-        Auto Close Menu On Link Click
-        ========================================= */
-
-        const navLinks =
-            mobileNav.querySelectorAll("a");
-
-        navLinks.forEach((link) => {
-
-            link.addEventListener("click", () => {
-
-                mobileNav.classList.remove("active");
-
-                menuToggle.innerHTML = "☰";
-
-            });
-
-        });
-
-    });
-
-</script>
