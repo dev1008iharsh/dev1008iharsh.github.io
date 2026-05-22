@@ -6,307 +6,306 @@ const portfolioProjects = [
 
     {
         title: "RyderHarshApp",
-
         description:
-            "Advanced real-time rider tracking system with Google Maps integration, smooth marker animations, background tracking and app termination recovery.",
-
+            "Real-time rider tracking with animated map markers, background GPS and recovery after app termination.",
         image: "images/ryder.png",
-
         link: "https://github.com/dev1008iharsh/RyderHarshApp",
-
+        highlights: [
+            "Smooth marker interpolation on Google Maps",
+            "Background tracking with state recovery"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
+            "UIKit",
             "MapKit",
+            "Background GPS",
+            "Live Tracking",
             "Performance"
         ]
     },
 
     {
         title: "HarshVideoCall",
-
         description:
-            "High-performance realtime video communication engine using Agora RTC SDK with AI virtual backgrounds, optimized memory handling and low-latency streaming.",
-
+            "Low-latency video engine on Agora RTC with AI virtual backgrounds and memory-tuned streaming sessions.",
         image: "images/videocall.png",
-
         link: "https://github.com/dev1008iharsh/HarshVideoCall",
-
+        highlights: [
+            "Agora RTC with AI background segmentation",
+            "Optimized capture and render pipeline"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Agora",
-            "Realtime",
-            "AI Apps"
+            "UIKit",
+            "Agora RTC",
+            "AI Backgrounds",
+            "Low Latency",
+            "Memory Tuning"
         ]
     },
 
     {
         title: "TeaTimeHarsh",
-
         description:
-            "Offline-first location-based social app with Firebase sync, Core Data persistence, maps integration and scalable UIKit architecture.",
-
+            "Offline-first social map app with Firebase sync, Core Data persistence and location-based discovery.",
         image: "images/teatime.png",
-
         link: "https://github.com/dev1008iharsh/TeaTimeHarsh",
-
+        highlights: [
+            "Offline queue with background Firebase sync",
+            "Map-based social discovery layers"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "UIKit",
+            "Offline-first",
+            "Core Data",
             "Firebase",
-            "Offline First",
-            "Core Data"
+            "MapKit"
         ]
     },
 
     {
         title: "HarshChat",
-
         description:
-            "High-performance realtime messaging engine powered by Firebase Realtime Database supporting 10L+ users, MVVM architecture and advanced UIKit animations.",
-
+            "Firebase-powered messaging built for 10L+ scale with MVVM, custom UIKit motion and real-time delivery.",
         image: "images/harshchat.png",
-
         link: "https://github.com/dev1008iharsh/HarshChatApp",
-
-        tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Firebase",
-            "Realtime",
-            "MVVM"
+        highlights: [
+            "Real-time Database chat at large user scale",
+            "Custom message animations and MVVM modules"
         ],
-
+        tags: [
+            "UIKit",
+            "Firebase RTDB",
+            "MVVM",
+            "Custom Animations",
+            "Scale Engineering"
+        ],
         flagship: true
     },
 
     {
         title: "AI Chat Application",
-
         description:
-            "AI-powered conversational application integrating Google Gemini APIs with image generation, Markdown rendering and intelligent request routing.",
-
+            "Gemini-powered chat with image generation, Markdown rendering and smart prompt routing in a native UI.",
         image: "images/aichat.png",
-
         link: "https://github.com/dev1008iharsh/AIChatBotHarsh",
-
+        highlights: [
+            "Gemini API with image generation flow",
+            "Markdown chat rendering and prompt routing"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "AI Apps",
-            "LLM",
-            "Gemini"
+            "SwiftUI",
+            "Gemini API",
+            "Image Generation",
+            "Markdown UI",
+            "LLM Routing"
         ]
     },
 
     {
         title: "QuizAppHarsh",
-
         description:
-            "Dynamic quiz application with MVVM architecture, AdMob integrations, realtime scoring logic and advanced adaptive layouts.",
-
+            "Adaptive quiz engine with MVVM, AdMob monetization, score logic and layout systems for all screen sizes.",
         image: "images/quizapp.png",
-
         link: "https://github.com/dev1008iharsh/QuizAppHarshP",
-
+        highlights: [
+            "Dynamic question engine with score rules",
+            "AdMob integration with adaptive layouts"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "SwiftUI",
             "MVVM",
             "AdMob",
-            "Performance"
+            "Adaptive UI",
+            "Score Engine"
         ]
     },
 
     {
         title: "IndianPaymentGateway",
-
         description:
-            "Multi-payment integration system supporting Razorpay and Stripe with modular architecture, secure validation and scalable transaction handling.",
-
+            "Modular checkout layer supporting Razorpay and Stripe with validation, receipts and reusable payment flows.",
         image: "images/paymentgateway.png",
-
         link: "https://github.com/dev1008iharsh/IndianPaymentGateway",
-
+        highlights: [
+            "Dual gateway: Razorpay + Stripe modules",
+            "Secure validation and transaction callbacks"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Payments",
-            "Security",
-            "REST APIs"
+            "UIKit",
+            "Razorpay",
+            "Stripe",
+            "Modular Checkout",
+            "Security"
         ]
     },
 
     {
         title: "HarshHubGit",
-
         description:
-            "GitHub followers exploration app featuring pagination, image caching, async networking and scalable performance-driven architecture.",
-
+            "GitHub followers explorer with async networking, pagination, image caching and smooth list performance.",
         image: "images/harshhub.png",
-
         link: "https://github.com/dev1008iharsh/HarshHubGit",
-
+        highlights: [
+            "Cursor-based pagination on GitHub API",
+            "Async/await networking with image cache"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Networking",
+            "SwiftUI",
+            "async/await",
             "Pagination",
-            "Async/Await"
+            "Image Caching",
+            "GitHub API"
         ]
     },
 
     {
         title: "NewsAppHarsh",
-
         description:
-            "Offline-first high-performance news platform with Core Data persistence, image caching, background synchronization and MVVM architecture.",
-
+            "High-performance news reader with Core Data, background sync, image pipeline and offline reading mode.",
         image: "images/newsapp.png",
-
         link: "https://github.com/dev1008iharsh/NewsAppHarsh",
-
+        highlights: [
+            "Background article sync and cache warming",
+            "Image pipeline with Core Data persistence"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Offline First",
+            "UIKit",
+            "Offline-first",
             "Core Data",
-            "Concurrency"
+            "Background Sync",
+            "Image Pipeline"
         ]
     },
 
     {
         title: "TwitterHarsh",
-
         description:
-            "Twitter/X-inspired social media platform with Firebase Authentication, realtime feeds, image processing and reactive Combine workflows.",
-
+            "Twitter/X-style social app with Firebase Auth, live feeds, image processing and Combine-driven state.",
         image: "images/twitter.png",
-
         link: "https://github.com/dev1008iharsh/TwitterHarsh",
-
+        highlights: [
+            "Real-time home feed with media posts",
+            "Combine workflows for reactive UI updates"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Firebase",
+            "UIKit",
+            "Firebase Auth",
             "Combine",
-            "Realtime"
+            "Image Processing",
+            "Live Feed"
         ]
     },
 
     {
         title: "HarshFlix",
-
         description:
-            "Netflix-style movie trailer application integrating TMDB APIs, YouTube playback, offline persistence and smooth UIKit animations.",
-
+            "Netflix-style trailer app using TMDB APIs, YouTube playback, Core Data favorites and UIKit hero transitions.",
         image: "images/harshflix.png",
-
         link: "https://github.com/dev1008iharsh/HarshFlix",
-
+        highlights: [
+            "TMDB discovery with YouTube trailer player",
+            "Core Data favorites and hero animations"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "TMDB",
+            "UIKit",
+            "TMDB API",
+            "YouTube Player",
             "Core Data",
-            "Streaming"
+            "Hero Animations"
         ]
     },
 
     {
         title: "Harsh iShop",
-
         description:
-            "End-to-end e-commerce solution supporting product browsing, cart management, coupons, payment integration and multilingual support.",
-
+            "Full e-commerce flow with catalog, cart, coupons, payments and multilingual storefront support.",
         image: "images/ishop.png",
-
         link: "https://github.com/dev1008iharsh/Harsh-iShop",
-
+        highlights: [
+            "Cart, coupons and checkout in one flow",
+            "Multilingual product and category support"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "SwiftUI",
             "E-Commerce",
             "Payments",
-            "REST APIs"
+            "Multilingual",
+            "Cart System"
         ]
     },
 
     {
         title: "MatchingHarshCard",
-
         description:
-            "Interactive puzzle memory game built using UICollectionView with smooth animations, haptic feedback and efficient game state management.",
-
+            "Memory puzzle game with UICollectionView grids, haptic feedback and efficient state-driven gameplay.",
         image: "images/matching.png",
-
         link: "https://github.com/dev1008iharsh/MatchingHarshCard",
-
+        highlights: [
+            "UICollectionView grid with match detection",
+            "Haptic feedback and smooth flip animations"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Game",
-            "Animations",
-            "Performance"
+            "UIKit",
+            "UICollectionView",
+            "Haptics",
+            "Game State",
+            "Animations"
         ]
     },
 
     {
         title: "AuraEcomShop",
-
         description:
-            "Fully programmatic Firebase-powered e-commerce platform with role-based admin/customer functionality and scalable architecture.",
-
+            "Programmatic Firebase e-commerce with admin and customer roles, catalog control and order pipelines.",
         image: "images/aura.png",
-
         link: "https://github.com/dev1008iharsh/AuraEcomShop",
-
+        highlights: [
+            "Role-based admin vs customer experiences",
+            "100% programmatic UI with Firebase backend"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "UIKit",
             "Firebase",
-            "E-Commerce",
-            "Programmatic UI"
+            "Role-Based Access",
+            "Programmatic UI",
+            "E-Commerce"
         ]
     },
 
     {
         title: "HarshBuzz",
-
         description:
-            "Live cricket scores application using MVVM architecture with realtime updates, scalable networking and dynamic UIKit rendering.",
-
+            "Live cricket scores app with MVVM, real-time match updates and dynamic UIKit scorecard rendering.",
         image: "images/buzz.png",
-
         link: "https://github.com/dev1008iharsh/HarshBuzz",
-
+        highlights: [
+            "Live match polling with scorecard UI",
+            "MVVM modules for leagues and fixtures"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
-            "Realtime",
+            "SwiftUI",
+            "Live Scores API",
             "MVVM",
+            "Dynamic UI",
             "REST APIs"
         ]
     },
 
     {
         title: "SwiftGenericApiMVVM",
-
         description:
-            "Generic reusable networking layer implementing MVVM, centralized request handling, media uploads and scalable API integrations.",
-
+            "Reusable networking and MVVM foundation with generic requests, media uploads and shared API contracts.",
         image: "images/api.png",
-
         link: "https://github.com/dev1008iharsh/SwiftGenericApiMVVM",
-
+        highlights: [
+            "Generic request layer for any endpoint",
+            "Media upload helpers and MVVM templates"
+        ],
         tags: [
-            "Swift",
-            "UIKit + SwiftUI",
+            "UIKit",
+            "Generic Networking",
             "MVVM",
-            "REST APIs",
-            "Networking"
+            "Media Upload",
+            "REST APIs"
         ]
     }
 
