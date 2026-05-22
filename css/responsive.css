@@ -90,6 +90,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .role-status-card {
+        grid-template-columns: 1fr;
+    }
+
     .project-grid {
         grid-template-columns: 1fr;
     }
@@ -118,15 +122,8 @@
         overflow-x: hidden;
     }
 
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .navbar nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+    .navbar.menu-open .mobile-nav-panel {
+        max-height: calc(100vh - 76px);
     }
 
     .hero {
@@ -182,7 +179,7 @@
 
     .large-card,
     .project-card,
-    .skill-box,
+    .expertise-card,
     .contact-card {
         padding: 28px;
     }
@@ -294,7 +291,7 @@
 
     .large-card,
     .project-card,
-    .skill-box,
+    .expertise-card,
     .contact-card {
         padding: 22px;
         border-radius: 22px;
@@ -312,7 +309,7 @@
         font-size: 15px;
     }
 
-    .skill-box h3 {
+    .expertise-card h3 {
         font-size: 20px;
     }
 
