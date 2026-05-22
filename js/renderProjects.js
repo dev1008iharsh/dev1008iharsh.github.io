@@ -1,268 +1,71 @@
-// =========================================================
-// FILE: js/renderProjects.js
-// Dynamic Projects Renderer
-// =========================================================
-
 document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const container = document.getElementById("projectsContainer");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroDescription = document.getElementById("heroDescription");
+    const heroBadge = document.getElementById("heroBadge");
 
-    /* =====================================================
-       URL Params
-    ===================================================== */
-
-    const params =
-        new URLSearchParams(window.location.search);
-
-    const type =
-        params.get("type");
-
-    /* =====================================================
-       DOM Elements
-    ===================================================== */
-
-    const container =
-        document.getElementById("projectsContainer");
-
-    const heroTitle =
-        document.getElementById("heroTitle");
-
-    const heroDescription =
-        document.getElementById("heroDescription");
-
-    const heroBadge =
-        document.getElementById("heroBadge");
-
-    /* =====================================================
-       Safety Check
-    ===================================================== */
-
-    if (
-        !container ||
-        !heroTitle ||
-        !heroDescription ||
-        !heroBadge
-    ) {
-
-        console.error(
-            "Projects page elements not found."
-        );
-
-        return;
-    }
-
-    /* =====================================================
-       Projects Data
-    ===================================================== */
+    if (!container || !heroTitle || !heroDescription || !heroBadge) return;
 
     let projects = [];
 
-    /* =====================================================
-       LIVE PROJECTS
-    ===================================================== */
-
     if (type === "live") {
-
-        document.title =
-            "Live Projects • Harsh Darji";
-
-        heroBadge.innerHTML =
-            "🚀 Production Grade App Store Applications";
-
-        heroTitle.innerHTML =
-            'Live <span>Projects</span>';
-
-        heroDescription.innerHTML =
-            `
-            Production-grade App Store applications
-            built using Swift, UIKit + SwiftUI,
-            AI integrations, realtime systems
-            and scalable architectures.
-            `;
-
-        // Safety fallback
-        // Prevent page crash if data file fails
-
-        projects =
-            typeof liveProjects !== "undefined"
-            ? liveProjects
-            : [];
-
+        document.title = "Live Projects • Harsh Darji";
+        heroBadge.textContent = "🚀 App Store Apps • Led & Built by Harsh";
+        heroTitle.innerHTML = "Live <span>Projects</span>";
+        heroDescription.textContent =
+            "App Store apps across camera, health, fintech, logistics, streaming and marketplaces with real-time systems and production-grade architecture.";
+        projects = typeof liveProjects !== "undefined" ? liveProjects : [];
+    } else {
+        document.title = "Portfolio Apps • Harsh Darji";
+        heroBadge.textContent = "💻 GitHub Portfolio Apps • Architecture & Leadership";
+        heroTitle.innerHTML = "Portfolio <span>Apps</span>";
+        heroDescription.textContent =
+            "GitHub portfolio apps covering MVVM, Firebase scale, AI chat, payments, offline-first data and reusable iOS frameworks.";
+        projects = typeof portfolioProjects !== "undefined" ? portfolioProjects : [];
     }
-
-    /* =====================================================
-       PORTFOLIO PROJECTS
-    ===================================================== */
-
-    else {
-
-        document.title =
-            "Portfolio Projects • Harsh Darji";
-
-        heroBadge.innerHTML =
-            "🚀 Advanced GitHub Portfolio";
-
-        heroTitle.innerHTML =
-            'Portfolio <span>Projects</span>';
-
-        heroDescription.innerHTML =
-            `
-            Advanced GitHub portfolio projects
-            built using Swift, UIKit + SwiftUI,
-            MVVM, Firebase and scalable
-            iOS architectures.
-            `;
-
-        // Safety fallback
-        // Prevent page crash if data file fails
-
-        projects =
-            typeof portfolioProjects !== "undefined"
-            ? portfolioProjects
-            : [];
-
-    }
-
-    /* =====================================================
-       Debug Logs
-    ===================================================== */
-
-    console.log(
-        "Projects Type:",
-        type
-    );
-
-    console.log(
-        "Projects Data:",
-        projects
-    );
-
-    /* =====================================================
-       Render Projects
-    ===================================================== */
 
     renderProjects(projects);
-
 });
 
-/* =========================================================
-   Render Cards
-========================================================= */
-
 function renderProjects(projects) {
-
-    const container =
-        document.getElementById("projectsContainer");
-
-    if (!container) {
-
-        console.error(
-            "Projects container not found."
-        );
-
-        return;
-    }
-
-    /* =====================================================
-       Empty State
-    ===================================================== */
+    const container = document.getElementById("projectsContainer");
+    if (!container) return;
 
     if (!Array.isArray(projects)) {
-
-        console.error(
-            "Projects is not an array:",
-            projects
-        );
-
-        container.innerHTML =
-            `
-            <p style="color:white;">
-                Failed to load projects.
-            </p>
-            `;
-
+        container.innerHTML = "<p>Failed to load projects.</p>";
         return;
     }
 
-    /* =====================================================
-       Reset Container
-    ===================================================== */
+    const frameworkTags = ["SwiftUI", "UIKit"];
 
-    container.innerHTML = "";
+    container.innerHTML = projects.map((project) => {
+        const tags = (project.tags || []).map((tag) => {
+            const cls = frameworkTags.includes(tag) ? "tag-framework" : "tag-skill";
+            return `<span class="${cls}">${tag}</span>`;
+        }).join("");
 
-    /* =====================================================
-       Generate Cards
-    ===================================================== */
+        const highlights = (project.highlights || []).map((item) => `<li>${item}</li>`).join("");
+        const highlightsHTML = highlights
+            ? `<ul class="project-highlights">${highlights}</ul>`
+            : "";
 
-    const cardsHTML = projects.map((project) => {
+        const badge = project.flagship
+            ? `<div class="project-top"><span class="project-badge">Flagship</span></div>`
+            : "";
 
         return `
         <div class="project-card fade-in">
-
-            ${
-                project.flagship
-                ?
-                `
-                <div class="project-top">
-
-                    <span class="project-badge">
-                        Flagship
-                    </span>
-
-                </div>
-                `
-                :
-                ""
-            }
-
-            <h3>
-                ${project.title || "Untitled Project"}
-            </h3>
-
-            <p>
-                ${project.description || ""}
-            </p>
-
-            <div class="project-tags">
-
-                ${(project.tags || []).map(tag =>
-                    `<span>${tag}</span>`
-                ).join("")}
-
-            </div>
-
+            ${badge}
+            <h3>${project.title || "Untitled Project"}</h3>
+            <p>${project.description || ""}</p>
+            ${highlightsHTML}
+            <div class="project-tags">${tags}</div>
             <div class="project-buttons">
-
-                <button
-                    class="project-btn"
-                    data-preview="${project.image || ""}"
-                    data-title="${project.title || ""}"
-                >
-                    Preview
-                </button>
-
-                <a
-                    class="project-btn"
-                    href="${project.link || "#"}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Experience
-                </a>
-
+                <button class="project-btn" data-preview="${project.image || ""}" data-title="${project.title || ""}">Preview</button>
+                <a class="project-btn" href="${project.link || "#"}" target="_blank" rel="noopener noreferrer">Experience</a>
             </div>
-
-        </div>
-        `;
-
+        </div>`;
     }).join("");
-
-    /* =====================================================
-       Inject HTML
-    ===================================================== */
-
-    container.innerHTML = cardsHTML;
-
-    console.log(
-        "Projects rendered successfully."
-    );
-
 }
