@@ -1,0 +1,119 @@
+body.projects-page {
+    cursor: auto !important;
+}
+
+body.projects-page * {
+    cursor: auto !important;
+}
+
+body.projects-page .cursor-dot,
+body.projects-page .cursor-outline {
+    display: none !important;
+}
+
+.page-hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 180px 24px 80px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: clamp(52px, 8vw, 90px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.page-hero h1 span {
+    background: linear-gradient(90deg, #4f7cff, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-hero .hero-description {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.project-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-highlights {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-highlights li {
+    position: relative;
+    padding-left: 18px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.project-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f7cff, #8b5cf6);
+}
+
+.project-tags .tag-framework {
+    background: linear-gradient(135deg, rgba(79, 124, 255, 0.22), rgba(139, 92, 246, 0.18));
+    border-color: rgba(120, 160, 255, 0.35);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+body.projects-page .project-btn {
+    border: 1px solid rgba(91, 140, 255, 0.18);
+    background: linear-gradient(135deg, rgba(8, 18, 45, 0.95), rgba(15, 35, 80, 0.95));
+    box-shadow: 0 0 20px rgba(79, 124, 255, 0.22);
+}
+
+body.projects-page .project-btn::before {
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 140px 20px 60px;
+    }
+
+    .project-grid {
+        padding: 0 20px 100px;
+        grid-template-columns: 1fr;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .project-btn {
+        width: 100%;
+    }
+}
