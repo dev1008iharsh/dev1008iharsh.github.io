@@ -1,296 +1,387 @@
-<!-- =========================================
-     FILE: components/skills.html
-========================================== -->
+/* =========================================================
+   FILE: css/animations.css
+   DESCRIPTION:
+   All reusable animations and hover effects
+========================================================= */
+
+/* =========================================================
+   FADE IN UP
+========================================================= */
+
+@keyframes fadeInUp {
+
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
 
-<section
-    id="skills"
-    class="section skills-section"
->
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   FLOATING EFFECT
+========================================================= */
+
+@keyframes floating {
 
-    <div class="section-heading">
+    0% {
+        transform: translateY(0px);
+    }
 
-        <div class="hero-badge">
-            🚀 Technical Expertise
-        </div>
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   GLOW PULSE
+========================================================= */
+
+@keyframes pulseGlow {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+}
+
+/* =========================================================
+   ROTATING GRADIENT
+========================================================= */
+
+@keyframes rotateGradient {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   BLUR MOVEMENT
+========================================================= */
+
+@keyframes blurMove {
+
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(30px, -20px);
+    }
+
+    50% {
+        transform: translate(-20px, 30px);
+    }
+
+    75% {
+        transform: translate(20px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/* =========================================================
+   SHIMMER EFFECT
+========================================================= */
+
+@keyframes shimmer {
+
+    0% {
+        background-position: -500px 0;
+    }
+
+    100% {
+        background-position: 500px 0;
+    }
+}
+
+/* =========================================================
+   SCALE IN
+========================================================= */
+
+@keyframes scaleIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+.hero-badge {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero h1 {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero h2 {
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-description {
+    animation: fadeInUp 1.4s ease forwards;
+}
+
+.hero-tags {
+    animation: fadeInUp 1.6s ease forwards;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1.8s ease forwards;
+}
+
+.social-links {
+    animation: fadeInUp 2s ease forwards;
+}
 
-        <h2>
-            Skills & <span>Expertise</span>
-        </h2>
+/* =========================================================
+   PROFILE IMAGE ANIMATION
+========================================================= */
+
+.profile-wrapper {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.profile-ring {
+    animation:
+        pulseGlow 5s ease-in-out infinite,
+        rotateGradient 16s linear infinite;
+}
 
-        <p class="section-text">
-            Project Lead and Senior iOS Developer skill stack:
-            AI-driven delivery, architecture, team execution
-            and production-grade engineering.
-        </p>
+/* =========================================================
+   CARD HOVER EFFECTS
+========================================================= */
 
-    </div>
+.about-card,
+.stat-card,
+.feature-card,
+.project-card,
+.expertise-card,
+.contact-card {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.about-card:hover,
+.stat-card:hover,
+.feature-card:hover,
+.project-card:hover,
+.expertise-card:hover,
+.contact-card:hover {
+
+    transform: translateY(-10px);
 
-    <!-- Core roles: Project Lead + Senior iOS -->
-    <div class="skills-core-grid">
+    border-color: rgba(0,194,255,0.3);
 
-        <div class="expertise-card skills-core-card">
+    box-shadow:
+        0 20px 60px rgba(0,194,255,0.08),
+        0 0 40px rgba(139,92,246,0.08);
+}
 
-            <div class="skills-core-header">
+/* =========================================================
+   NAV BUTTON HOVER
+========================================================= */
 
-                <div class="expertise-icon">
-                    👨‍💼
-                </div>
+.nav-btn {
+    position: relative;
+    overflow: hidden;
+}
 
-                <h3>
-                    Project Lead
-                </h3>
+.nav-btn::before {
 
-            </div>
+    content: "";
 
-            <div class="expertise-tags">
+    position: absolute;
 
-                <span class="tag-highlight">Project Lead</span>
-                <span>Sprint Planning</span>
-                <span>Code Reviews</span>
-                <span>Team Mentoring</span>
-                <span>Release Management</span>
-                <span>Technical Leadership</span>
-                <span>Delivery Ownership</span>
-                <span>Stakeholder Communication</span>
-                <span>Client Communication</span>
-                <span>Agile / Scrum</span>
-                <span>Jira</span>
-                <span>Trello</span>
-                <span>GitHub</span>
-                <span>GitLab</span>
-                <span>Slack</span>
-                <span>TestFlight</span>
+    top: 0;
+    left: -120%;
 
-            </div>
+    width: 100%;
+    height: 100%;
 
-        </div>
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+        );
 
-        <div class="expertise-card skills-core-card">
+    transition: 0.6s ease;
+}
 
-            <div class="skills-core-header">
+.nav-btn:hover::before {
+    left: 120%;
+}
 
-                <div class="expertise-icon">
-                    📱
-                </div>
+/* =========================================================
+   PROJECT BUTTONS
+========================================================= */
 
-                <h3>
-                    Senior iOS Developer
-                </h3>
+.project-btn {
+    position: relative;
+    overflow: hidden;
+}
 
-            </div>
+.project-btn::before {
 
-            <div class="expertise-tags">
+    content: "";
 
-                <span class="tag-highlight">Senior iOS Developer</span>
-                <span>Swift</span>
-                <span>SwiftUI</span>
-                <span>UIKit</span>
-                <span>Combine</span>
-                <span>MVVM</span>
-                <span>Clean Architecture</span>
-                <span>SOLID</span>
-                <span>Dependency Injection</span>
-                <span>Modular Architecture</span>
-                <span>App Store Release</span>
-                <span>Production Debugging</span>
-                <span>Architecture Reviews</span>
+    position: absolute;
 
-            </div>
+    inset: 0;
 
-        </div>
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
 
-    </div>
+    transform: translateX(-100%);
 
-    <!-- All technical skill groups -->
-    <div class="expertise-container skills-grid">
+    transition: 0.6s ease;
+}
 
-        <div class="expertise-card">
+.project-btn:hover::before {
+    transform: translateX(100%);
+}
 
-            <div class="expertise-icon">
-                🤖
-            </div>
+/* =========================================================
+   HERO TAG HOVER
+========================================================= */
 
-            <h3>
-                AI & Automation
-            </h3>
+.hero-tags span,
+.project-tags span,
+.feature-tags span,
+.expertise-tags span {
 
-            <div class="expertise-tags">
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
 
-                <span>AI-Driven Development</span>
-                <span>ChatGPT</span>
-                <span>Claude</span>
-                <span>Gemini</span>
-                <span>AI Apps</span>
-                <span>AI-Assisted Development</span>
-                <span>Automation</span>
-                <span>Productivity Systems</span>
+.hero-tags span:hover,
+.project-tags span:hover,
+.feature-tags span:hover,
+.expertise-tags span:hover {
 
-            </div>
+    transform: translateY(-4px);
 
-        </div>
+    border-color: rgba(0,194,255,0.35);
 
-        <div class="expertise-card">
+    background: rgba(255,255,255,0.08);
+}
 
-            <div class="expertise-icon">
-                🌐
-            </div>
+/* =========================================================
+   GLOW BACKGROUND MOVEMENT
+========================================================= */
 
-            <h3>
-                Networking & APIs
-            </h3>
+.blur-one {
+    animation: blurMove 14s ease-in-out infinite;
+}
 
-            <div class="expertise-tags">
+.blur-two {
+    animation: blurMove 18s ease-in-out infinite;
+}
 
-                <span>REST APIs</span>
-                <span>GraphQL</span>
-                <span>URLSession</span>
-                <span>WebSockets</span>
-                <span>API Security</span>
-                <span>Network Optimization</span>
+/* =========================================================
+   MODAL ANIMATION
+========================================================= */
 
-            </div>
+.modal-overlay.active {
+    animation: fadeInUp 0.3s ease forwards;
+}
 
-        </div>
+.modal-content {
+    animation: scaleIn 0.35s ease forwards;
+}
 
-        <div class="expertise-card">
+/* =========================================================
+   FEATURE GLOW EFFECT
+========================================================= */
 
-            <div class="expertise-icon">
-                🗂️
-            </div>
+.feature-card::after {
 
-            <h3>
-                Database & Backend
-            </h3>
+    content: "";
 
-            <div class="expertise-tags">
+    position: absolute;
 
-                <span>Core Data</span>
-                <span>Realm</span>
-                <span>Firebase</span>
-                <span>Firestore</span>
-                <span>Supabase</span>
-                <span>Offline-first</span>
-                <span>Caching</span>
-                <span>Cloud Sync</span>
+    inset: 0;
 
-            </div>
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0,194,255,0.15),
+            transparent 45%
+        );
 
-        </div>
+    opacity: 0;
 
-        <div class="expertise-card">
+    transition: 0.4s ease;
 
-            <div class="expertise-icon">
-                ⚡
-            </div>
+    pointer-events: none;
+}
 
-            <h3>
-                Concurrency & Performance
-            </h3>
+.feature-card:hover::after {
+    opacity: 1;
+}
 
-            <div class="expertise-tags">
+/* =========================================================
+   INPUT FOCUS EFFECT
+========================================================= */
 
-                <span>async/await</span>
-                <span>GCD</span>
-                <span>Multithreading</span>
-                <span>Background Tasks</span>
-                <span>Performance Optimization</span>
-                <span>Memory Management</span>
-                <span>Instruments</span>
+.contact-form input:focus,
+.contact-form textarea:focus {
 
-            </div>
+    border-color: rgba(0,194,255,0.4);
 
-        </div>
+    box-shadow:
+        0 0 0 4px rgba(0,194,255,0.08);
+}
 
-        <div class="expertise-card">
+/* =========================================================
+   SMOOTH PAGE TRANSITION
+========================================================= */
 
-            <div class="expertise-icon">
-                🔒
-            </div>
-
-            <h3>
-                Security
-            </h3>
-
-            <div class="expertise-tags">
-
-                <span>Keychain</span>
-                <span>Secure Storage</span>
-                <span>Authentication</span>
-                <span>Privacy Compliance</span>
-                <span>Data Protection</span>
-
-            </div>
-
-        </div>
-
-        <div class="expertise-card">
-
-            <div class="expertise-icon">
-                🍎
-            </div>
-
-            <h3>
-                Apple Frameworks
-            </h3>
-
-            <div class="expertise-tags">
-
-                <span>MapKit</span>
-                <span>Core Location</span>
-                <span>AVFoundation</span>
-                <span>AVCaptureSession</span>
-                <span>Core Animation</span>
-                <span>UserNotifications</span>
-
-            </div>
-
-        </div>
-
-        <div class="expertise-card">
-
-            <div class="expertise-icon">
-                🚀
-            </div>
-
-            <h3>
-                App Features
-            </h3>
-
-            <div class="expertise-tags">
-
-                <span>Push Notifications</span>
-                <span>Deep Linking</span>
-                <span>Universal Links</span>
-                <span>In-App Purchases</span>
-
-            </div>
-
-        </div>
-
-        <div class="expertise-card">
-
-            <div class="expertise-icon">
-                🧪
-            </div>
-
-            <h3>
-                Testing & Debugging
-            </h3>
-
-            <div class="expertise-tags">
-
-                <span>Unit Testing</span>
-                <span>UI Testing</span>
-                <span>Debugging</span>
-                <span>Crash Monitoring</span>
-                <span>Code Reviews</span>
-                <span>Xcode</span>
-                <span>Postman</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+body {
+    animation: fadeInUp 0.8s ease;
+}
