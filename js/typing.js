@@ -3,11 +3,7 @@
    Premium Hero Typing Animation
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    initializeTypingAnimation();
-
-});
+/* Initialized after hero loads in loadComponents.js */
 
 /* =========================================================
    Typing Animation
@@ -30,19 +26,19 @@ function initializeTypingAnimation() {
 
     const texts = [
 
-        "AI-Driven Mobile Application Development Experiences",
+        "Project Lead • Senior iOS Developer",
 
-        "Senior iOS Engineer 🚀",
+        "Leading Teams & Shipping iOS Products",
 
         "Swift • UIKit • SwiftUI",
 
-        "Realtime Systems • Firebase",
+        "Real-time Systems • Firebase",
 
-        "Scalable Architecture Specialist",
+        "Scalable Architecture & Code Reviews",
 
-        "Performance Optimization Expert",
+        "Production Delivery & App Store Releases",
 
-        "Production-Grade App Builder"
+        "AI-Driven Mobile Experiences"
 
     ];
 
