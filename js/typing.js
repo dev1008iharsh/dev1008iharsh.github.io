@@ -26,21 +26,39 @@ function initializeTypingAnimation() {
 
     const texts = [
 
-        "Project Lead • Senior iOS Developer",
+    "Project Lead • Senior Mobile App Developer",
 
-        "Leading Teams & Shipping iOS Products",
+    "Leading Teams • Building & Shipping Production-Ready Apps",
 
-        "Swift • UIKit • SwiftUI",
+    "Complete Mobile Solutions • From Idea to App Store Release",
 
-        "Real-time Systems • Firebase",
+    "Native iOS Development • Swift • UIKit • SwiftUI",
 
-        "Scalable Architecture & Code Reviews",
+    "Cross-Platform Development • Flutter • Dart • React Native",
 
-        "Production Delivery & App Store Releases",
+    "Backend Integration • REST APIs • GraphQL • WebSockets",
 
-        "AI-Driven Mobile Experiences"
+    "Firebase • Supabase • Authentication • Real-Time Systems",
 
-    ];
+    "Scalable Architecture • MVVM • Clean Architecture • Modular Design",
+
+    "Performance Optimization • Memory Management • App Security",
+
+    "CI/CD • Fastlane • Automated Testing • Release Management",
+
+    "Code Reviews • Mentoring Developers • Technical Leadership",
+
+    "AI-Powered Applications • LLM Integration • OpenAI APIs",
+
+    "Agentic Development • Claude • ChatGPT • AI-Assisted Engineering",
+
+    "Automation Workflows • AI Agents • Productivity Systems",
+
+    "Product Strategy • User Experience • Business-Focused Development",
+
+    "Building Reliable • Scalable • High-Performance Mobile Products"
+
+];
 
     let textIndex = 0;
 
