@@ -5,13 +5,17 @@ function initMobileMenu() {
 
     if (!menuToggle || !navbar || !mobilePanel) return;
     if (menuToggle.dataset.bound === "true") return;
+
     menuToggle.dataset.bound = "true";
 
     const setMenuOpen = (isOpen) => {
         navbar.classList.toggle("menu-open", isOpen);
         document.body.classList.toggle("mobile-menu-open", isOpen);
         menuToggle.innerHTML = isOpen ? "✕" : "☰";
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
     };
 
     menuToggle.addEventListener("click", (event) => {
@@ -20,17 +24,35 @@ function initMobileMenu() {
     });
 
     mobilePanel.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const hash = new URL(link.href, window.location.href).hash;
-            if (hash) {
-                event.preventDefault();
-                setMenuOpen(false);
-                if (typeof window.scrollToHashWithRetry === "function") {
-                    window.scrollToHashWithRetry(hash);
-                }
-                return;
-            }
+
+        link.addEventListener("click", () => {
+
+            const currentPage =
+                window.location.pathname.split("/").pop() || "index.html";
+
+            const targetUrl = new URL(
+                link.href,
+                window.location.origin
+            );
+
+            const targetPage =
+                targetUrl.pathname.split("/").pop() || "index.html";
+
+            const hash = targetUrl.hash;
+
             setMenuOpen(false);
+
+            // Only intercept SAME PAGE hash navigation
+            if (
+                hash &&
+                currentPage === targetPage &&
+                typeof window.scrollToHashWithRetry === "function"
+            ) {
+                event.preventDefault();
+
+                window.scrollToHashWithRetry(hash);
+            }
         });
+
     });
 }
